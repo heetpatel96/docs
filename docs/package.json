@@ -1,7 +1,8 @@
 {
   "dependencies": {
     "async": "^3.2.4",
-    "vue-template-compiler": "^2.7.8"
+    "vue-template-compiler": "^2.7.8",
+    "vuepress": "^1.9.7"
   },
   "scripts": {
     "docs:build": "vuepress build docs"
