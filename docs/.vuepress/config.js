@@ -2,6 +2,7 @@ const { auto } = require("async");
 
 module.exports = {
     title: '',
+    base: "/",
     description: 'Welcome to RFEM Documentation',
     themeConfig: {
         logo: '/images/dev_docs.png',
