@@ -1,6 +1,9 @@
 const { auto } = require("async");
 
 module.exports = {
+    head: [
+      ['link', { rel: 'icon', href: '/favicon.ico' }]
+    ],
     title: '',
     base: "/docs/",
     description: 'Welcome to RFEM Documentation',
