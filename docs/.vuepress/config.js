@@ -51,6 +51,11 @@ module.exports = {
                 collapsable: false,
                 children: ["tutorialintro"]
               },
+              {
+                title: "Discussion Forum",
+                collapsable: false,
+                children: ["Announcments"]
+              },
             ]
         },
         searchPlaceholder: 'Search...',
