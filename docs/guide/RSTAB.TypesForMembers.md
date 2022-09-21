@@ -1,4 +1,4 @@
-# RSTAB.TypesForMembers package
+# Types For Members
 
 ## Submodules
 

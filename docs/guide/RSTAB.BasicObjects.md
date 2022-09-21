@@ -1,4 +1,4 @@
-# RSTAB.BasicObjects package
+# Basic Objects
 
 ## Submodules
 

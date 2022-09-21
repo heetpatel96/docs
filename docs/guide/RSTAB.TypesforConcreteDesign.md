@@ -1,4 +1,4 @@
-# RSTAB.TypesforConcreteDesign package
+# Types for Concrete Design
 
 ## Submodules
 

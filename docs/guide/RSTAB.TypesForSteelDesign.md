@@ -1,4 +1,4 @@
-# RSTAB.TypesForSteelDesign package
+# Types For Steel Design 
 
 ## Submodules
 

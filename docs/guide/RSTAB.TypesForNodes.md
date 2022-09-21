@@ -1,4 +1,4 @@
-# RSTAB.TypesForNodes package
+# Types For Nodes
 
 ## Submodules
 

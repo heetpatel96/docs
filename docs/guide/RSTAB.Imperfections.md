@@ -1,4 +1,4 @@
-# RSTAB.Imperfections package
+# Imperfections
 
 ## Submodules
 

@@ -1,4 +1,4 @@
-# RSTAB.Loads package
+# Loads
 
 ## Submodules
 

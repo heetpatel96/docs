@@ -1,4 +1,4 @@
-# RSTAB.ConcreteDesign package
+# Concrete Design
 
 ## Submodules
 

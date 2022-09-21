@@ -1,4 +1,4 @@
-# RSTAB.LoadCasesAndCombinations package
+# Load Cases And Combinations
 
 ## Submodules
 

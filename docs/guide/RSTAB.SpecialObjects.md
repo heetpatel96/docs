@@ -1,4 +1,4 @@
-# RSTAB.SpecialObjects package
+# Special Objects
 
 ## Submodules
 
