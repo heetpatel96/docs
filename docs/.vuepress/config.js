@@ -16,6 +16,7 @@ module.exports = {
               items: [
                 {text: 'Quick Start', link: '/guide/'},
                 {text: 'Python', link: '/guide/ready'},
+                {text: 'Articles', link: '/guide/Articles'},
                 {text: '.NET', link: '/guide/netintro'},
                 {text: 'JavaScript', link: '/guide/MD/AnalysisSettings'},
                 {text: 'Tutorials', link: '/guide/tutorialintro'},
@@ -32,9 +33,14 @@ module.exports = {
                 children: ["", "getStarted"]
               },
               {
-                title: "Python HLF 🐍",
+                title: "RFEM Python HLF 🐍",
                 collapsable: false,
-                children: ["ready", "init", "RFEM.BasicObjects", "RFEM.ConcreteDesign", "RFEM.Imperfections", "RFEM.LoadCasesAndCombinations", "RFEM.Loads", "RFEM.SpecialObjects", "RFEM.TypesforConcreteDesign", "RFEM.TypesForLines", "RFEM.TypesForMembers", "RFEM.TypesForNodes", "RFEM.TypesForSolids", "RFEM.TypesForSpecialObjects", "RFEM.TypesForSteelDesign", "RFEM.TypesForSurfaces"]
+                children: ["ready", "init", "RFEM.BasicObjects", "RFEM.ConcreteDesign", "RFEM.Imperfections", "RFEM.LoadCasesAndCombinations", "RFEM.Loads", "RFEM.SpecialObjects", "RFEM.TypesforConcreteDesign", "RFEM.TypesForLines", "RFEM.TypesForMembers", "RFEM.TypesForNodes", "RFEM.TypesForSolids", "RFEM.TypesForSpecialObjects", "RFEM.TypesForSteelDesign", "RFEM.TypesForSurfaces", "Articles"]
+              },
+              {
+                title: "RSTAB Python HLF 🐍",
+                collapsable: false,
+                children: ["RSTAB.BasicObjects", "RSTAB.ConcreteDesign", "RSTAB.Imperfections", "RSTAB.LoadCasesAndCombinations", "RSTAB.Loads", "RSTAB.SpecialObjects", "RSTAB.TypesforConcreteDesign", "RSTAB.TypesForMembers", "RSTAB.TypesForNodes", "RSTAB.TypesForSpecialObjects", "RSTAB.TypesForSteelDesign"]
               },
               {
                 title: ".NET HLF",
@@ -50,11 +56,6 @@ module.exports = {
                 title: "Tutorials",
                 collapsable: false,
                 children: ["tutorialintro"]
-              },
-              {
-                title: "Discussion Forum",
-                collapsable: false,
-                children: ["Announcments"]
               },
             ]
         },
