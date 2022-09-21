@@ -43,17 +43,17 @@ module.exports = {
                 children: ["RSTAB.BasicObjects", "RSTAB.ConcreteDesign", "RSTAB.Imperfections", "RSTAB.LoadCasesAndCombinations", "RSTAB.Loads", "RSTAB.SpecialObjects", "RSTAB.TypesforConcreteDesign", "RSTAB.TypesForMembers", "RSTAB.TypesForNodes", "RSTAB.TypesForSpecialObjects", "RSTAB.TypesForSteelDesign"]
               },
               {
-                title: ".NET HLF",
+                title: ".NET HLF 🕸️",
                 collapsable: false,
                 children: ["netintro"]
               },
               {
-                title: "JavaScript Commands",
+                title: "JavaScript Commands 📜",
                 collapsable: false,
                 children: ["MD/AnalysisSettings", "MD/BasicObjects", "MD/GuideObjects", "MD/Loading", "MD/Loads", "MD/LoadWizards", "MD/SpecialObjects", "MD/TypesForLines", "MD/TypesForMembers", "MD/TypesForNodes", "MD/TypesForSolids", "MD/TypesForSurfaces"]
               },
               {
-                title: "Tutorials",
+                title: "Tutorials 🗼",
                 collapsable: false,
                 children: ["tutorialintro"]
               },
