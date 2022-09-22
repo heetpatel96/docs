@@ -74,6 +74,9 @@
     * **params** (*dict*, *optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
 
 
+    * **model** (*RSTAB Class*, *optional*) – Model to be edited
+
+
 
 ### Member.Beam(no, start_node_no, end_node_no, section_distribution_type, rotation_specification_type, rotation_parameters, start_section_no, end_section_no, distribution_parameters, comment, params, model)
 
@@ -90,66 +93,50 @@
 
 
     * **section_distribution_type** (*enum*) – Section Distribution Type Enumeration
-    for section_distribution_type == MemberSectionDistributionType.SECTION_DISTRIBUTION_TYPE_LINEAR:
 
-    > distribution_parameters = [section_alignment]
 
-    for section_distribution_type == MemberSectionDistributionType.SECTION_DISTRIBUTION_TYPE_TAPERED_AT_BOTH_SIDES:
+        > * for section_distribution_type == MemberSectionDistributionType.SECTION_DISTRIBUTION_TYPE_LINEAR:    
+        distribution_parameters = [section_alignment]
 
-        distribution_parameters = [section_distance_from_start_is_defined_as_relative, section_distance_from_end_is_defined_as_relative,
+        > * for section_distribution_type == MemberSectionDistributionType.SECTION_DISTRIBUTION_TYPE_TAPERED_AT_BOTH_SIDES:     
+        distribution_parameters = [section_distance_from_start_is_defined_as_relative, section_distance_from_end_is_defined_as_relative, section_distance_from_start_relative/absolute, section_distance_from_end_relative/absolute, section_alignment, section_internal]
 
-            section_distance_from_start_relative/absolute, section_distance_from_end_relative/absolute,
-            section_alignment, section_internal]
-
-    for section_distribution_type == MemberSectionDistributionType.SECTION_DISTRIBUTION_TYPE_TAPERED_AT_START_OF_MEMBER:
-
+        > * for section_distribution_type == MemberSectionDistributionType.SECTION_DISTRIBUTION_TYPE_TAPERED_AT_START_OF_MEMBER:    
         distribution_parameters = [section_distance_from_start_is_defined_as_relative, section_distance_from_start_relative/absolute, section_alignment]
 
-    for section_distribution_type == MemberSectionDistributionType.SECTION_DISTRIBUTION_TYPE_TAPERED_AT_END_OF_MEMBER:
-
+        > * for section_distribution_type == MemberSectionDistributionType.SECTION_DISTRIBUTION_TYPE_TAPERED_AT_END_OF_MEMBER:  
         distribution_parameters = [section_distance_from_start_is_defined_as_relative, section_distance_from_start_relative/absolute, section_alignment]
 
-    for section_distribution_type == MemberSectionDistributionType.SECTION_DISTRIBUTION_TYPE_SADDLE:
-
+        > * for section_distribution_type == MemberSectionDistributionType.SECTION_DISTRIBUTION_TYPE_SADDLE:    
         distribution_parameters = [section_distance_from_start_is_defined_as_relative, section_distance_from_start_relative/absolute, section_alignment, section_internal]
 
-    for section_distribution_type == MemberSectionDistributionType.SECTION_DISTRIBUTION_TYPE_OFFSET_AT_BOTH_SIDES:
+        > * for section_distribution_type == MemberSectionDistributionType.SECTION_DISTRIBUTION_TYPE_OFFSET_AT_BOTH_SIDES:  
+        distribution_parameters = [section_distance_from_start_is_defined_as_relative, section_distance_from_end_is_defined_as_relative, section_distance_from_start_relative/absolute, section_distance_from_end_relative/absolute, section_alignment, section_internal]
 
-        distribution_parameters = [section_distance_from_start_is_defined_as_relative, section_distance_from_end_is_defined_as_relative,
-
-            section_distance_from_start_relative/absolute, section_distance_from_end_relative/absolute,
-            section_alignment, section_internal]
-
-    for section_distribution_type == MemberSectionDistributionType.SECTION_DISTRIBUTION_TYPE_OFFSET_AT_START_OF_MEMBER:
-
+        > * for section_distribution_type == MemberSectionDistributionType.SECTION_DISTRIBUTION_TYPE_OFFSET_AT_START_OF_MEMBER:     
         distribution_parameters = [section_distance_from_start_is_defined_as_relative, section_distance_from_start_relative/absolute, section_alignment]
 
-    for section_distribution_type == MemberSectionDistributionType.SECTION_DISTRIBUTION_TYPE_OFFSET_AT_END_OF_MEMBER:
-
+        > * for section_distribution_type == MemberSectionDistributionType.SECTION_DISTRIBUTION_TYPE_OFFSET_AT_END_OF_MEMBER:   
         distribution_parameters = [section_distance_from_start_is_defined_as_relative, section_distance_from_start_relative/absolute, section_alignment]
-
 
 
     * **rotation_specification_type** (*enum*) – Rotation Specification Type Enumeration
 
 
     * **rotation_parameters** (*list*) – Rotation Parameters; 1 or 2 params
-    for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_ANGLE:
 
-    > rotation_parameters = [rotation_angle]
 
-    for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_HELP_NODE:
+        > * for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_ANGLE:
+        rotation_parameters = [rotation_angle]
 
+        > * for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_HELP_NODE:
         rotation_parameters = [rotation_help_node, rotation_plane_type]
 
-    for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_INSIDE_NODE:
-
+        > * for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_INSIDE_NODE:
         rotation_parameters = [rotation_plane_type]
 
-    for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_SURFACE:
-
+        > * for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_SURFACE:
         rotation_parameters = [rotation_surface, rotation_surface_plane_type]
-
 
 
     * **start_section_no** (*int*) – Tag of Start Section
@@ -166,9 +153,14 @@
 
     * **params** (*dict*, *optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
 
+        params = {'member_hinge_start':, 'member_hinge_end': , 'member_eccentricity_start': , 'member_eccentricity_end': , 'support':, 'member_nonlinearity': , 'end_modifications_member_start_extension': , 'end_modifications_member_start_slope_y': , 'end_modifications_member_start_slope_z': , 'end_modifications_member_end_extension': , 'end_modifications_member_end_slope_y': , 'end_modifications_member_end_slope_z': , 'member_result_intermediate_point' : , 'is_deactivated_for_calculation' : }
 
 
-#### _static_ Buckling(no=1, start_node_no=1, end_node_no=2, rotation_specification_type=MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_ANGLE, rotation_parameters=[0], section_no=1, comment='', params={'end_modifications_member_end_extension': 0, 'end_modifications_member_end_slope_y': 0, 'end_modifications_member_end_slope_z': 0, 'end_modifications_member_start_extension': 0, 'end_modifications_member_start_slope_y': 0, 'end_modifications_member_start_slope_z': 0, 'is_deactivated_for_calculation': False, 'member_eccentricity_end': 0, 'member_eccentricity_start': 0, 'member_nonlinearity': 0}, model=<class 'RSTAB.initModel.Model'>)
+    * **model** (*RSTAB Class*, *optional*) – Model to be edited
+
+
+
+### Member.Buckling(no, start_node_no, end_node_no, rotation_specification_type, rotation_parameters, section_no, comment, params, model)
 
 * **Parameters**
 
@@ -186,35 +178,36 @@
 
 
     * **rotation_parameters** (*list*) – Rotation Parameters
-    for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_ANGLE:
 
-    > rotation_parameters = [rotation_angle]
+        > * for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_ANGLE:    
+        rotation_parameters = [rotation_angle]
 
-    for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_HELP_NODE:
-
+        > * for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_HELP_NODE:    
         rotation_parameters = [rotation_help_node, rotation_plane_type]
 
-    for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_INSIDE_NODE:
-
+        > * for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_INSIDE_NODE:  
         rotation_parameters = [rotation_plane_type]
 
-    for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_SURFACE:
-
+        > * for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_SURFACE:  
         rotation_parameters = [rotation_surface, rotation_surface_plane_type]
-
 
 
     * **section_no** (*int*) – Section Tag
 
 
-    * **comment** (*str**, **optional*) – Comment
+    * **comment** (*str*, *optional*) – Comment
 
 
-    * **params** (*dict**, **optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
+    * **params** (*dict*, *optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
+
+        params = {'member_eccentricity_start': , 'member_eccentricity_end': , 'member_nonlinearity': , 'end_modifications_member_start_extension': , 'end_modifications_member_start_slope_y': , 'end_modifications_member_start_slope_z': , 'end_modifications_member_end_extension': , 'end_modifications_member_end_slope_y': , 'end_modifications_member_end_slope_z': , 'is_deactivated_for_calculation' : }
+
+
+    * **model** (*RSTAB Class*, *optional*) – Model to be edited
 
 
 
-#### _static_ Cable(no=1, start_node_no=1, end_node_no=2, rotation_specification_type=MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_ANGLE, rotation_parameters=[0], section_no=1, comment='', params={'end_modifications_member_end_extension': 0, 'end_modifications_member_end_slope_y': 0, 'end_modifications_member_end_slope_z': 0, 'end_modifications_member_start_extension': 0, 'end_modifications_member_start_slope_y': 0, 'end_modifications_member_start_slope_z': 0, 'is_deactivated_for_calculation': False}, model=<class 'RSTAB.initModel.Model'>)
+### Member.Cable(no, start_node_no, end_node_no, rotation_specification_type, rotation_parameters, section_no, comment, params, model)
 
 * **Parameters**
 
@@ -232,35 +225,36 @@
 
 
     * **rotation_parameters** (*list*) – Rotation Parameters
-    for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_ANGLE:
 
-    > rotation_parameters = [rotation_angle]
+        > * for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_ANGLE:    
+        rotation_parameters = [rotation_angle]
 
-    for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_HELP_NODE:
-
+        > * for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_HELP_NODE:    
         rotation_parameters = [rotation_help_node, rotation_plane_type]
 
-    for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_INSIDE_NODE:
-
+        > * for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_INSIDE_NODE:  
         rotation_parameters = [rotation_plane_type]
 
-    for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_SURFACE:
-
+        > * for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_SURFACE:      
         rotation_parameters = [rotation_surface, rotation_surface_plane_type]
-
 
 
     * **section_no** (*int*) – Section Tag
 
 
-    * **comment** (*str**, **optional*) – Comment
+    * **comment** (*str*, *optional*) – Comment
 
 
-    * **params** (*dict**, **optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
+    * **params** (*dict*, *optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
+
+        params = {'end_modifications_member_start_extension': , 'end_modifications_member_start_slope_y': , 'end_modifications_member_start_slope_z': , 'end_modifications_member_end_extension': , 'end_modifications_member_end_slope_y': , 'end_modifications_member_end_slope_z': , 'is_deactivated_for_calculation' : }
+
+
+    * **model** (*RSTAB Class*, *optional*) – Model to be edited
 
 
 
-#### _static_ Compression(no=1, start_node_no=1, end_node_no=2, rotation_specification_type=MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_ANGLE, rotation_parameters=[0], section_no=1, comment='', params={'end_modifications_member_end_extension': 0, 'end_modifications_member_end_slope_y': 0, 'end_modifications_member_end_slope_z': 0, 'end_modifications_member_start_extension': 0, 'end_modifications_member_start_slope_y': 0, 'end_modifications_member_start_slope_z': 0, 'is_deactivated_for_calculation': False, 'member_eccentricity_end': 0, 'member_eccentricity_start': 0, 'member_nonlinearity': 0}, model=<class 'RSTAB.initModel.Model'>)
+### Member.Compression(no, start_node_no, end_node_no, rotation_specification_type, rotation_parameters, section_no, comment, params, model)
 
 * **Parameters**
 
@@ -278,81 +272,36 @@
 
 
     * **rotation_parameters** (*list*) – Rotation Parameters
-    for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_ANGLE:
 
-    > rotation_parameters = [rotation_angle]
+        > * for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_ANGLE:    
+        rotation_parameters = [rotation_angle]
 
-    for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_HELP_NODE:
-
+        > * for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_HELP_NODE:    
         rotation_parameters = [rotation_help_node, rotation_plane_type]
 
-    for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_INSIDE_NODE:
-
+        > * for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_INSIDE_NODE:  
         rotation_parameters = [rotation_plane_type]
 
-    for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_SURFACE:
-
+        > * for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_SURFACE:  
         rotation_parameters = [rotation_surface, rotation_surface_plane_type]
-
 
 
     * **section_no** (*int*) – Section Tag
 
 
-    * **comment** (*str**, **optional*) – Comment
+    * **comment** (*str*, *optional*) – Comment
 
 
-    * **params** (*dict**, **optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
+    * **params** (*dict*, *optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
+
+        params = {'member_eccentricity_start': , 'member_eccentricity_end': , 'member_nonlinearity': , 'end_modifications_member_start_extension': , 'end_modifications_member_start_slope_y': , 'end_modifications_member_start_slope_z': , 'end_modifications_member_end_extension': , 'end_modifications_member_end_slope_y': , 'end_modifications_member_end_slope_z': , 'is_deactivated_for_calculation' : }
 
 
-
-#### _static_ CouplingHingeHinge(no=1, start_node_no=1, end_node_no=2, rotation_specification_type=MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_ANGLE, rotation_parameters=[0], comment='', params={'is_deactivated_for_calculation': False}, model=<class 'RSTAB.initModel.Model'>)
-
-* **Parameters**
-
-    
-    * **no** (*int*) – Member Tag
-
-
-    * **start_node_no** (*int*) – Tag of Start Node
-
-
-    * **end_node_no** (*int*) – Tag of End Node
-
-
-    * **rotation_specification_type** (*enum*) – Rotation Specification Type Enumeration
-
-
-    * **rotation_parameters** (*list*) – Rotation Parameters
-    for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_ANGLE:
-
-    > rotation_parameters = [rotation_angle]
-
-    for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_HELP_NODE:
-
-        rotation_parameters = [rotation_help_node, rotation_plane_type]
-
-    for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_INSIDE_NODE:
-
-        rotation_parameters = [rotation_plane_type]
-
-    for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_SURFACE:
-
-        rotation_parameters = [rotation_surface, rotation_surface_plane_type]
+    * **model** (*RSTAB Class*, *optional*) – Model to be edited
 
 
 
-    * **comment** (*str**, **optional*) – Comment
-
-
-    * **params** (*dict**, **optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
-
-
-    * **model** (*RSTAB Class**, **optional*) – Model to be edited
-
-
-
-#### _static_ CouplingHingeRigid(no=1, start_node_no=1, end_node_no=2, rotation_specification_type=MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_ANGLE, rotation_parameters=[0], comment='', params={'is_deactivated_for_calculation': False}, model=<class 'RSTAB.initModel.Model'>)
+### Member.CouplingHingeHinge(no, start_node_no, end_node_no, rotation_specification_type, rotation_parameters, comment, params, model)
 
 * **Parameters**
 
@@ -370,35 +319,33 @@
 
 
     * **rotation_parameters** (*list*) – Rotation Parameters
-    for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_ANGLE:
 
-    > rotation_parameters = [rotation_angle]
+        > * for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_ANGLE:    
+        rotation_parameters = [rotation_angle]
 
-    for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_HELP_NODE:
-
+        > * for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_HELP_NODE:    
         rotation_parameters = [rotation_help_node, rotation_plane_type]
 
-    for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_INSIDE_NODE:
-
+        > * for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_INSIDE_NODE:  
         rotation_parameters = [rotation_plane_type]
 
-    for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_SURFACE:
-
+        > * for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_SURFACE:  
         rotation_parameters = [rotation_surface, rotation_surface_plane_type]
 
 
-
-    * **comment** (*str**, **optional*) – Comment
-
-
-    * **params** (*dict**, **optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
+    * **comment** (*str*, *optional*) – Comment
 
 
-    * **model** (*RSTAB Class**, **optional*) – Model to be edited
+    * **params** (*dict*, *optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
+
+        params = {'is_deactivated_for_calculation': }
+
+
+    * **model** (*RSTAB Class*, *optional*) – Model to be edited
 
 
 
-#### _static_ CouplingRigidHinge(no=1, start_node_no=1, end_node_no=2, rotation_specification_type=MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_ANGLE, rotation_parameters=[0], comment='', params={'is_deactivated_for_calculation': False}, model=<class 'RSTAB.initModel.Model'>)
+### Member.CouplingHingeRigid(no, start_node_no, end_node_no, rotation_specification_type, rotation_parameters, comment, params, model)
 
 * **Parameters**
 
@@ -416,35 +363,33 @@
 
 
     * **rotation_parameters** (*list*) – Rotation Parameters
-    for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_ANGLE:
 
-    > rotation_parameters = [rotation_angle]
+        > * for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_ANGLE:    
+        rotation_parameters = [rotation_angle]
 
-    for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_HELP_NODE:
-
+        > * for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_HELP_NODE:    
         rotation_parameters = [rotation_help_node, rotation_plane_type]
 
-    for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_INSIDE_NODE:
-
+        > * for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_INSIDE_NODE:  
         rotation_parameters = [rotation_plane_type]
 
-    for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_SURFACE:
-
+        > * for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_SURFACE:  
         rotation_parameters = [rotation_surface, rotation_surface_plane_type]
 
 
-
-    * **comment** (*str**, **optional*) – Comment
-
-
-    * **params** (*dict**, **optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
+    * **comment** (*str*, *optional*) – Comment
 
 
-    * **model** (*RSTAB Class**, **optional*) – Model to be edited
+    * **params** (*dict*, *optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
+
+        params = {'is_deactivated_for_calculation': }
+
+
+    * **model** (*RSTAB Class*, *optional*) – Model to be edited
 
 
 
-#### _static_ CouplingRigidRigid(no=1, start_node_no=1, end_node_no=2, rotation_specification_type=MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_ANGLE, rotation_parameters=[0], comment='', params={'is_deactivated_for_calculation': False}, model=<class 'RSTAB.initModel.Model'>)
+### Member.CouplingRigidHinge(no, start_node_no, end_node_no, rotation_specification_type, rotation_parameters, comment, params, model)
 
 * **Parameters**
 
@@ -462,35 +407,33 @@
 
 
     * **rotation_parameters** (*list*) – Rotation Parameters
-    for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_ANGLE:
 
-    > rotation_parameters = [rotation_angle]
+        > * for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_ANGLE:    
+        rotation_parameters = [rotation_angle]
 
-    for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_HELP_NODE:
-
+        > * for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_HELP_NODE:    
         rotation_parameters = [rotation_help_node, rotation_plane_type]
 
-    for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_INSIDE_NODE:
-
+        > * for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_INSIDE_NODE:  
         rotation_parameters = [rotation_plane_type]
 
-    for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_SURFACE:
-
+        > * for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_SURFACE:  
         rotation_parameters = [rotation_surface, rotation_surface_plane_type]
 
 
-
-    * **comment** (*str**, **optional*) – Comment
-
-
-    * **params** (*dict**, **optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
+    * **comment** (*str*, *optional*) – Comment
 
 
-    * **model** (*RSTAB Class**, **optional*) – Model to be edited
+    * **params** (*dict*, *optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
+
+        params = {'is_deactivated_for_calculation': }
+
+
+    * **model** (*RSTAB Class*, *optional*) – Model to be edited
 
 
 
-#### _static_ DefinableStiffness(no=1, start_node_no=1, end_node_no=2, rotation_specification_type=MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_ANGLE, rotation_parameters=[0], definable_stiffness=1, comment='', params={'is_deactivated_for_calculation': False, 'member_eccentricity_end': 0, 'member_eccentricity_start': 0, 'member_hinge_end': 0, 'member_hinge_start': 0, 'member_nonlinearity': 0, 'member_result_intermediate_point': 0}, model=<class 'RSTAB.initModel.Model'>)
+### Member.CouplingRigidRigid(no, start_node_no, end_node_no, rotation_specification_type, rotation_parameters, comment, params, model)
 
 * **Parameters**
 
@@ -508,38 +451,80 @@
 
 
     * **rotation_parameters** (*list*) – Rotation Parameters
-    for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_ANGLE:
 
-    > rotation_parameters = [rotation_angle]
+        > * for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_ANGLE:    
+        rotation_parameters = [rotation_angle]
 
-    for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_HELP_NODE:
-
+        > * for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_HELP_NODE:    
         rotation_parameters = [rotation_help_node, rotation_plane_type]
 
-    for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_INSIDE_NODE:
-
+        > * for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_INSIDE_NODE:  
         rotation_parameters = [rotation_plane_type]
 
-    for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_SURFACE:
-
+        > * for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_SURFACE:  
         rotation_parameters = [rotation_surface, rotation_surface_plane_type]
 
+
+    * **comment** (*str*, *optional*) – Comment
+
+
+    * **params** (*dict*, *optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
+
+        params = {'is_deactivated_for_calculation': }
+
+
+    * **model** (*RSTAB Class*, *optional*) – Model to be edited
+
+
+
+### Member.DefinableStiffness(no, start_node_no, end_node_no, rotation_specification_type, rotation_parameters, definable_stiffness, comment, params, model)
+
+* **Parameters**
+
+    
+    * **no** (*int*) – Member Tag
+
+
+    * **start_node_no** (*int*) – Tag of Start Node
+
+
+    * **end_node_no** (*int*) – Tag of End Node
+
+
+    * **rotation_specification_type** (*enum*) – Rotation Specification Type Enumeration
+
+
+    * **rotation_parameters** (*list*) – Rotation Parameters
+
+        > * for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_ANGLE:    
+        rotation_parameters = [rotation_angle]
+
+        > * for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_HELP_NODE:    
+        rotation_parameters = [rotation_help_node, rotation_plane_type]
+
+        > * for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_INSIDE_NODE:  
+        rotation_parameters = [rotation_plane_type]
+
+        > * for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_SURFACE:  
+        rotation_parameters = [rotation_surface, rotation_surface_plane_type]
 
 
     * **definable_stiffness** (*int*) – Definable Stiffness Tag
 
 
-    * **comment** (*str**, **optional*) – Comment
+    * **comment** (*str*, *optional*) – Comment
 
 
-    * **params** (*dict**, **optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
+    * **params** (*dict*, *optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
+
+        params = {'member_hinge_start':, 'member_hinge_end': , 'member_eccentricity_start': , 'member_eccentricity_end': , 'member_nonlinearity': , 'member_result_intermediate_point' : , 'is_deactivated_for_calculation' : }
 
 
-    * **model** (*RSTAB Class**, **optional*) – Model to be edited
+    * **model** (*RSTAB Class*, *optional*) – Model to be edited
 
 
 
-#### _static_ DeleteMember(members_no='1 2', model=<class 'RSTAB.initModel.Model'>)
+### Member.DeleteMember(members_no, model)
 
 * **Parameters**
 
@@ -547,54 +532,11 @@
     * **members_no** (*str*) – Numbers of Members to be deleted
 
 
-    * **model** (*RSTAB Class**, **optional*) – Model to be edited
+    * **model** (*RSTAB Class*, *optional*) – Model to be edited
 
 
 
-#### _static_ Rigid(no=1, start_node_no=1, end_node_no=2, rotation_specification_type=MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_ANGLE, rotation_parameters=[0], comment='', params={'is_deactivated_for_calculation': False, 'member_eccentricity_end': 0, 'member_eccentricity_start': 0, 'member_hinge_end': 0, 'member_hinge_start': 0, 'member_nonlinearity': 0, 'member_result_intermediate_point': 0, 'support': 0}, model=<class 'RSTAB.initModel.Model'>)
-
-* **Parameters**
-
-    
-    * **no** (*int*) – Member Tag
-
-
-    * **start_node_no** (*int*) – Tag of Start Node
-
-
-    * **end_node_no** (*int*) – Tag of End Node
-
-
-    * **rotation_specification_type** (*enum*) – Rotation Specification Type Enumeration
-
-
-    * **rotation_parameters** (*list*) – Rotation Parameters
-    for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_ANGLE:
-
-    > rotation_parameters = [rotation_angle]
-
-    for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_HELP_NODE:
-
-        rotation_parameters = [rotation_help_node, rotation_plane_type]
-
-    for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_INSIDE_NODE:
-
-        rotation_parameters = [rotation_plane_type]
-
-    for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_SURFACE:
-
-        rotation_parameters = [rotation_surface, rotation_surface_plane_type]
-
-
-
-    * **comment** (*str**, **optional*) – Comment
-
-
-    * **params** (*dict**, **optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
-
-
-
-#### _static_ Tension(no=1, start_node_no=1, end_node_no=2, rotation_specification_type=MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_ANGLE, rotation_parameters=[0], section_no=1, comment='', params={'end_modifications_member_end_extension': 0, 'end_modifications_member_end_slope_y': 0, 'end_modifications_member_end_slope_z': 0, 'end_modifications_member_start_extension': 0, 'end_modifications_member_start_slope_y': 0, 'end_modifications_member_start_slope_z': 0, 'is_deactivated_for_calculation': False, 'member_eccentricity_end': 0, 'member_eccentricity_start': 0, 'member_nonlinearity': 0}, model=<class 'RSTAB.initModel.Model'>)
+### Member.Rigid(no, start_node_no, end_node_no, rotation_specification_type, rotation_parameters, comment, params, model)
 
 * **Parameters**
 
@@ -612,81 +554,80 @@
 
 
     * **rotation_parameters** (*list*) – Rotation Parameters
-    for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_ANGLE:
 
-    > rotation_parameters = [rotation_angle]
+        > * for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_ANGLE:    
+        rotation_parameters = [rotation_angle]
 
-    for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_HELP_NODE:
-
+        > * for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_HELP_NODE:    
         rotation_parameters = [rotation_help_node, rotation_plane_type]
 
-    for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_INSIDE_NODE:
-
+        > * for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_INSIDE_NODE:  
         rotation_parameters = [rotation_plane_type]
 
-    for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_SURFACE:
-
+        > * for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_SURFACE:  
         rotation_parameters = [rotation_surface, rotation_surface_plane_type]
 
+
+    * **comment** (*str*, *optional*) – Comment
+
+
+    * **params** (*dict*, *optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
+
+        params = {'member_hinge_start':, 'member_hinge_end': , 'member_eccentricity_start': , 'member_eccentricity_end': , 'support':, 'member_nonlinearity': , 'member_result_intermediate_point' : , 'is_deactivated_for_calculation' : }
+
+
+    * **model** (*RSTAB Class*, *optional*) – Model to be edited
+
+
+
+### Member.Tension(no, start_node_no, end_node_no, rotation_specification_type, rotation_parameters, section_no, comment, params, model)
+
+* **Parameters**
+
+    
+    * **no** (*int*) – Member Tag
+
+
+    * **start_node_no** (*int*) – Tag of Start Node
+
+
+    * **end_node_no** (*int*) – Tag of End Node
+
+
+    * **rotation_specification_type** (*enum*) – Rotation Specification Type Enumeration
+
+
+    * **rotation_parameters** (*list*) – Rotation Parameters
+
+        > * for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_ANGLE:    
+        rotation_parameters = [rotation_angle]
+
+        > * for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_HELP_NODE:    
+        rotation_parameters = [rotation_help_node, rotation_plane_type]
+
+        > * for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_INSIDE_NODE:  
+        rotation_parameters = [rotation_plane_type]
+
+        > * for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_SURFACE:  
+        rotation_parameters = [rotation_surface, rotation_surface_plane_type]
 
 
     * **section_no** (*int*) – Section Tag
 
 
-    * **comment** (*str**, **optional*) – Comment
+    * **comment** (*str*, *optional*) – Comment
 
 
-    * **params** (*dict**, **optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
+    * **params** (*dict*, *optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
+
+        params = {'member_eccentricity_start': , 'member_eccentricity_end': , 'member_nonlinearity': , 'end_modifications_member_start_extension': , 'end_modifications_member_start_slope_y': , 'end_modifications_member_start_slope_z': , 'end_modifications_member_end_extension': , 'end_modifications_member_end_slope_y': , 'end_modifications_member_end_slope_z': , 'is_deactivated_for_calculation' : }
 
 
-
-#### _static_ Truss(no=1, start_node_no=1, end_node_no=2, rotation_specification_type=MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_ANGLE, rotation_parameters=[0], section_no=1, comment='', params={'end_modifications_member_end_extension': 0, 'end_modifications_member_end_slope_y': 0, 'end_modifications_member_end_slope_z': 0, 'end_modifications_member_start_extension': 0, 'end_modifications_member_start_slope_y': 0, 'end_modifications_member_start_slope_z': 0, 'is_deactivated_for_calculation': False, 'member_eccentricity_end': 0, 'member_eccentricity_start': 0, 'member_nonlinearity': 0}, model=<class 'RSTAB.initModel.Model'>)
-
-* **Parameters**
-
-    
-    * **no** (*int*) – Member Tag
-
-
-    * **start_node_no** (*int*) – Tag of Start Node
-
-
-    * **end_node_no** (*int*) – Tag of End Node
-
-
-    * **rotation_specification_type** (*enum*) – Rotation Specification Type Enumeration
-
-
-    * **rotation_parameters** (*list*) – Rotation Parameters
-    for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_ANGLE:
-
-    > rotation_parameters = [rotation_angle]
-
-    for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_HELP_NODE:
-
-        rotation_parameters = [rotation_help_node, rotation_plane_type]
-
-    for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_INSIDE_NODE:
-
-        rotation_parameters = [rotation_plane_type]
-
-    for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_SURFACE:
-
-        rotation_parameters = [rotation_surface, rotation_surface_plane_type]
+    * **model** (*RSTAB Class*, *optional*) – Model to be edited
 
 
 
-    * **section_no** (*int*) – Section Tag
-
-
-    * **comment** (*str**, **optional*) – Comment
-
-
-    * **params** (*dict**, **optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
-
-
-
-#### _static_ TrussOnlyN(no=1, start_node_no=1, end_node_no=2, rotation_specification_type=MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_ANGLE, rotation_parameters=[0], section_no=1, comment='', params={'end_modifications_member_end_extension': 0, 'end_modifications_member_end_slope_y': 0, 'end_modifications_member_end_slope_z': 0, 'end_modifications_member_start_extension': 0, 'end_modifications_member_start_slope_y': 0, 'end_modifications_member_start_slope_z': 0, 'is_deactivated_for_calculation': False, 'member_eccentricity_end': 0, 'member_eccentricity_start': 0, 'member_nonlinearity': 0}, model=<class 'RSTAB.initModel.Model'>)
+### Member.Truss(no, start_node_no, end_node_no, rotation_specification_type, rotation_parameters, section_no, comment, params, model)
 
 * **Parameters**
 
@@ -704,32 +645,79 @@
 
 
     * **rotation_parameters** (*list*) – Rotation Parameters
-    for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_ANGLE:
 
-    > rotation_parameters = [rotation_angle]
+        > * for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_ANGLE:    
+        rotation_parameters = [rotation_angle]
 
-    for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_HELP_NODE:
-
+        > * for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_HELP_NODE:    
         rotation_parameters = [rotation_help_node, rotation_plane_type]
 
-    for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_INSIDE_NODE:
-
+        > * for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_INSIDE_NODE:  
         rotation_parameters = [rotation_plane_type]
 
-    for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_SURFACE:
-
+        > * for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_SURFACE:  
         rotation_parameters = [rotation_surface, rotation_surface_plane_type]
-
 
 
     * **section_no** (*int*) – Section Tag
 
 
-    * **comment** (*str**, **optional*) – Comment
+    * **comment** (*str*, *optional*) – Comment
 
 
-    * **params** (*dict**, **optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
+    * **params** (*dict*, *optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
 
+        params = {'member_eccentricity_start': , 'member_eccentricity_end': , 'member_nonlinearity': , 'end_modifications_member_start_extension': , 'end_modifications_member_start_slope_y': , 'end_modifications_member_start_slope_z': , 'end_modifications_member_end_extension': , 'end_modifications_member_end_slope_y': , 'end_modifications_member_end_slope_z': , 'is_deactivated_for_calculation' : }
+
+
+    * **model** (*RSTAB Class*, *optional*) – Model to be edited
+
+
+
+### Member.TrussOnlyN(no, start_node_no, end_node_no, rotation_specification_type, rotation_parameters, section_no, comment, params, model)
+
+* **Parameters**
+
+    
+    * **no** (*int*) – Member Tag
+
+
+    * **start_node_no** (*int*) – Tag of Start Node
+
+
+    * **end_node_no** (*int*) – Tag of End Node
+
+
+    * **rotation_specification_type** (*enum*) – Rotation Specification Type Enumeration
+
+
+    * **rotation_parameters** (*list*) – Rotation Parameters
+
+        > * for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_ANGLE:    
+        rotation_parameters = [rotation_angle]
+
+        > * for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_HELP_NODE:    
+        rotation_parameters = [rotation_help_node, rotation_plane_type]
+
+        > * for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_INSIDE_NODE:  
+        rotation_parameters = [rotation_plane_type]
+
+        > * for rotation_specification_type == MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_SURFACE:  
+        rotation_parameters = [rotation_surface, rotation_surface_plane_type]
+
+
+    * **section_no** (*int*) – Section Tag
+
+
+    * **comment** (*str*, *optional*) – Comment
+
+
+    * **params** (*dict*, *optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
+
+        params = {'member_eccentricity_start': , 'member_eccentricity_end': , 'member_nonlinearity': , 'end_modifications_member_start_extension': , 'end_modifications_member_start_slope_y': , 'end_modifications_member_start_slope_z': , 'end_modifications_member_end_extension': , 'end_modifications_member_end_slope_y': , 'end_modifications_member_end_slope_z': , 'is_deactivated_for_calculation' : }
+
+
+    * **model** (*RSTAB Class*, *optional*) – Model to be edited
 
 
 
