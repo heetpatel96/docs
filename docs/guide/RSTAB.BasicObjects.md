@@ -1,27 +1,10 @@
 # Basic Objects
 
-## Submodules
 
-## RSTAB.BasicObjects.material module
-
-
-### _class_ RSTAB.BasicObjects.material.Material(no=1, name='S235', comment='', params=None, model=<class 'RSTAB.initModel.Model'>)
-Bases: `object`
+## Material
 
 
-#### _static_ DeleteMaterial(materials_no='1 2', model=<class 'RSTAB.initModel.Model'>)
-
-* **Parameters**
-
-    
-    * **materials_no** (*str*) – Numbers of Materials to be deleted
-
-
-    * **model** (*RSTAB Class**, **optional*) – Model to be edited
-
-
-
-#### \__init__(no=1, name='S235', comment='', params=None, model=<class 'RSTAB.initModel.Model'>)
+### Material(no, name, comment, params, model)
 
 * **Parameters**
 
@@ -32,23 +15,67 @@ Bases: `object`
     * **name** (*str*) – Name of Desired Material (As Named in RSTAB Database)
 
 
-    * **comment** (*str**, **optional*) – Comments
+    * **comment** (*str*, *optional*) – Comments
 
 
-    * **params** (*dict**, **optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
+    * **params** (*dict*, *optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
 
 
-    * **model** (*RSTAB Class**, **optional*) – Model to be edited
+    * **model** (*RSTAB Class*, *optional*) – Model to be edited
 
 
-## RSTAB.BasicObjects.member module
+### Material.DeleteMaterial(materials_no, model)
+
+* **Parameters**
+
+    
+    * **materials_no** (*str*) – Numbers of Materials to be deleted
 
 
-### _class_ RSTAB.BasicObjects.member.Member(no=1, start_node_no=1, end_node_no=2, rotation_angle=0.0, start_section_no=1, end_section_no=1, start_member_hinge_no=0, end_member_hinge_no=0, comment='', params=None, model=<class 'RSTAB.initModel.Model'>)
-Bases: `object`
+    * **model** (*RSTAB Class*, *optional*) – Model to be edited
 
 
-#### _static_ Beam(no=1, start_node_no=1, end_node_no=2, section_distribution_type=MemberSectionDistributionType.SECTION_DISTRIBUTION_TYPE_UNIFORM, rotation_specification_type=MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_ANGLE, rotation_parameters=[0], start_section_no=1, end_section_no=1, distribution_parameters=None, comment='', params={'end_modifications_member_end_extension': 0, 'end_modifications_member_end_slope_y': 0, 'end_modifications_member_end_slope_z': 0, 'end_modifications_member_start_extension': 0, 'end_modifications_member_start_slope_y': 0, 'end_modifications_member_start_slope_z': 0, 'is_deactivated_for_calculation': False, 'member_eccentricity_end': 0, 'member_eccentricity_start': 0, 'member_hinge_end': 0, 'member_hinge_start': 0, 'member_nonlinearity': 0, 'member_result_intermediate_point': 0, 'support': 0}, model=<class 'RSTAB.initModel.Model'>)
+
+## Member
+
+
+### Member(no, start_node_no, end_node_no, rotation_angle, start_section_no, end_section_no, start_member_hinge_no, end_member_hinge_no, comment, params, model)
+
+* **Parameters**
+
+    
+    * **no** (*int*) – Member Tag
+
+
+    * **start_node_no** (*int*) – Tag of Start Node
+
+
+    * **end_node_no** (*int*) – Tag of End Node
+
+
+    * **rotation_angle** (*float*) – Member Rotation Angle
+
+
+    * **start_section_no** (*int*) – Tag of Start Section
+
+
+    * **end_section_no** (*int*) – Tag of End Section
+
+
+    * **start_member_hinge_no** (*int*) – Tag of Start Member Hinge
+
+
+    * **end_member_hinge_no** (*int*) – Tag of End Member Hinge
+
+
+    * **comment** (*str*, *optional*) – Comment
+
+
+    * **params** (*dict*, *optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
+
+
+
+### Member.Beam(no, start_node_no, end_node_no, section_distribution_type, rotation_specification_type, rotation_parameters, start_section_no, end_section_no, distribution_parameters, comment, params, model)
 
 * **Parameters**
 
@@ -134,10 +161,10 @@ Bases: `object`
     * **distribution_parameters** (*list*) – Distribution Parameters
 
 
-    * **comment** (*str**, **optional*) – Comment
+    * **comment** (*str*, *optional*) – Comment
 
 
-    * **params** (*dict**, **optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
+    * **params** (*dict*, *optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
 
 
 
@@ -704,40 +731,6 @@ Bases: `object`
     * **params** (*dict**, **optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
 
 
-
-#### \__init__(no=1, start_node_no=1, end_node_no=2, rotation_angle=0.0, start_section_no=1, end_section_no=1, start_member_hinge_no=0, end_member_hinge_no=0, comment='', params=None, model=<class 'RSTAB.initModel.Model'>)
-
-* **Parameters**
-
-    
-    * **no** (*int*) – Member Tag
-
-
-    * **start_node_no** (*int*) – Tag of Start Node
-
-
-    * **end_node_no** (*int*) – Tag of End Node
-
-
-    * **rotation_angle** (*float*) – Member Rotation Angle
-
-
-    * **start_section_no** (*int*) – Tag of Start Section
-
-
-    * **end_section_no** (*int*) – Tag of End Section
-
-
-    * **start_member_hinge_no** (*int*) – Tag of Start Member Hinge
-
-
-    * **end_member_hinge_no** (*int*) – Tag of End Member Hinge
-
-
-    * **comment** (*str**, **optional*) – Comment
-
-
-    * **params** (*dict**, **optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
 
 
 ## RSTAB.BasicObjects.memberSet module
