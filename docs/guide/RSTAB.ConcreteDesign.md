@@ -1,15 +1,10 @@
 # Concrete Design
 
-## Submodules
 
-## RSTAB.ConcreteDesign.ConcreteServiceabilityConfigurations module
-
-
-### _class_ RSTAB.ConcreteDesign.ConcreteServiceabilityConfigurations.ConcreteServiceabilityConfiguration(no=1, name='SLS', members='1', member_sets='', surfaces='', surface_sets='', nodes='', comment='', params=None, model=<class 'RSTAB.initModel.Model'>)
-Bases: `object`
+## ConcreteServiceabilityConfigurations
 
 
-#### \__init__(no=1, name='SLS', members='1', member_sets='', surfaces='', surface_sets='', nodes='', comment='', params=None, model=<class 'RSTAB.initModel.Model'>)
+### ConcreteServiceabilityConfiguration(no, name, members, member_sets, surfaces, surface_sets, nodes, comment, params, model)
 
 * **Parameters**
 
@@ -35,23 +30,19 @@ Bases: `object`
     * **nodes** (*str*) – Assigned Nodes
 
 
-    * **comment** (*str**, **optional*) – Comment
+    * **comment** (*str*, *optional*) – Comment
 
 
-    * **params** (*dict**, **optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
+    * **params** (*dict*, *optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
 
 
-    * **model** (*RSTAB Class**, **optional*) – Model to be edited
+    * **model** (*RSTAB Class*, *optional*) – Model to be edited
 
 
-## RSTAB.ConcreteDesign.ConcreteUltimateConfigurations module
+## ConcreteUltimateConfigurations
 
 
-### _class_ RSTAB.ConcreteDesign.ConcreteUltimateConfigurations.ConcreteUltimateConfiguration(no=1, name='ULS', members='1', member_sets='', surfaces='', surface_sets='', nodes='', comment='', params=None, model=<class 'RSTAB.initModel.Model'>)
-Bases: `object`
-
-
-#### \__init__(no=1, name='ULS', members='1', member_sets='', surfaces='', surface_sets='', nodes='', comment='', params=None, model=<class 'RSTAB.initModel.Model'>)
+### ConcreteUltimateConfiguration(no, name, members, member_sets, surfaces, surface_sets, nodes, comment, params, model)
 
 * **Parameters**
 
@@ -77,13 +68,12 @@ Bases: `object`
     * **nodes** (*str*) – Assigned Nodes
 
 
-    * **comment** (*str**, **optional*) – Comment
+    * **comment** (*str*, *optional*) – Comment
 
 
-    * **params** (*dict**, **optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
+    * **params** (*dict*, *optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
 
 
-    * **model** (*RSTAB Class**, **optional*) – Model to be edited
+    * **model** (*RSTAB Class*, *optional*) – Model to be edited
 
 
-## Module contents
