@@ -721,56 +721,10 @@
 
 
 
-## RSTAB.BasicObjects.memberSet module
+## MemberSet
 
 
-### _class_ RSTAB.BasicObjects.memberSet.MemberSet(no=1, members_no='1 4 5 8 9 12 13 16 17 20 21 24', member_set_type=SetType.SET_TYPE_GROUP, comment='', params=None, model=<class 'RSTAB.initModel.Model'>)
-Bases: `object`
-
-
-#### _static_ ContinuousMembers(no=1, members_no='1 4 5 8 9 12 13 16 17 20 21 24', comment='', params=None, model=<class 'RSTAB.initModel.Model'>)
-
-* **Parameters**
-
-    
-    * **no** (*int*) – Member Set Tag
-
-
-    * **members_no** (*str*) – Numbers of Members Contained Within Continuous Member Set
-
-
-    * **comment** (*str**, **optional*) – Comments
-
-
-    * **params** (*dict**, **optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
-
-
-    * **model** (*RSTAB Class**, **optional*) – Model to be edited
-
-
-
-#### _static_ GroupOfmembers(no=1, members_no='1 4 5 8 9 12 13 16 17 20 21 24', comment='', params=None, model=<class 'RSTAB.initModel.Model'>)
-
-* **Parameters**
-
-    
-    * **no** (*int*) – Member Set Tag
-
-
-    * **members_no** (*str*) – Numbers of Members Contained Within Group of Members Member Set
-
-
-    * **comment** (*str**, **optional*) – Comments
-
-
-    * **params** (*dict**, **optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
-
-
-    * **model** (*RSTAB Class**, **optional*) – Model to be edited
-
-
-
-#### \__init__(no=1, members_no='1 4 5 8 9 12 13 16 17 20 21 24', member_set_type=SetType.SET_TYPE_GROUP, comment='', params=None, model=<class 'RSTAB.initModel.Model'>)
+### MemberSet(no, members_no, member_set_type, comment, params, model)
 
 * **Parameters**
 
@@ -784,23 +738,88 @@ Bases: `object`
     * **member_set_type** (*enum*) – Member Set Type Enumeration
 
 
-    * **comment** (*str**, **optional*) – Comments
+    * **comment** (*str*, *optional*) – Comments
 
 
-    * **params** (*dict**, **optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
+    * **params** (*dict*, *optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
 
 
-    * **model** (*RSTAB Class**, **optional*) – Model to be edited
+    * **model** (*RSTAB Class*, *optional*) – Model to be edited
 
 
-## RSTAB.BasicObjects.node module
+
+### MemberSet.ContinuousMembers(no, members_no, comment, params, model)
+
+* **Parameters**
+
+    
+    * **no** (*int*) – Member Set Tag
 
 
-### _class_ RSTAB.BasicObjects.node.Node(no=1, coordinate_X=0.0, coordinate_Y=0.0, coordinate_Z=0.0, comment='', params=None, model=<class 'RSTAB.initModel.Model'>)
-Bases: `object`
+    * **members_no** (*str*) – Numbers of Members Contained Within Continuous Member Set
 
 
-#### _static_ BetweenTwoNodes(no=1, start_node_no=1, end_node_no=2, node_reference=NodeReferenceType.REFERENCE_TYPE_L, length_between_i_and_j=1, parameters=[True, 50], offset_y=0, offset_z=0, comment='', params=None, model=<class 'RSTAB.initModel.Model'>)
+    * **comment** (*str*, *optional*) – Comments
+
+
+    * **params** (*dict*, *optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
+
+
+    * **model** (*RSTAB Class*, *optional*) – Model to be edited
+
+
+
+### MemberSet.GroupOfmembers(no, members_no, comment, params, model)
+
+* **Parameters**
+
+    
+    * **no** (*int*) – Member Set Tag
+
+
+    * **members_no** (*str*) – Numbers of Members Contained Within Group of Members Member Set
+
+
+    * **comment** (*str*, *optional*) – Comments
+
+
+    * **params** (*dict*, *optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
+
+
+    * **model** (*RSTAB Class*, *optional*) – Model to be edited
+
+
+
+## Node 
+
+
+### Node(no, coordinate_X, coordinate_Y, coordinate_Z, comment, params, model)
+
+* **Parameters**
+
+    
+    * **no** (*int*) – Node Tag
+
+
+    * **coordinate_X** (*float*) – X-Coordinate
+
+
+    * **coordinate_Y** (*float*) – Y-Coordinate
+
+
+    * **coordinate_Z** (*float*) – Z-Coordinate
+
+
+    * **comment** (*str*, *optional*) – Comments
+
+
+    * **params** (*dict*, *optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
+
+
+    * **model** (*RSTAB Class*, *optional*) – Model to be edited
+
+
+### Node.BetweenTwoNodes(no, start_node_no, end_node_no, node_reference, length_between_i_and_j, parameters, offset_y, offset_z, comment, params, model)
 
 * **Parameters**
 
@@ -820,14 +839,13 @@ Bases: `object`
     * **length_between_i_and_j** (*float*) – Length between 2 Nodes
 
 
-    * **parameters** (*list*) – if distance_from_start_relative:
+    * **parameters** (*list*) – Parameter List
 
+        > * if distance_from_start_relative:    
         parameters = [True, %]
 
-    if distance_from_start_absolute:
-
+        > * if distance_from_start_absolute:    
         parameters = [False, magnitude]
-
 
 
     * **offset_y** (*float*) – Offset in Y-Direction
@@ -836,17 +854,17 @@ Bases: `object`
     * **offset_z** (*float*) – Offset in Z-Direction
 
 
-    * **comment** (*str**, **optional*) – Comments
+    * **comment** (*str*, *optional*) – Comments
 
 
-    * **params** (*dict**, **optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
+    * **params** (*dict*, *optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
 
 
-    * **model** (*RSTAB Class**, **optional*) – Model to be edited
+    * **model** (*RSTAB Class*, *optional*) – Model to be edited
 
 
 
-#### _static_ BetweenTwoPoints(no=1, start_point_x=0.0, start_point_y=0.0, start_point_z=0.0, end_point_x=1.0, end_point_y=1.0, end_point_z=1.0, node_reference=NodeReferenceType.REFERENCE_TYPE_L, parameters=[True, 0.5], offset_y=0.0, offset_z=0.0, comment='', params=None, model=<class 'RSTAB.initModel.Model'>)
+### Node.BetweenTwoPoints(no, start_point_x, start_point_y, start_point_z, end_point_x, end_point_y, end_point_z, node_reference, parameters, offset_y, offset_z, comment, params, model)
 
 * **Parameters**
 
@@ -875,14 +893,13 @@ Bases: `object`
     * **node_reference** (*enum*) – Node Reference Enumeration
 
 
-    * **parameters** (*list*) – if distance_from_start_relative:
+    * **parameters** (*list*) – 
 
+        > * if distance_from_start_relative:    
         parameters = [True, %]
 
-    if distance_from_start_absolute:
-
+        > * if distance_from_start_absolute:    
         parameters = [False, magnitude]
-
 
 
     * **offset_y** (*float*) – Offset in Y-Direction
@@ -891,17 +908,17 @@ Bases: `object`
     * **offset_z** (*float*) – Offset in Z-Direction
 
 
-    * **comment** (*str**, **optional*) – Comments
+    * **comment** (*str*, *optional*) – Comments
 
 
-    * **params** (*dict**, **optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
+    * **params** (*dict*, *optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
 
 
-    * **model** (*RSTAB Class**, **optional*) – Model to be edited
+    * **model** (*RSTAB Class*, *optional*) – Model to be edited
 
 
 
-#### _static_ DeleteNode(nodes_no='1 2', model=<class 'RSTAB.initModel.Model'>)
+### Node.DeleteNode(nodes_no, model)
 
 * **Parameters**
 
@@ -909,11 +926,11 @@ Bases: `object`
     * **nodes_no** (*str*) – Numbers of Nodes to be deleted
 
 
-    * **model** (*RSTAB Class**, **optional*) – Model to be edited
+    * **model** (*RSTAB Class*, *optional*) – Model to be edited
 
 
 
-#### _static_ OnMember(no=1, member_number=1, node_reference=NodeReferenceType.REFERENCE_TYPE_L, length_between_i_and_j=1, parameters=[True, 0.5], comment='', params=None, model=<class 'RSTAB.initModel.Model'>)
+### Node.OnMember(no, member_number, node_reference, length_between_i_and_j, parameters, comment, params, model)
 
 * **Parameters**
 
@@ -930,27 +947,26 @@ Bases: `object`
     * **length_between_i_and_j** (*int*) – Length between 2 Nodes
 
 
-    * **parameters** (*list*) – if distance_from_start_relative:
+    * **parameters** (*list*) – 
 
+        > * if distance_from_start_relative:    
         parameters = [True, %]
 
-    if distance_from_start_absolute:
-
+        > * if distance_from_start_absolute:    
         parameters = [False, magnitude]
 
 
-
-    * **comment** (*str**, **optional*) – Comments
-
-
-    * **params** (*dict**, **optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
+    * **comment** (*str*, *optional*) – Comments
 
 
-    * **model** (*RSTAB Class**, **optional*) – Model to be edited
+    * **params** (*dict*, *optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
+
+
+    * **model** (*RSTAB Class*, *optional*) – Model to be edited
 
 
 
-#### _static_ Standard(no=1, coordinate_system=None, coordinate_system_type=NodeCoordinateSystemType.COORDINATE_SYSTEM_CARTESIAN, comment='', params=None, model=<class 'RSTAB.initModel.Model'>)
+### Node.Standard(no, coordinate_system, coordinate_system_type, comment, params, model)
 
 * **Parameters**
 
@@ -959,87 +975,40 @@ Bases: `object`
 
 
     * **coordinate_system** (*list*) – Coordinate System
-    for coordinate_system_type == NodeCoordinateSystemType.COORDINATE_SYSTEM_CARTESIAN;
 
-    > coordinate_system = [X, Y, Z]
+        > * for coordinate_system_type == NodeCoordinateSystemType.COORDINATE_SYSTEM_CARTESIAN;     
+        coordinate_system = [X, Y, Z]
 
-    for coordinate_system_type == NodeCoordinateSystemType.COORDINATE_SYSTEM_X_CYLINDRICAL;
-
+        > * for coordinate_system_type == NodeCoordinateSystemType.COORDINATE_SYSTEM_X_CYLINDRICAL;     
         coordinate_system = [X, R, θ]
 
-    for coordinate_system_type == NodeCoordinateSystemType.COORDINATE_SYSTEM_Y_CYLINDRICAL;
-
+        > * for coordinate_system_type == NodeCoordinateSystemType.COORDINATE_SYSTEM_Y_CYLINDRICAL;     
         coordinate_system = [R, Ύ, θ]
 
-    for coordinate_system_type == NodeCoordinateSystemType.COORDINATE_SYSTEM_Z_CYLINDRICAL;
-
+        > * for coordinate_system_type == NodeCoordinateSystemType.COORDINATE_SYSTEM_Z_CYLINDRICAL;     
         coordinate_system = [R, θ, Z]
 
-    for coordinate_system_type == NodeCoordinateSystemType.COORDINATE_SYSTEM_POLAR:
-
+        > * for coordinate_system_type == NodeCoordinateSystemType.COORDINATE_SYSTEM_POLAR:     
         coordinate_system = [R, θ, φ]
-
 
 
     * **coordinate_system_type** (*enum*) – Coordinate System Type Enumeration
 
 
-    * **comment** (*str**, **optional*) – Comments
+    * **comment** (*str*, *optional*) – Comments
 
 
-    * **params** (*dict**, **optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
+    * **params** (*dict*, *optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
 
 
-    * **model** (*RSTAB Class**, **optional*) – Model to be edited
-
-
-
-#### \__init__(no=1, coordinate_X=0.0, coordinate_Y=0.0, coordinate_Z=0.0, comment='', params=None, model=<class 'RSTAB.initModel.Model'>)
-
-* **Parameters**
-
-    
-    * **no** (*int*) – Node Tag
-
-
-    * **coordinate_X** (*float*) – X-Coordinate
-
-
-    * **coordinate_Y** (*float*) – Y-Coordinate
-
-
-    * **coordinate_Z** (*float*) – Z-Coordinate
-
-
-    * **comment** (*str**, **optional*) – Comments
-
-
-    * **params** (*dict**, **optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
-
-
-    * **model** (*RSTAB Class**, **optional*) – Model to be edited
-
-
-## RSTAB.BasicObjects.section module
-
-
-### _class_ RSTAB.BasicObjects.section.Section(no=1, name='IPE 300', material_no=1, comment='', params=None, model=<class 'RSTAB.initModel.Model'>)
-Bases: `object`
-
-
-#### _static_ DeleteSection(sections_no='1 2', model=<class 'RSTAB.initModel.Model'>)
-
-* **Parameters**
-
-    
-    * **sections_no** (*str*) – Numbers of Sections to be deleted
-
-
-    * **model** (*RSTAB Class**, **optional*) – Model to be edited
+    * **model** (*RSTAB Class*, *optional*) – Model to be edited
 
 
 
-#### \__init__(no=1, name='IPE 300', material_no=1, comment='', params=None, model=<class 'RSTAB.initModel.Model'>)
+## Section
+
+
+### Section(no, name, material_no, comment, params, model)
 
 * **Parameters**
 
@@ -1053,13 +1022,22 @@ Bases: `object`
     * **material_no** (*int*) – Tag of Material assigned to Section
 
 
-    * **comment** (*str**, **optional*) – Comments
+    * **comment** (*str*, *optional*) – Comments
 
 
-    * **params** (*dict**, **optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
+    * **params** (*dict*, *optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
 
 
-    * **model** (*RSTAB Class**, **optional*) – Model to be edited
+    * **model** (*RSTAB Class*, *optional*) – Model to be edited
 
 
-## Module contents
+### Section.DeleteSection(sections_no, model)
+
+* **Parameters**
+
+    
+    * **sections_no** (*str*) – Numbers of Sections to be deleted
+
+
+    * **model** (*RSTAB Class*, *optional*) – Model to be edited
+
