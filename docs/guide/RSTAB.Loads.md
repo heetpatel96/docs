@@ -1,15 +1,10 @@
 # Loads
 
-## Submodules
 
-## RSTAB.Loads.imposedNodalDeformation module
-
-
-### _class_ RSTAB.Loads.imposedNodalDeformation.ImposedNodalDeformation(no=1, load_case_no=1, node_no='1', load_parameter=None, comment='', params=None, model=<class 'RSTAB.initModel.Model'>)
-Bases: `object`
+## ImposedNodalDeformation
 
 
-#### \__init__(no=1, load_case_no=1, node_no='1', load_parameter=None, comment='', params=None, model=<class 'RSTAB.initModel.Model'>)
+### ImposedNodalDeformation(no, load_case_no, node_no, load_parameter, comment, params, model)
 
 * **Parameters**
 
@@ -24,26 +19,53 @@ Bases: `object`
 
 
     * **load_parameter** (*list*) – Load Parameters List
-    load_parameter = [imposed_displacement_x, imposed_displacement_y, imposed_displacement_z, imposed_rotation_x, imposed_rotation_y imposed_rotation_z]
+
+        > load_parameter = [imposed_displacement_x, imposed_displacement_y, imposed_displacement_z, imposed_rotation_x, imposed_rotation_y imposed_rotation_z]
 
 
-    * **comment** (*str**, **optional*) – Comments
+    * **comment** (*str*, *optional*) – Comments
 
 
-    * **params** (*dict**, **optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
+    * **params** (*dict*, *optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
 
 
-    * **model** (*RSTAB Class**, **optional*) – Model to be edited
+    * **model** (*RSTAB Class*, *optional*) – Model to be edited
 
 
-## RSTAB.Loads.memberLoad module
+## MemberLoad 
 
 
-### _class_ RSTAB.Loads.memberLoad.MemberLoad(no=1, load_case_no=1, members_no='1', load_direction=LoadDirectionType.LOAD_DIRECTION_LOCAL_Z, magnitude=2000, comment='', params=None, model=<class 'RSTAB.initModel.Model'>)
-Bases: `object`
+### MemberLoad(no, load_case_no, members_no, load_direction, magnitude, comment, params, model)
+
+* **Parameters**
+
+    
+    * **no** (*int*) – Load Tag
 
 
-#### _static_ AxialDisplacement(no=1, load_case_no=1, members_no='1', load_direction=MemberLoadDirection.LOAD_DIRECTION_LOCAL_X, magnitude=0.0, comment='', params=None, model=<class 'RSTAB.initModel.Model'>)
+    * **load_case_no** (*int*) – Assigned Load Case
+
+
+    * **members_no** (*str*) – Assigned Members
+
+
+    * **load_direction** (*enum*) – Load Directin Enumeration
+
+
+    * **magnitude** (*float*) – Load Magnitude
+
+
+    * **comment** (*str*, *optional*) – Comments
+
+
+    * **params** (*dict*, *optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
+
+
+    * **model** (*RSTAB Class*, *optional*) – Model to be edited
+
+
+
+### MemberLoad.AxialDisplacement(no, load_case_no, members_no, load_direction, magnitude, comment, params, model)
 
 * **Parameters**
 
@@ -63,17 +85,17 @@ Bases: `object`
     * **magnitude** (*float*) – Load Magnitude
 
 
-    * **comment** (*str**, **optional*) – Comments
+    * **comment** (*str*, *optional*) – Comments
 
 
-    * **params** (*dict**, **optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
+    * **params** (*dict*, *optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
 
 
-    * **model** (*RSTAB Class**, **optional*) – Model to be edited
+    * **model** (*RSTAB Class*, *optional*) – Model to be edited
 
 
 
-#### _static_ AxialStrain(no=1, load_case_no=1, members_no='1', load_distribution=MemberLoadDistribution.LOAD_DISTRIBUTION_UNIFORM, load_direction=MemberLoadDirection.LOAD_DIRECTION_LOCAL_X, load_parameter=None, list_reference=False, load_over_total_length=False, comment='', params=None, model=<class 'RSTAB.initModel.Model'>)
+### MemberLoad.AxialStrain(no, load_case_no, members_no, load_distribution, load_direction, load_parameter, list_reference, load_over_total_length, comment, params, model)
 
 * **Parameters**
 
@@ -94,26 +116,21 @@ Bases: `object`
 
 
     * **load_parameter** (*list/list of lists*) – Load Parameter List
-    for load_distribution == MemberLoadDistribution.LOAD_DISTRIBUTION_UNIFORM:
 
-    > load_parameter = [epsilon]
+        > * for load_distribution == MemberLoadDistribution.LOAD_DISTRIBUTION_UNIFORM:  
+        load_parameter = [epsilon]
 
-    for load_distribution == MemberLoadDistribution.LOAD_DISTRIBUTION_TRAPEZIODAL:
-
+        > * for load_distribution == MemberLoadDistribution.LOAD_DISTRIBUTION_TRAPEZIODAL:  
         load_parameter = [epsilon1, epsilon2, distance_a_relative = False, distance_a_relative = False, a_distance, b_distance]
 
-    for load_distribution == MemberLoadDistribution.LOAD_DISTRIBUTION_TAPERED:
-
+        > * for load_distribution == MemberLoadDistribution.LOAD_DISTRIBUTION_TAPERED:  
         load_parameter = [epsilon1, epsilon2, distance_a_relative = False, distance_a_relative = False, a_distance, b_distance]
 
-    for load_distribution == MemberLoadDistribution.LOAD_DISTRIBUTION_TAPERED:
-
+        > * for load_distribution == MemberLoadDistribution.LOAD_DISTRIBUTION_TAPERED:  
         load_parameter = [epsilon1, epsilon2, epsilon3]
 
-    for load_distribution == MemberLoadDistribution.LOAD_DISTRIBUTION_VARYING:
-
+        > * for load_distribution == MemberLoadDistribution.LOAD_DISTRIBUTION_VARYING:  
         load_parameter = [[distance, magnitude], …]
-
 
 
     * **list_reference** (*bool*) – Enable/Disable List Reference Option
@@ -122,17 +139,17 @@ Bases: `object`
     * **load_over_total_length** (*bool*) – Enable/Disable Load Over Total Length Option
 
 
-    * **comment** (*str**, **optional*) – Comments
+    * **comment** (*str*, *optional*) – Comments
 
 
-    * **params** (*dict**, **optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
+    * **params** (*dict*, *optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
 
 
-    * **model** (*RSTAB Class**, **optional*) – Model to be edited
+    * **model** (*RSTAB Class*, *optional*) – Model to be edited
 
 
 
-#### _static_ Displacement(no=1, load_case_no=1, members_no='1', load_distribution=MemberLoadDistribution.LOAD_DISTRIBUTION_UNIFORM, load_direction=MemberLoadDirection.LOAD_DIRECTION_LOCAL_Z, load_parameter=None, list_reference=False, load_over_total_length=False, comment='', params=None, model=<class 'RSTAB.initModel.Model'>)
+### MemberLoad.Displacement(no, load_case_no, members_no, load_distribution, load_direction, load_parameter, list_reference, load_over_total_length, comment, params, model)
 
 * **Parameters**
 
@@ -153,46 +170,36 @@ Bases: `object`
 
 
     * **load_parameter** (*list/list of lists*) – Load Parameter List
-    for load_distribution == MemberLoadDistribution.LOAD_DISTRIBUTION_UNIFORM:
 
-    > load_parameter = [magnitude]
+        > * for load_distribution == MemberLoadDistribution.LOAD_DISTRIBUTION_UNIFORM:  
+        load_parameter = [magnitude]
 
-    for load_distrubition == MemberLoadDistribution.LOAD_DISTRIBUTION_CONCENTRATED_1:
-
+        > * for load_distrubition == MemberLoadDistribution.LOAD_DISTRIBUTION_CONCENTRATED_1:   
         load_parameter = [magnitude, distance_a_is_defined_as_relative = False, distance_a]
 
-    for load_distrubition == MemberLoadDistribution.LOAD_DISTRIBUTION_CONCENTRATED_N:
-
+        > * for load_distrubition == MemberLoadDistribution.LOAD_DISTRIBUTION_CONCENTRATED_N:   
         load_parameter = [magnitude, distance_a_is_defined_as_relative = False, distance_b_is_defined_as_relative = False, distance_a, distance_b]
 
-    for load_distrubition == MemberLoadDistribution.LOAD_DISTRIBUTION_CONCENTRATED_2x2:
-
+        > * for load_distrubition == MemberLoadDistribution.LOAD_DISTRIBUTION_CONCENTRATED_2x2:     
         load_parameter = [magnitude, distance_a_is_defined_as_relative = False, distance_b_is_defined_as_relative = False, distance_c_is_defined_as_relative = False, distance_a, distance_b, distance_c]
 
-    for load_distrubition == MemberLoadDistribution.LOAD_DISTRIBUTION_CONCENTRATED_2:
-
+        > * for load_distrubition == MemberLoadDistribution.LOAD_DISTRIBUTION_CONCENTRATED_2:   
         load_parameter = [magnitude_1, magnitude_2, distance_a_is_defined_as_relative = False, distance_b_is_defined_as_relative = False, distance_a, distance_b]
 
-    for load_distribution == MemberLoadDistribution.LOAD_DISTRIBUTION_CONCENTRATED_VARYING:
-
+        > * for load_distribution == MemberLoadDistribution.LOAD_DISTRIBUTION_CONCENTRATED_VARYING:     
         load_parameter = [[distance, magnitude], …]
 
-    for load_distribution == MemberLoadDistribution.LOAD_DISTRIBUTION_TRAPEZIODAL:
-
+        > * for load_distribution == MemberLoadDistribution.LOAD_DISTRIBUTION_TRAPEZIODAL:      
         load_parameter = [magnitude_1, magnitude_2, distance_a_relative = False, distance_a_relative = False, a_distance, b_distance]
 
-    for load_distribution == MemberLoadDistribution.LOAD_DISTRIBUTION_TAPERED:
-
+        > * for load_distribution == MemberLoadDistribution.LOAD_DISTRIBUTION_TAPERED:  
         load_parameter = [magnitude_1, magnitude_2, distance_a_relative = False, distance_a_relative = False, a_distance, b_distance]
 
-    for load_distribution == MemberLoadDistribution.LOAD_DISTRIBUTION_PARABOLIC:
-
+        > * for load_distribution == MemberLoadDistribution.LOAD_DISTRIBUTION_PARABOLIC:    
         load_parameter = [magnitude_1, magnitude_2, magnitude_3]
 
-    for load_distribution == MemberLoadDistribution.LOAD_DISTRIBUTION_VARYING:
-
+        > * for load_distribution == MemberLoadDistribution.LOAD_DISTRIBUTION_VARYING:  
         load_parameter = [[distance, magnitude], …]
-
 
 
     * **list_reference** (*bool*) – Enable/Disable List Reference Option
@@ -201,17 +208,17 @@ Bases: `object`
     * **load_over_total_length** (*bool*) – Enable/Disable Load Over Total Length Option
 
 
-    * **comment** (*str**, **optional*) – Comments
+    * **comment** (*str*, *optional*) – Comments
 
 
-    * **params** (*dict**, **optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
+    * **params** (*dict*, *optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
 
 
-    * **model** (*RSTAB Class**, **optional*) – Model to be edited
+    * **model** (*RSTAB Class*, *optional*) – Model to be edited
 
 
 
-#### _static_ Force(no=1, load_case_no=1, members_no='1', load_distribution=MemberLoadDistribution.LOAD_DISTRIBUTION_UNIFORM, load_direction=MemberLoadDirection.LOAD_DIRECTION_LOCAL_Z, load_parameter=None, force_eccentricity=False, list_reference=False, comment='', params=None, model=<class 'RSTAB.initModel.Model'>)
+### MemberLoad.Force(no, load_case_no, members_no, load_distribution, load_direction, load_parameter, force_eccentricity, list_reference, comment, params, model)
 
 * **Parameters**
 
@@ -232,54 +239,42 @@ Bases: `object`
 
 
     * **load_parameter** (*float/list/list of lists*) – Load Parameter List
-    for load_distribution == LOAD_DISTRIBUTION_UNIFORM:
 
-    > load_parameter = magnitude
-
-    for load_distribution == LOAD_DISTRIBUTION_UNIFORM_TOTAL:
-
+        > * for load_distribution == LOAD_DISTRIBUTION_UNIFORM:     
         load_parameter = magnitude
 
-    for load_distribution == LOAD_DISTRIBUTION_CONCENTRATED_1:
+        > * for load_distribution == LOAD_DISTRIBUTION_UNIFORM_TOTAL:   
+        load_parameter = magnitude
 
+        > * for load_distribution == LOAD_DISTRIBUTION_CONCENTRATED_1:  
         load_parameter = [relative_distance = False, magnitude, distance_a]
 
-    for load_distribution == LOAD_DISTRIBUTION_CONCENTRATED_N:
-
+        > * for load_distribution == LOAD_DISTRIBUTION_CONCENTRATED_N:  
         load_parameter = [relative_distance_a = False, relative_distance_b = False, magnitude, count_n, distance_a, distance_b]
 
-    for load_distribution == LOAD_DISTRIBUTION_CONCENTRATED_2x2:
-
+        > * for load_distribution == LOAD_DISTRIBUTION_CONCENTRATED_2x2:    
         load_parameter = [relative_distance_a = False, relative_distance_b = False, relative_distance_c = False, magnitude, distance_a, distance_b, distance_c]
 
-    for load_distribution == LOAD_DISTRIBUTION_CONCENTRATED_2:
-
+        > * for load_distribution == LOAD_DISTRIBUTION_CONCENTRATED_2:  
         load_parameter = [relative_distance_a = False, relative_distance_b = False, magnitude_1, magnitude_2, distance_a, distance_b]
 
-    for load_distribution == LOAD_DISTRIBUTION_CONCENTRATED_VARYING:
-
+        > * for load_distribution == LOAD_DISTRIBUTION_CONCENTRATED_VARYING:    
         load_parameter = [[distance, magnitude], …]
 
-    for load_distribution == LOAD_DISTRIBUTION_TRAPEZOIDAL:
-
+        > * for load_distribution == LOAD_DISTRIBUTION_TRAPEZOIDAL:     
         load_parameter = [relative_distance_a = False, relative_distance_b = False,magnitude_1, magnitude_2, distance_a, distance_b]
 
-    for load_distribution == LOAD_DISTRIBUTION_TAPERED:
-
+        > * for load_distribution == LOAD_DISTRIBUTION_TAPERED:     
         load_parameter = [relative_distance_a = False, relative_distance_b = False,magnitude_1, magnitude_2, distance_a, distance_b]
 
-    for load_distribution == LOAD_DISTRIBUTION_PARABOLIC:
-
+        > * for load_distribution == LOAD_DISTRIBUTION_PARABOLIC:   
         load_parameter = [magnitude_1, magnitude_2, magnitude_3]
 
-    for load_distribution == LOAD_DISTRIBUTION_VARYING:
-
+        > * for load_distribution == LOAD_DISTRIBUTION_VARYING:     
         load_parameter = [[distance, magnitude], …]
 
-    for load_distribution == LOAD_DISTRIBUTION_VARYING_IN_Z:
-
+        > * for load_distribution == LOAD_DISTRIBUTION_VARYING_IN_Z:        
         load_parameter = [[distance, magnitude], …]
-
 
 
     * **force_eccentricity** (*bool*) – Enable/Disable Force Eccentricity Option
@@ -288,29 +283,20 @@ Bases: `object`
     * **list_reference** (*bool*) – Enable/Disable List Reference Option
 
 
-    * **comment** (*str**, **optional*) – Comments
+    * **comment** (*str*, *optional*) – Comments
 
 
-    * **params** (*dict**, **optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
-    for force_eccentricity == True:
+    * **params** (*dict*, *optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
 
-    > params = {‘eccentricity_horizontal_alignment’: MemberLoadEccentricityHorizontalAlignment.ALIGN_NONE,
+        > for force_eccentricity == True:
+        params = {‘eccentricity_horizontal_alignment’: MemberLoadEccentricityHorizontalAlignment.ALIGN_NONE, ‘eccentricity_vertical_alignment’: MemberLoadEccentricityVerticalAlignment.ALIGN_NONE, ‘eccentricity_section_middle’: MemberLoadEccentricitySectionMiddle.LOAD_ECCENTRICITY_SECTION_MIDDLE_CENTER_OF_GRAVITY, ‘is_eccentricity_at_end_different_from_start’: False, ‘eccentricity_y_at_end’: 0.0, ‘eccentricity_y_at_start’: 0.0, ‘eccentricity_z_at_end’: 0.0, ‘eccentricity_z_at_start’: 0.0}
 
-    >     ’eccentricity_vertical_alignment’: MemberLoadEccentricityVerticalAlignment.ALIGN_NONE,
-    >     ‘eccentricity_section_middle’: MemberLoadEccentricitySectionMiddle.LOAD_ECCENTRICITY_SECTION_MIDDLE_CENTER_OF_GRAVITY,
-    >     ‘is_eccentricity_at_end_different_from_start’: False,
-    >     ‘eccentricity_y_at_end’: 0.0,
-    >     ‘eccentricity_y_at_start’: 0.0,
-    >     ‘eccentricity_z_at_end’: 0.0,
-    >     ‘eccentricity_z_at_start’: 0.0}
+
+    * **model** (*RSTAB Class*, *optional*) – Model to be edited
 
 
 
-    * **model** (*RSTAB Class**, **optional*) – Model to be edited
-
-
-
-#### _static_ InitialPrestress(no=1, load_case_no=1, members_no='1', load_direction=MemberLoadDirection.LOAD_DIRECTION_LOCAL_X, magnitude=0.0, comment='', params=None, model=<class 'RSTAB.initModel.Model'>)
+### MemberLoad.InitialPrestress(no, load_case_no, members_no, load_direction, magnitude, comment, params, model)
 
 * **Parameters**
 
@@ -330,17 +316,17 @@ Bases: `object`
     * **magnitude** (*float*) – Load Magnitude
 
 
-    * **comment** (*str**, **optional*) – Comments
+    * **comment** (*str*, *optional*) – Comments
 
 
-    * **params** (*dict**, **optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
+    * **params** (*dict*, *optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
 
 
-    * **model** (*RSTAB Class**, **optional*) – Model to be edited
+    * **model** (*RSTAB Class*, *optional*) – Model to be edited
 
 
 
-#### _static_ Mass(no=1, load_case_no=1, members_no='1', individual_mass_components=False, mass_components=None, comment='', params=None, model=<class 'RSTAB.initModel.Model'>)
+### MemberLoad.Mass(no, load_case_no, members_no, individual_mass_components, mass_components, comment, params, model)
 
 * **Parameters**
 
@@ -358,27 +344,25 @@ Bases: `object`
 
 
     * **mass_components** (*list*) – Mass Components List
-    if individual_mass_components == False:
 
-    > mass_components = [M]
+        > * if individual_mass_components == False:     
+        mass_components = [M]
 
-    else:
-
+        > * else:   
         mass_components = [Mx, My, Mz, Ix, Iy, Iz]
 
 
-
-    * **comment** (*str**, **optional*) – Comments
-
-
-    * **params** (*dict**, **optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
+    * **comment** (*str*, *optional*) – Comments
 
 
-    * **model** (*RSTAB Class**, **optional*) – Model to be edited
+    * **params** (*dict*, *optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
+
+
+    * **model** (*RSTAB Class*, *optional*) – Model to be edited
 
 
 
-#### _static_ Moment(no=1, load_case_no=1, members_no='1', load_distribution=MemberLoadDistribution.LOAD_DISTRIBUTION_UNIFORM, load_direction=MemberLoadDirection.LOAD_DIRECTION_LOCAL_Z, load_parameter=None, list_reference=False, comment='', params=None, model=<class 'RSTAB.initModel.Model'>)
+### MemberLoad.Moment(no, load_case_no, members_no, load_distribution, load_direction, load_parameter, list_reference, comment, params, model)
 
 * **Parameters**
 
@@ -399,62 +383,52 @@ Bases: `object`
 
 
     * **load_parameter** (*float/list/list of lists*) – Load Parameter List
-    for load_distribution == LOAD_DISTRIBUTION_UNIFORM:
 
-    > load_parameter = magnitude
+        > * for load_distribution == LOAD_DISTRIBUTION_UNIFORM:     
+        load_parameter = magnitude
 
-    for load_distribution == LOAD_DISTRIBUTION_CONCENTRATED_1:
-
+        > * for load_distribution == LOAD_DISTRIBUTION_CONCENTRATED_1:  
         load_parameter = [relative_distance = False, magnitude, distance_a]
 
-    for load_distribution == LOAD_DISTRIBUTION_CONCENTRATED_N:
-
+        > * for load_distribution == LOAD_DISTRIBUTION_CONCENTRATED_N:      
         load_parameter = [relative_distance_a = False, relative_distance_b = False, magnitude, count_n, distance_a, distance_b]
 
-    for load_distribution == LOAD_DISTRIBUTION_CONCENTRATED_2x2:
-
+        > * for load_distribution == LOAD_DISTRIBUTION_CONCENTRATED_2x2:        
         load_parameter = [relative_distance_a = False, relative_distance_b = False, relative_distance_c = False, magnitude, distance_a, distance_b, distance_c]
 
-    for load_distribution == LOAD_DISTRIBUTION_CONCENTRATED_2:
-
+        > * for load_distribution == LOAD_DISTRIBUTION_CONCENTRATED_2:  
         load_parameter = [relative_distance_a = False, relative_distance_b = False, magnitude_1, magnitude_2, distance_a, distance_b]
 
-    for load_distribution == LOAD_DISTRIBUTION_CONCENTRATED_VARYING:
-
+        > * for load_distribution == LOAD_DISTRIBUTION_CONCENTRATED_VARYING:    
         load_parameter = [[distance, magnitude], …]
 
-    for load_distribution == LOAD_DISTRIBUTION_TRAPEZOIDAL:
-
+        > * for load_distribution == LOAD_DISTRIBUTION_TRAPEZOIDAL:     
         load_parameter = [relative_distance_a = False, relative_distance_b = False,magnitude_1, magnitude_2, distance_a, distance_b]
 
-    for load_distribution == LOAD_DISTRIBUTION_TAPERED:
-
+        > * for load_distribution == LOAD_DISTRIBUTION_TAPERED:     
         load_parameter = [relative_distance_a = False, relative_distance_b = False,magnitude_1, magnitude_2, distance_a, distance_b]
 
-    for load_distribution == LOAD_DISTRIBUTION_PARABOLIC:
-
+        > * for load_distribution == LOAD_DISTRIBUTION_PARABOLIC:   
         load_parameter = [magnitude_1, magnitude_2, magnitude_3]
 
-    for load_distribution == LOAD_DISTRIBUTION_VARYING:
-
+        > * for load_distribution == LOAD_DISTRIBUTION_VARYING:     
         load_parameter = [[distance, magnitude], …]
-
 
 
     * **list_reference** (*bool*) – Enable/Disable List Reference Option
 
 
-    * **comment** (*str**, **optional*) – Comments
+    * **comment** (*str*, *optional*) – Comments
 
 
-    * **params** (*dict**, **optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
+    * **params** (*dict*, *optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
 
 
-    * **model** (*RSTAB Class**, **optional*) – Model to be edited
+    * **model** (*RSTAB Class*, *optional*) – Model to be edited
 
 
 
-#### _static_ PipeContentFull(no=1, load_case_no=1, members_no='1', load_direction_orientation=MemberLoadDirectionOrientation.LOAD_DIRECTION_FORWARD, specific_weight=0.0, comment='', params=None, model=<class 'RSTAB.initModel.Model'>)
+### MemberLoad.PipeContentFull(no, load_case_no, members_no, load_direction_orientation, specific_weight, comment, params, model)
 
 * **Parameters**
 
@@ -474,17 +448,17 @@ Bases: `object`
     * **specific_weight** (*float*) – Specific Weight
 
 
-    * **comment** (*str**, **optional*) – Comments
+    * **comment** (*str*, *optional*) – Comments
 
 
-    * **params** (*dict**, **optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
+    * **params** (*dict*, *optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
 
 
-    * **model** (*RSTAB Class**, **optional*) – Model to be edited
+    * **model** (*RSTAB Class*, *optional*) – Model to be edited
 
 
 
-#### _static_ PipeContentPartial(no=1, load_case_no=1, members_no='1', load_direction_orientation=MemberLoadDirectionOrientation.LOAD_DIRECTION_FORWARD, specific_weight=0.0, filling_height=0.0, comment='', params=None, model=<class 'RSTAB.initModel.Model'>)
+### MemberLoad.PipeContentPartial(no, load_case_no, members_no, load_direction_orientation, specific_weight, filling_height, comment, params, model)
 
 * **Parameters**
 
@@ -507,17 +481,17 @@ Bases: `object`
     * **filling_height** (*float*) – Filling Height
 
 
-    * **comment** (*str**, **optional*) – Comments
+    * **comment** (*str*, *optional*) – Comments
 
 
-    * **params** (*dict**, **optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
+    * **params** (*dict*, *optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
 
 
-    * **model** (*RSTAB Class**, **optional*) – Model to be edited
+    * **model** (*RSTAB Class*, *optional*) – Model to be edited
 
 
 
-#### _static_ PipeInternalPressure(no=1, load_case_no=1, members_no='1', pressure=0.0, comment='', params=None, model=<class 'RSTAB.initModel.Model'>)
+### MemberLoad.PipeInternalPressure(no, load_case_no, members_no, pressure, comment, params, model)
 
 * **Parameters**
 
@@ -534,17 +508,17 @@ Bases: `object`
     * **pressure** (*float*) – Pressure
 
 
-    * **comment** (*str**, **optional*) – Comments
+    * **comment** (*str*, *optional*) – Comments
 
 
-    * **params** (*dict**, **optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
+    * **params** (*dict*, *optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
 
 
-    * **model** (*RSTAB Class**, **optional*) – Model to be edited
+    * **model** (*RSTAB Class*, *optional*) – Model to be edited
 
 
 
-#### _static_ Precamber(no=1, load_case_no=1, members_no='1', load_distribution=MemberLoadDistribution.LOAD_DISTRIBUTION_UNIFORM, load_direction=MemberLoadDirection.LOAD_DIRECTION_LOCAL_Z, load_parameter=None, list_reference=False, load_over_total_length=False, comment='', params=None, model=<class 'RSTAB.initModel.Model'>)
+### MemberLoad.Precamber(no, load_case_no, members_no, load_distribution, load_direction, load_parameter, list_reference, load_over_total_length, comment, params, model)
 
 * **Parameters**
 
@@ -565,26 +539,21 @@ Bases: `object`
 
 
     * **load_parameter** (*list/list of lists*) – Load Parameter List
-    for load_distribution == MemberLoadDistribution.LOAD_DISTRIBUTION_UNIFORM:
 
-    > load_parameter = [magnitude]
+        > * for load_distribution == MemberLoadDistribution.LOAD_DISTRIBUTION_UNIFORM:  
+        load_parameter = [magnitude]
 
-    for load_distribution == MemberLoadDistribution.LOAD_DISTRIBUTION_TRAPEZIODAL:
-
+        > * for load_distribution == MemberLoadDistribution.LOAD_DISTRIBUTION_TRAPEZIODAL:  
         load_parameter = [magnitude_1, magnitude_2, distance_a_relative = False, distance_a_relative = False, a_distance, b_distance]
 
-    for load_distribution == MemberLoadDistribution.LOAD_DISTRIBUTION_TAPERED:
-
+        > * for load_distribution == MemberLoadDistribution.LOAD_DISTRIBUTION_TAPERED:      
         load_parameter = [magnitude_1, magnitude_2, distance_a_relative = False, distance_a_relative = False, a_distance, b_distance]
 
-    for load_distribution == MemberLoadDistribution.LOAD_DISTRIBUTION_PARABOLIC:
-
+        > * for load_distribution == MemberLoadDistribution.LOAD_DISTRIBUTION_PARABOLIC:    
         load_parameter = [magnitude_1, magnitude_2, magnitude_3]
 
-    for load_distribution == MemberLoadDistribution.LOAD_DISTRIBUTION_VARYING:
-
+        > * for load_distribution == MemberLoadDistribution.LOAD_DISTRIBUTION_VARYING:  
         load_parameter = [[distance, magnitude], …]
-
 
 
     * **list_reference** (*bool*) – Enable/Disable List Reference Option
@@ -593,17 +562,17 @@ Bases: `object`
     * **load_over_total_length** (*bool*) – Enable/Disable Load Over Total Length Option
 
 
-    * **comment** (*str**, **optional*) – Comments
+    * **comment** (*str*, *optional*) – Comments
 
 
-    * **params** (*dict**, **optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
+    * **params** (*dict*, *optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
 
 
-    * **model** (*RSTAB Class**, **optional*) – Model to be edited
+    * **model** (*RSTAB Class*, *optional*) – Model to be edited
 
 
 
-#### _static_ RotaryMotion(no=1, load_case_no=1, members_no='1', angular_acceleration=1.0, angular_velocity=2.0, axis_definition_type=MemberLoadAxisDefinitionType.AXIS_DEFINITION_TWO_POINTS, axis_orientation=MemberLoadAxisDefinitionAxisOrientation.AXIS_POSITIVE, axis_definition=MemberLoadAxisDefinition.AXIS_X, axis_definition_p1=[1, 0, 1], axis_definition_p2=[0, 1, 0], comment='', params=None, model=<class 'RSTAB.initModel.Model'>)
+### MemberLoad.RotaryMotion(no, load_case_no, members_no, angular_acceleration, angular_velocity, axis_definition_type, axis_orientation, axis_definition, axis_definition_p1, axis_definition_p2, comment, params, model)
 
 * **Parameters**
 
@@ -638,17 +607,17 @@ Bases: `object`
     * **axis_definition_p2** (*list*) – P2 List [X, Y, Z]
 
 
-    * **comment** (*str**, **optional*) – Comments
+    * **comment** (*str*, *optional*) – Comments
 
 
-    * **params** (*dict**, **optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
+    * **params** (*dict*, *optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
 
 
-    * **model** (*RSTAB Class**, **optional*) – Model to be edited
+    * **model** (*RSTAB Class*, *optional*) – Model to be edited
 
 
 
-#### _static_ Rotation(no=1, load_case_no=1, members_no='1', load_distribution=MemberLoadDistribution.LOAD_DISTRIBUTION_UNIFORM, load_direction=MemberLoadDirection.LOAD_DIRECTION_LOCAL_Z, load_parameter=None, list_reference=False, load_over_total_length=False, comment='', params=None, model=<class 'RSTAB.initModel.Model'>)
+### MemberLoad.Rotation(no, load_case_no, members_no, load_distribution, load_direction, load_parameter, list_reference, load_over_total_length, comment, params, model)
 
 * **Parameters**
 
@@ -669,46 +638,36 @@ Bases: `object`
 
 
     * **load_parameter** (*list/list of lists*) – Load Parameter List
-    for load_distribution == MemberLoadDistribution.LOAD_DISTRIBUTION_UNIFORM:
 
-    > load_parameter = [magnitude]
+        > * for load_distribution == MemberLoadDistribution.LOAD_DISTRIBUTION_UNIFORM:  
+        load_parameter = [magnitude]
 
-    for load_distrubition == MemberLoadDistribution.LOAD_DISTRIBUTION_CONCENTRATED_1:
-
+        > * for load_distrubition == MemberLoadDistribution.LOAD_DISTRIBUTION_CONCENTRATED_1:   
         load_parameter = [magnitude, distance_a_is_defined_as_relative = False, distance_a]
 
-    for load_distrubition == MemberLoadDistribution.LOAD_DISTRIBUTION_CONCENTRATED_N:
-
+        > * for load_distrubition == MemberLoadDistribution.LOAD_DISTRIBUTION_CONCENTRATED_N:   
         load_parameter = [magnitude, distance_a_is_defined_as_relative = False, distance_b_is_defined_as_relative = False, distance_a, distance_b]
 
-    for load_distrubition == MemberLoadDistribution.LOAD_DISTRIBUTION_CONCENTRATED_2x2:
-
+        > * for load_distrubition == MemberLoadDistribution.LOAD_DISTRIBUTION_CONCENTRATED_2x2:     
         load_parameter = [magnitude, distance_a_is_defined_as_relative = False, distance_b_is_defined_as_relative = False, distance_c_is_defined_as_relative = False, distance_a, distance_b, distance_c]
 
-    for load_distrubition == MemberLoadDistribution.LOAD_DISTRIBUTION_CONCENTRATED_2:
-
+        > * for load_distrubition == MemberLoadDistribution.LOAD_DISTRIBUTION_CONCENTRATED_2:       
         load_parameter = [magnitude_1, magnitude_2, distance_a_is_defined_as_relative = False, distance_b_is_defined_as_relative = False, distance_a, distance_b]
 
-    for load_distribution == MemberLoadDistribution.LOAD_DISTRIBUTION_CONCENTRATED_VARYING:
-
+        > * for load_distribution == MemberLoadDistribution.LOAD_DISTRIBUTION_CONCENTRATED_VARYING:     
         load_parameter = [[distance, magnitude], …]
 
-    for load_distribution == MemberLoadDistribution.LOAD_DISTRIBUTION_TRAPEZIODAL:
-
+        > * for load_distribution == MemberLoadDistribution.LOAD_DISTRIBUTION_TRAPEZIODAL:      
         load_parameter = [magnitude_1, magnitude_2, distance_a_relative = False, distance_a_relative = False, a_distance, b_distance]
 
-    for load_distribution == MemberLoadDistribution.LOAD_DISTRIBUTION_TAPERED:
-
+        > * for load_distribution == MemberLoadDistribution.LOAD_DISTRIBUTION_TAPERED:      
         load_parameter = [magnitude_1, magnitude_2, distance_a_relative = False, distance_a_relative = False, a_distance, b_distance]
 
-    for load_distribution == MemberLoadDistribution.LOAD_DISTRIBUTION_PARABOLIC:
-
+        > * for load_distribution == MemberLoadDistribution.LOAD_DISTRIBUTION_PARABOLIC:    
         load_parameter = [magnitude_1, magnitude_2, magnitude_3]
 
-    for load_distribution == MemberLoadDistribution.LOAD_DISTRIBUTION_VARYING:
-
+        > * for load_distribution == MemberLoadDistribution.LOAD_DISTRIBUTION_VARYING:  
         load_parameter = [[distance, magnitude], …]
-
 
 
     * **list_reference** (*bool*) – Enable/Disable List Reference Option
@@ -717,17 +676,17 @@ Bases: `object`
     * **load_over_total_length** (*bool*) – Enable/Disable Load Over Total Length Option
 
 
-    * **comment** (*str**, **optional*) – Comments
+    * **comment** (*str*, *optional*) – Comments
 
 
-    * **params** (*dict**, **optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
+    * **params** (*dict*, *optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
 
 
-    * **model** (*RSTAB Class**, **optional*) – Model to be edited
+    * **model** (*RSTAB Class*, *optional*) – Model to be edited
 
 
 
-#### _static_ Temperature(no=1, load_case_no=1, members_no='1', load_distribution=MemberLoadDistribution.LOAD_DISTRIBUTION_UNIFORM, load_direction=MemberLoadDirection.LOAD_DIRECTION_LOCAL_Z, load_parameter=None, list_reference=False, load_over_total_length=False, comment='', params=None, model=<class 'RSTAB.initModel.Model'>)
+### MemberLoad.Temperature(no, load_case_no, members_no, load_distribution, load_direction, load_parameter, list_reference, load_over_total_length, comment, params, model)
 
 * **Parameters**
 
@@ -748,32 +707,24 @@ Bases: `object`
 
 
     * **load_parameter** (*list/list of lists*) – Load Parameter List
-    for load_distribution == MemberLoadDistribution.LOAD_DISTRIBUTION_UNIFORM:
 
-    > load_parameter = [tt, tb]
+        > * for load_distribution == MemberLoadDistribution.LOAD_DISTRIBUTION_UNIFORM:  
+        load_parameter = [tt, tb]
 
-    for load_distribution == MemberLoadDistribution.LOAD_DISTRIBUTION_TRAPEZIODAL:
-
-        for load_over_total_length == False:
-
-            load_parameter = [tt1, tt2, tb1, tb2, distance_a_relative = False, distance_a_relative = False, a_distance, b_distance]
-
-        for load_over_total_length == True:
-
+        > * for load_distribution == MemberLoadDistribution.LOAD_DISTRIBUTION_TRAPEZIODAL:      
+            >> * for load_over_total_length == False:   
+            load_parameter = [tt1, tt2, tb1, tb2, distance_a_relative = False, distance_a_relative = False, a_distance, b_distance]     
+            >> * for load_over_total_length == True:    
             load_parameter = [tt1, tt2, tb1, tb2]
 
-    for load_distribution == MemberLoadDistribution.LOAD_DISTRIBUTION_TAPERED:
-
+        > * for load_distribution == MemberLoadDistribution.LOAD_DISTRIBUTION_TAPERED:  
         load_parameter = [tt1, tt2, tb1, tb2, distance_a_relative = False, distance_a_relative = False, a_distance, b_distance]
 
-    for load_distribution == MemberLoadDistribution.LOAD_DISTRIBUTION_PARABOLIC:
-
+        > * for load_distribution == MemberLoadDistribution.LOAD_DISTRIBUTION_PARABOLIC:    
         load_parameter = [tb1, tb2, tb3, tt1, tt2, tt3]
 
-    for load_distribution == MemberLoadDistribution.LOAD_DISTRIBUTION_VARYING:
-
+        > * for load_distribution == MemberLoadDistribution.LOAD_DISTRIBUTION_VARYING:  
         load_parameter = [[distance, magnitude], …]
-
 
 
     * **list_reference** (*bool*) – List Reference Boolean
@@ -782,17 +733,17 @@ Bases: `object`
     * **load_over_total_length** (*bool*) – Enable/Disable Load Over Total Length Option
 
 
-    * **comment** (*str**, **optional*) – Comments
+    * **comment** (*str*, *optional*) – Comments
 
 
-    * **params** (*dict**, **optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
+    * **params** (*dict*, *optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
 
 
-    * **model** (*RSTAB Class**, **optional*) – Model to be edited
+    * **model** (*RSTAB Class*, *optional*) – Model to be edited
 
 
 
-#### _static_ TemperatureChange(no=1, load_case_no=1, members_no='1', load_distribution=MemberLoadDistribution.LOAD_DISTRIBUTION_UNIFORM, load_direction=MemberLoadDirection.LOAD_DIRECTION_LOCAL_Z, load_parameter=None, list_reference=False, load_over_total_length=False, comment='', params=None, model=<class 'RSTAB.initModel.Model'>)
+### MemberLoad.TemperatureChange(no, load_case_no, members_no, load_distribution, load_direction, load_parameter, list_reference, load_over_total_length, comment, params, model)
 
 * **Parameters**
 
@@ -813,32 +764,24 @@ Bases: `object`
 
 
     * **load_parameter** (*list/list of lists*) – Load Parameter List
-    for load_distribution == MemberLoadDistribution.LOAD_DISTRIBUTION_UNIFORM:
 
-    > load_parameter = [tc, delta_t]
+        > * for load_distribution == MemberLoadDistribution.LOAD_DISTRIBUTION_UNIFORM:  
+        load_parameter = [tc, delta_t]
 
-    for load_distribution == MemberLoadDistribution.LOAD_DISTRIBUTION_TRAPEZIODAL:
-
-        for load_over_total_length == False:
-
+        > * for load_distribution == MemberLoadDistribution.LOAD_DISTRIBUTION_TRAPEZIODAL:  
+            >> * for load_over_total_length == False:    
             load_parameter = [delta_t_1, delta_t_2, t_c_1, t_c_2, distance_a_relative = False, distance_a_relative = False, a_distance, b_distance]
-
-        for load_over_total_length == True:
-
+            >> * for load_over_total_length == True:     
             load_parameter = [delta_t_1, delta_t_2, t_c_1, t_c_2]
 
-    for load_distribution == MemberLoadDistribution.LOAD_DISTRIBUTION_TAPERED:
-
+        > * for load_distribution == MemberLoadDistribution.LOAD_DISTRIBUTION_TAPERED:      
         load_parameter = [delta_t_1, delta_t_2, t_c_1, t_c_2, distance_a_relative = False, distance_a_relative = False, a_distance, b_distance]
 
-    for load_distribution == MemberLoadDistribution.LOAD_DISTRIBUTION_PARABOLIC:
-
+        > * for load_distribution == MemberLoadDistribution.LOAD_DISTRIBUTION_PARABOLIC:    
         load_parameter = [delta_t_1, delta_t_2, delta_t_3, t_c_1, t_c_2, t_c_3]
 
-    for load_distribution == MemberLoadDistribution.LOAD_DISTRIBUTION_VARYING:
-
+        > * for load_distribution == MemberLoadDistribution.LOAD_DISTRIBUTION_VARYING:      
         load_parameter = [[distance, magnitude], …]
-
 
 
     * **list_reference** (*bool*) – Enable/Disable List Reference Option
@@ -847,17 +790,20 @@ Bases: `object`
     * **load_over_total_length** (*bool*) – Enable/Disable Load Over Total Length Option
 
 
-    * **comment** (*str**, **optional*) – Comments
+    * **comment** (*str*, *optional*) – Comments
 
 
-    * **params** (*dict**, **optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
+    * **params** (*dict*, *optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
 
 
-    * **model** (*RSTAB Class**, **optional*) – Model to be edited
+    * **model** (*RSTAB Class*, *optional*) – Model to be edited
 
 
 
-#### \__init__(no=1, load_case_no=1, members_no='1', load_direction=LoadDirectionType.LOAD_DIRECTION_LOCAL_Z, magnitude=2000, comment='', params=None, model=<class 'RSTAB.initModel.Model'>)
+## Membersetload 
+
+
+### MemberSetLoad(no, load_case_no, member_sets, load_direction, magnitude, comment, params, model)
 
 * **Parameters**
 
@@ -868,29 +814,26 @@ Bases: `object`
     * **load_case_no** (*int*) – Assigned Load Case
 
 
-    * **members_no** (*str*) – Assigned Members
+    * **member_sets** (*str*) – Assigned Member Sets
 
 
-    * **load_direction** (*enum*) – Load Directin Enumeration
+    * **load_direction** (*enum*) – Load Direction Enumeration
 
 
     * **magnitude** (*float*) – Load Magnitude
 
 
-    * **comment** (*str**, **optional*) – Comments
+    * **comment** (*str*, *optional*) – Comments
 
 
-    * **params** (*dict**, **optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
+    * **params** (*dict*, *optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
 
 
-## RSTAB.Loads.membersetload module
+    * **model** (*RSTAB Class*, *optional*) – Model to be edited
 
 
-### _class_ RSTAB.Loads.membersetload.MemberSetLoad(no=1, load_case_no=1, member_sets='1', load_direction=LoadDirectionType.LOAD_DIRECTION_LOCAL_Z, magnitude=0.0, comment='', params=None, model=<class 'RSTAB.initModel.Model'>)
-Bases: `object`
 
-
-#### _static_ AxialDisplacement(no=1, load_case_no=1, member_sets='1', load_direction=MemberSetLoadDirection.LOAD_DIRECTION_LOCAL_X, magnitude=0.0, comment='', params=None, model=<class 'RSTAB.initModel.Model'>)
+### MemberSetLoad.AxialDisplacement(no, load_case_no, member_sets, load_direction, magnitude, comment, params, model)
 
 * **Parameters**
 
@@ -910,17 +853,17 @@ Bases: `object`
     * **magnitude** (*float*) – Load Magnitude
 
 
-    * **comment** (*str**, **optional*) – Comments
+    * **comment** (*str*, *optional*) – Comments
 
 
-    * **params** (*dict**, **optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
+    * **params** (*dict*, *optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
 
 
-    * **model** (*RSTAB Class**, **optional*) – Model to be edited
+    * **model** (*RSTAB Class*, *optional*) – Model to be edited
 
 
 
-#### _static_ AxialStrain(no=1, load_case_no=1, member_sets='1', load_distribution=MemberSetLoadDistribution.LOAD_DISTRIBUTION_UNIFORM, load_direction=MemberSetLoadDirection.LOAD_DIRECTION_LOCAL_X, load_parameter=None, load_over_total_length=False, comment='', params=None, model=<class 'RSTAB.initModel.Model'>)
+### MemberSetLoad.AxialStrain(no, load_case_no, member_sets, load_distribution, load_direction, load_parameter, load_over_total_length, comment, params, model)
 
 * **Parameters**
 
@@ -941,48 +884,40 @@ Bases: `object`
 
 
     * **load_parameter** (*list/list of lists*) – Load Parameters
-    for load_distribution = MemberSetLoadDistribution.LOAD_DISTRIBUTION_UNIFORM:
 
-    > load_parameter = [epsilon]
+        > * for load_distribution = MemberSetLoadDistribution.LOAD_DISTRIBUTION_UNIFORM:    
+        load_parameter = [epsilon]
 
-    for load_distribution = MemberSetLoadDistribution.LOAD_DISTRIBUTION_TRAPEZIODAL:
-
-        for load_over_total_length: bool= False:
-
-            load_parameter = [epsilon1, epsilon2, distance_a_relative = False, distance_a_relative = False, a_distance, b_distance]
-
-        for load_over_total_length: bool= True:
-
+        > * for load_distribution = MemberSetLoadDistribution.LOAD_DISTRIBUTION_TRAPEZIODAL:    
+            >> * for load_over_total_length: bool= False:   
+            load_parameter = [epsilon1, epsilon2, distance_a_relative = False, distance_a_relative = False, a_distance, b_distance]     
+            >> * for load_over_total_length: bool= True:    
             load_parameter = [epsilon1, epsilon2]
 
-    for load_distribution = MemberSetLoadDistribution.LOAD_DISTRIBUTION_TAPERED:
-
+        > * for load_distribution = MemberSetLoadDistribution.LOAD_DISTRIBUTION_TAPERED:    
         load_parameter = [epsilon1, epsilon2, distance_a_relative = False, distance_a_relative = False, a_distance, b_distance]
 
-    for load_distribution = MemberSetLoadDistribution.LOAD_DISTRIBUTION_TAPERED:
-
+        > * for load_distribution = MemberSetLoadDistribution.LOAD_DISTRIBUTION_TAPERED:    
         load_parameter = [epsilon1, epsilon2, epsilon3]
 
-    for load_distribution = MemberSetLoadDistribution.LOAD_DISTRIBUTION_VARYING:
-
+        > * for load_distribution = MemberSetLoadDistribution.LOAD_DISTRIBUTION_VARYING:    
         load_parameter = [[distance, delta_distance, magnitude], …]
-
 
 
     * **load_over_total_length** (*bool*) – Load Over Total Length Option
 
 
-    * **comment** (*str**, **optional*) – Comment
+    * **comment** (*str*, *optional*) – Comment
 
 
-    * **params** (*dict**, **optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
+    * **params** (*dict*, *optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
 
 
-    * **model** (*RSTAB Class**, **optional*) – Model to be edited
+    * **model** (*RSTAB Class*, *optional*) – Model to be edited
 
 
 
-#### _static_ Displacement(no=1, load_case_no=1, member_sets='1', load_distribution=MemberSetLoadDistribution.LOAD_DISTRIBUTION_UNIFORM, load_direction=MemberSetLoadDirection.LOAD_DIRECTION_LOCAL_Z, load_parameter=None, load_over_total_length=False, comment='', params=None, model=<class 'RSTAB.initModel.Model'>)
+### MemberSetLoad.Displacement(no, load_case_no, member_sets, load_distribution, load_direction, load_parameter, load_over_total_length, comment, params, model)
 
 * **Parameters**
 
@@ -1003,62 +938,51 @@ Bases: `object`
 
 
     * **load_parameter** (*list/list of lists*) – Load Parameters
-    for load_distribution = MemberSetLoadDistribution.LOAD_DISTRIBUTION_UNIFORM:
+        > * for load_distribution = MemberSetLoadDistribution.LOAD_DISTRIBUTION_UNIFORM:    
+        load_parameter = [magnitude]
 
-    > load_parameter = [magnitude]
-
-    for load_distrubition = MemberSetLoadDistribution.LOAD_DISTRIBUTION_CONCENTRATED_1:
-
+        > * for load_distrubition = MemberSetLoadDistribution.LOAD_DISTRIBUTION_CONCENTRATED_1:     
         load_parameter = [magnitude, distance_a_is_defined_as_relative = False, distance_a]
 
-    for load_distrubition = MemberSetLoadDistribution.LOAD_DISTRIBUTION_CONCENTRATED_N:
-
+        > * for load_distrubition = MemberSetLoadDistribution.LOAD_DISTRIBUTION_CONCENTRATED_N:     
         load_parameter = [magnitude, distance_a_is_defined_as_relative = False, distance_b_is_defined_as_relative = False, distance_a, distance_b]
 
-    for load_distrubition = MemberSetLoadDistribution.LOAD_DISTRIBUTION_CONCENTRATED_2x2:
-
+        > * for load_distrubition = MemberSetLoadDistribution.LOAD_DISTRIBUTION_CONCENTRATED_2x2:   
         load_parameter = [magnitude, distance_a_is_defined_as_relative = False, distance_b_is_defined_as_relative = False, distance_c_is_defined_as_relative = False, distance_a, distance_b, distance_c]
 
-    for load_distrubition = MemberSetLoadDistribution.LOAD_DISTRIBUTION_CONCENTRATED_2:
-
+        > * for load_distrubition = MemberSetLoadDistribution.LOAD_DISTRIBUTION_CONCENTRATED_2:     
         load_parameter = [magnitude_1, magnitude_2, distance_a_is_defined_as_relative = False, distance_b_is_defined_as_relative = False, distance_a, distance_b]
 
-    for load_distribution = MemberSetLoadDistribution.LOAD_DISTRIBUTION_CONCENTRATED_VARYING:
-
+        > * for load_distribution = MemberSetLoadDistribution.LOAD_DISTRIBUTION_CONCENTRATED_VARYING:   
         load_parameter = [[distance, delta_distance, magnitude], …]
 
-    for load_distribution = MemberSetLoadDistribution.LOAD_DISTRIBUTION_TRAPEZIODAL:
-
+        > * for load_distribution = MemberSetLoadDistribution.LOAD_DISTRIBUTION_TRAPEZIODAL:    
         load_parameter = [magnitude_1, magnitude_2, distance_a_relative = False, distance_a_relative = False, a_distance, b_distance]
 
-    for load_distribution = MemberSetLoadDistribution.LOAD_DISTRIBUTION_TAPERED:
-
+        > * for load_distribution = MemberSetLoadDistribution.LOAD_DISTRIBUTION_TAPERED:    
         load_parameter = [magnitude_1, magnitude_2, distance_a_relative = False, distance_a_relative = False, a_distance, b_distance]
 
-    for load_distribution = MemberSetLoadDistribution.LOAD_DISTRIBUTION_PARABOLIC:
-
+        > * for load_distribution = MemberSetLoadDistribution.LOAD_DISTRIBUTION_PARABOLIC:  
         load_parameter = [magnitude_1, magnitude_2, magnitude_3]
 
-    for load_distribution = MemberSetLoadDistribution.LOAD_DISTRIBUTION_VARYING:
-
+        > * for load_distribution = MemberSetLoadDistribution.LOAD_DISTRIBUTION_VARYING:    
         load_parameter = [[distance, delta_distance, magnitude], …]
-
 
 
     * **load_over_total_length** (*bool*) – Load Over Total Length Option
 
 
-    * **comment** (*str**, **optional*) – Comment
+    * **comment** (*str*, *optional*) – Comment
 
 
-    * **params** (*dict**, **optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
+    * **params** (*dict*, *optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
 
 
-    * **model** (*RSTAB Class**, **optional*) – Model to be edited
+    * **model** (*RSTAB Class*, *optional*) – Model to be edited
 
 
 
-#### _static_ Force(no=1, load_case_no=1, member_sets='1', load_distribution=MemberSetLoadDistribution.LOAD_DISTRIBUTION_UNIFORM, load_direction=MemberSetLoadDirection.LOAD_DIRECTION_LOCAL_Z, load_parameter=None, force_eccentricity=False, comment='', params=None, model=<class 'RSTAB.initModel.Model'>)
+### MemberSetLoad.Force(no, load_case_no, member_sets, load_distribution, load_direction, load_parameter, force_eccentricity, comment, params, model)
 
 * **Parameters**
 
@@ -1079,81 +1003,61 @@ Bases: `object`
 
 
     * **load_parameter** (*list/list of lists*) – Load Parameter
-    for load_distribution == MemberSetLoadDistribution.LOAD_DISTRIBUTION_UNIFORM:
 
-    > load_parameter = [magnitude]
-
-    for load_distribution == MemberSetLoadDistribution.LOAD_DISTRIBUTION_UNIFORM_TOTAL:
-
+        > * for load_distribution == MemberSetLoadDistribution.LOAD_DISTRIBUTION_UNIFORM:   
         load_parameter = [magnitude]
 
-    for load_distribution == MemberSetLoadDistribution.LOAD_DISTRIBUTION_CONCENTRATED_1:
+        > * for load_distribution == MemberSetLoadDistribution.LOAD_DISTRIBUTION_UNIFORM_TOTAL:     
+        load_parameter = [magnitude]
 
+        > * for load_distribution == MemberSetLoadDistribution.LOAD_DISTRIBUTION_CONCENTRATED_1:    
         load_parameter = [relative_distance = False, magnitude, distance_a]
 
-    for load_distribution == MemberSetLoadDistribution.LOAD_DISTRIBUTION_CONCENTRATED_N:
-
+        > * for load_distribution == MemberSetLoadDistribution.LOAD_DISTRIBUTION_CONCENTRATED_N:    
         load_parameter = [relative_distance_a = False, relative_distance_b = False, magnitude, count_n, distance_a, distance_b]
 
-    for load_distribution == MemberSetLoadDistribution.LOAD_DISTRIBUTION_CONCENTRATED_2x2:
-
+        > * for load_distribution == MemberSetLoadDistribution.LOAD_DISTRIBUTION_CONCENTRATED_2x2:  
         load_parameter = [relative_distance_a = False, relative_distance_b = False, relative_distance_c = False, magnitude, distance_a, distance_b, distance_c]
 
-    for load_distribution == MemberSetLoadDistribution.LOAD_DISTRIBUTION_CONCENTRATED_2:
-
+        > * for load_distribution == MemberSetLoadDistribution.LOAD_DISTRIBUTION_CONCENTRATED_2:    
         load_parameter = [relative_distance_a = False, relative_distance_b = False, magnitude_1, magnitude_2, distance_a, distance_b]
 
-    for load_distribution == MemberSetLoadDistribution.LOAD_DISTRIBUTION_CONCENTRATED_VARYING:
-
+        > * for load_distribution == MemberSetLoadDistribution.LOAD_DISTRIBUTION_CONCENTRATED_VARYING:  
         load_parameter = [[distance, delta_distance, magnitude], …]
 
-    for load_distribution == MemberSetLoadDistribution.LOAD_DISTRIBUTION_TRAPEZOIDAL:
-
+        > * for load_distribution == MemberSetLoadDistribution.LOAD_DISTRIBUTION_TRAPEZOIDAL:   
         load_parameter = [relative_distance_a = False, relative_distance_b = False,magnitude_1, magnitude_2, distance_a, distance_b]
 
-    for load_distribution == MemberSetLoadDistribution.LOAD_DISTRIBUTION_TAPERED:
-
+        > * for load_distribution == MemberSetLoadDistribution.LOAD_DISTRIBUTION_TAPERED:   
         load_parameter = [relative_distance_a = False, relative_distance_b = False,magnitude_1, magnitude_2, distance_a, distance_b]
 
-    for load_distribution == MemberSetLoadDistribution.LOAD_DISTRIBUTION_PARABOLIC:
-
+        > * for load_distribution == MemberSetLoadDistribution.LOAD_DISTRIBUTION_PARABOLIC:     
         load_parameter = [magnitude_1, magnitude_2, magnitude_3]
 
-    for load_distribution == MemberSetLoadDistribution.LOAD_DISTRIBUTION_VARYING:
-
+        > * for load_distribution == MemberSetLoadDistribution.LOAD_DISTRIBUTION_VARYING:   
         load_parameter = [[distance, delta_distance, magnitude], …]
 
-    for load_distribution == MemberSetLoadDistribution.LOAD_DISTRIBUTION_VARYING_IN_Z:
-
+        > * for load_distribution == MemberSetLoadDistribution.LOAD_DISTRIBUTION_VARYING_IN_Z:  
         load_parameter = [[distance, delta_distance, magnitude], …]
-
 
 
     * **force_eccentricity** (*bool*) – Force Eccentricity Option
 
 
-    * **comment** (*str**, **optional*) – Comments
+    * **comment** (*str*, *optional*) – Comments
 
 
-    * **params** (*dict**, **optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
-    for force_eccentricity == True:
+    * **params** (*dict*, *optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
 
-    > params = {‘eccentricity_horizontal_alignment’: MemberSetLoadEccentricityHorizontalAlignment.ALIGN_NONE,
-    > ‘eccentricity_vertical_alignment’: MemberSetLoadEccentricityVerticalAlignment.ALIGN_NONE,
-    > ‘eccentricity_section_middle’: MemberSetLoadEccentricitySectionMiddle.LOAD_ECCENTRICITY_SECTION_MIDDLE_CENTER_OF_GRAVITY,
-    > ‘is_eccentricity_at_end_different_from_start’: False,
-    > ‘eccentricity_y_at_end’: 0.0,
-    > ‘eccentricity_y_at_start’: 0.0,
-    > ‘eccentricity_z_at_end’: 0.0,
-    > ‘eccentricity_z_at_start’: 0.0}
+        > * for force_eccentricity == True:     
+        params = {‘eccentricity_horizontal_alignment’: MemberSetLoadEccentricityHorizontalAlignment.ALIGN_NONE, ‘eccentricity_vertical_alignment’: MemberSetLoadEccentricityVerticalAlignment.ALIGN_NONE, ‘eccentricity_section_middle’: MemberSetLoadEccentricitySectionMiddle.LOAD_ECCENTRICITY_SECTION_MIDDLE_CENTER_OF_GRAVITY, ‘is_eccentricity_at_end_different_from_start’: False, ‘eccentricity_y_at_end’: 0.0, ‘eccentricity_y_at_start’: 0.0, ‘eccentricity_z_at_end’: 0.0, ‘eccentricity_z_at_start’: 0.0}
+
+
+    * **model** (*RSTAB Class*, *optional*) – Model to be edited
 
 
 
-    * **model** (*RSTAB Class**, **optional*) – Model to be edited
-
-
-
-#### _static_ InitialPrestress(no=1, load_case_no=1, member_sets='1', load_direction=MemberSetLoadDirection.LOAD_DIRECTION_LOCAL_X, magnitude=0.0, comment='', params=None, model=<class 'RSTAB.initModel.Model'>)
+### MemberSetLoad.InitialPrestress(no, load_case_no, member_sets, load_direction, magnitude, comment, params, model)
 
 * **Parameters**
 
@@ -1173,17 +1077,17 @@ Bases: `object`
     * **magnitude** (*float*) – Load Magnitude
 
 
-    * **comment** (*str**, **optional*) – Comment
+    * **comment** (*str*, *optional*) – Comment
 
 
-    * **params** (*dict**, **optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
+    * **params** (*dict*, *optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
 
 
-    * **model** (*RSTAB Class**, **optional*) – Model to be edited
+    * **model** (*RSTAB Class*, *optional*) – Model to be edited
 
 
 
-#### _static_ Mass(no=1, load_case_no=1, member_sets='1', individual_mass_components=False, mass_components=None, comment='', params=None, model=<class 'RSTAB.initModel.Model'>)
+### MemberSetLoad.Mass(no, load_case_no, member_sets, individual_mass_components, mass_components, comment, params, model)
 
 * **Parameters**
 
@@ -1203,17 +1107,17 @@ Bases: `object`
     * **mass_components** (*list*) – Mass Components
 
 
-    * **comment** (*str**, **optional*) – Comment
+    * **comment** (*str*, *optional*) – Comment
 
 
-    * **params** (*dict**, **optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
+    * **params** (*dict*, *optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
 
 
-    * **model** (*RSTAB Class**, **optional*) – Model to be edited
+    * **model** (*RSTAB Class*, *optional*) – Model to be edited
 
 
 
-#### _static_ Moment(no=1, load_case_no=1, member_sets='1', load_distribution=MemberSetLoadDistribution.LOAD_DISTRIBUTION_UNIFORM, load_direction=MemberSetLoadDirection.LOAD_DIRECTION_LOCAL_Z, load_parameter=None, comment='', params=None, model=<class 'RSTAB.initModel.Model'>)
+### MemberSetLoad.Moment(no, load_case_no, member_sets, load_distribution, load_direction, load_parameter, comment, params, model)
 
 * **Parameters**
 
@@ -1234,59 +1138,49 @@ Bases: `object`
 
 
     * **load_parameter** (*list/list of lists*) – Load Parameters
-    for load_distribution == MemberSetLoadDistribution.LOAD_DISTRIBUTION_UNIFORM:
 
-    > load_parameter = [magnitude]
+        > * for load_distribution == MemberSetLoadDistribution.LOAD_DISTRIBUTION_UNIFORM:   
+        load_parameter = [magnitude]
 
-    for load_distribution == MemberSetLoadDistribution.LOAD_DISTRIBUTION_CONCENTRATED_1:
-
+        > * for load_distribution == MemberSetLoadDistribution.LOAD_DISTRIBUTION_CONCENTRATED_1:    
         load_parameter = [relative_distance = False, magnitude, distance_a]
 
-    for load_distribution == MemberSetLoadDistribution.LOAD_DISTRIBUTION_CONCENTRATED_N:
-
+        > * for load_distribution == MemberSetLoadDistribution.LOAD_DISTRIBUTION_CONCENTRATED_N:    
         load_parameter = [relative_distance_a = False, relative_distance_b = False, magnitude, count_n, distance_a, distance_b]
 
-    for load_distribution == MemberSetLoadDistribution.LOAD_DISTRIBUTION_CONCENTRATED_2x2:
-
+        > * for load_distribution == MemberSetLoadDistribution.LOAD_DISTRIBUTION_CONCENTRATED_2x2:  
         load_parameter = [relative_distance_a = False, relative_distance_b = False, relative_distance_c = False, magnitude, distance_a, distance_b, distance_c]
 
-    for load_distribution == MemberSetLoadDistribution.LOAD_DISTRIBUTION_CONCENTRATED_2:
-
+        > * for load_distribution == MemberSetLoadDistribution.LOAD_DISTRIBUTION_CONCENTRATED_2:    
         load_parameter = [relative_distance_a = False, relative_distance_b = False, magnitude_1, magnitude_2, distance_a, distance_b]
 
-    for load_distribution == MemberSetLoadDistribution.LOAD_DISTRIBUTION_CONCENTRATED_VARYING:
-
+        > * for load_distribution == MemberSetLoadDistribution.LOAD_DISTRIBUTION_CONCENTRATED_VARYING:  
         load_parameter = [[distance, delta_distance, magnitude], …]
 
-    for load_distribution == MemberSetLoadDistribution.LOAD_DISTRIBUTION_TRAPEZOIDAL:
-
+        > * for load_distribution == MemberSetLoadDistribution.LOAD_DISTRIBUTION_TRAPEZOIDAL:   
         load_parameter = [relative_distance_a = False, relative_distance_b = False,magnitude_1, magnitude_2, distance_a, distance_b]
 
-    for load_distribution == MemberSetLoadDistribution.LOAD_DISTRIBUTION_TAPERED:
-
+        > * for load_distribution == MemberSetLoadDistribution.LOAD_DISTRIBUTION_TAPERED:   
         load_parameter = [relative_distance_a = False, relative_distance_b = False,magnitude_1, magnitude_2, distance_a, distance_b]
 
-    for load_distribution == MemberSetLoadDistribution.LOAD_DISTRIBUTION_PARABOLIC:
-
+        > * for load_distribution == MemberSetLoadDistribution.LOAD_DISTRIBUTION_PARABOLIC:     
         load_parameter = [magnitude_1, magnitude_2, magnitude_3]
 
-    for load_distribution == MemberSetLoadDistribution.LOAD_DISTRIBUTION_VARYING:
-
+        > * for load_distribution == MemberSetLoadDistribution.LOAD_DISTRIBUTION_VARYING:   
         load_parameter = [[distance, delta_distance, magnitude], …]
 
 
-
-    * **comment** (*str**, **optional*) – Comments
-
-
-    * **params** (*dict**, **optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
+    * **comment** (*str*, *optional*) – Comments
 
 
-    * **model** (*RSTAB Class**, **optional*) – Model to be edited
+    * **params** (*dict*, *optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
+
+
+    * **model** (*RSTAB Class*, *optional*) – Model to be edited
 
 
 
-#### _static_ PipeContentFull(no=1, load_case_no=1, member_sets='1', load_direction_orientation=MemberSetLoadDirectionOrientation.LOAD_DIRECTION_FORWARD, specific_weight=0.0, comment='', params=None, model=<class 'RSTAB.initModel.Model'>)
+### MemberSetLoad.PipeContentFull(no, load_case_no, member_sets, load_direction_orientation, specific_weight, comment, params, model)
 
 * **Parameters**
 
@@ -1306,17 +1200,17 @@ Bases: `object`
     * **specific_weight** (*float*) – Specific Weight
 
 
-    * **comment** (*str**, **optional*) – Comment
+    * **comment** (*str*, *optional*) – Comment
 
 
-    * **params** (*dict**, **optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
+    * **params** (*dict*, *optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
 
 
-    * **model** (*RSTAB Class**, **optional*) – Model to be edited
+    * **model** (*RSTAB Class*, *optional*) – Model to be edited
 
 
 
-#### _static_ PipeContentPartial(no=1, load_case_no=1, member_sets='1', load_direction_orientation=MemberSetLoadDirectionOrientation.LOAD_DIRECTION_FORWARD, specific_weight=0.0, filling_height=0.0, comment='', params=None, model=<class 'RSTAB.initModel.Model'>)
+### MemberSetLoad.PipeContentPartial(no, load_case_no, member_sets, load_direction_orientation, specific_weight, filling_height, comment, params, model)
 
 * **Parameters**
 
@@ -1339,17 +1233,17 @@ Bases: `object`
     * **filling_height** (*float*) – Filling Height
 
 
-    * **comment** (*str**, **optional*) – Comment
+    * **comment** (*str*, *optional*) – Comment
 
 
-    * **params** (*dict**, **optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
+    * **params** (*dict*, *optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
 
 
-    * **model** (*RSTAB Class**, **optional*) – Model to be edited
+    * **model** (*RSTAB Class*, *optional*) – Model to be edited
 
 
 
-#### _static_ PipeInternalPressure(no=1, load_case_no=1, member_sets='1', pressure=0.0, comment='', params=None, model=<class 'RSTAB.initModel.Model'>)
+### MemberSetLoad.PipeInternalPressure(no, load_case_no, member_sets, pressure, comment, params, model)
 
 * **Parameters**
 
@@ -1366,17 +1260,17 @@ Bases: `object`
     * **pressure** (*float*) – Pressure
 
 
-    * **comment** (*str**, **optional*) – Comment
+    * **comment** (*str*, *optional*) – Comment
 
 
-    * **params** (*dict**, **optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
+    * **params** (*dict*, *optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
 
 
-    * **model** (*RSTAB Class**, **optional*) – Model to be edited
+    * **model** (*RSTAB Class*, *optional*) – Model to be edited
 
 
 
-#### _static_ Precamber(no=1, load_case_no=1, member_sets='1', load_distribution=MemberSetLoadDistribution.LOAD_DISTRIBUTION_UNIFORM, load_direction=MemberSetLoadDirection.LOAD_DIRECTION_LOCAL_Z, load_parameter=None, load_over_total_length=False, comment='', params=None, model=<class 'RSTAB.initModel.Model'>)
+### MemberSetLoad.Precamber(no, load_case_no, member_sets, load_distribution, load_direction, load_parameter, load_over_total_length, comment, params, model)
 
 * **Parameters**
 
@@ -1397,48 +1291,40 @@ Bases: `object`
 
 
     * **load_parameter** (*list/list of lists*) – Load Parameters
-    for load_distribution = MemberSetLoadDistribution.LOAD_DISTRIBUTION_UNIFORM:
 
-    > load_parameter = [magnitude]
+        > * for load_distribution = MemberSetLoadDistribution.LOAD_DISTRIBUTION_UNIFORM:    
+        load_parameter = [magnitude]
 
-    for load_distribution = MemberSetLoadDistribution.LOAD_DISTRIBUTION_TRAPEZIODAL:
-
-        for load_over_total_length: bool= False:
-
-            load_parameter = [magnitude_1, magnitude_2, distance_a_relative = False, distance_a_relative = False, a_distance, b_distance]
-
-        for load_over_total_length: bool= True:
-
+        > * for load_distribution = MemberSetLoadDistribution.LOAD_DISTRIBUTION_TRAPEZIODAL:    
+            >> * for load_over_total_length: bool= False:   
+            load_parameter = [magnitude_1, magnitude_2, distance_a_relative = False, distance_a_relative = False, a_distance, b_distance]   
+            >> * for load_over_total_length: bool= True:    
             load_parameter = [magnitude_1, magnitude_2]
 
-    for load_distribution = MemberSetLoadDistribution.LOAD_DISTRIBUTION_TAPERED:
-
+        > * for load_distribution = MemberSetLoadDistribution.LOAD_DISTRIBUTION_TAPERED:    
         load_parameter = [magnitude_1, magnitude_2, distance_a_relative = False, distance_a_relative = False, a_distance, b_distance]
 
-    for load_distribution = MemberSetLoadDistribution.LOAD_DISTRIBUTION_PARABOLIC:
-
+        > * for load_distribution = MemberSetLoadDistribution.LOAD_DISTRIBUTION_PARABOLIC:  
         load_parameter = [magnitude_1, magnitude_2, magnitude_3]
 
-    for load_distribution = MemberSetLoadDistribution.LOAD_DISTRIBUTION_VARYING:
-
+        > * for load_distribution = MemberSetLoadDistribution.LOAD_DISTRIBUTION_VARYING:    
         load_parameter = [[distance, delta_distance, magnitude], …]
-
 
 
     * **load_over_total_length** (*bool*) – Load Over Total Lenth Option
 
 
-    * **comment** (*str**, **optional*) – Comment
+    * **comment** (*str*, *optional*) – Comment
 
 
-    * **params** (*dict**, **optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
+    * **params** (*dict*, *optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
 
 
-    * **model** (*RSTAB Class**, **optional*) – Model to be edited
+    * **model** (*RSTAB Class*, *optional*) – Model to be edited
 
 
 
-#### _static_ RotaryMotion(no=1, load_case_no=1, member_sets='1', angular_acceleration=0.0, angular_velocity=0.0, axis_definition_type=MemberSetLoadAxisDefinitionType.AXIS_DEFINITION_TWO_POINTS, axis_orientation=MemberSetLoadAxisDefinitionAxisOrientation.AXIS_POSITIVE, axis_definition=MemberSetLoadAxisDefinition.AXIS_X, axis_definition_p1=None, axis_definition_p2=None, comment='', params=None, model=<class 'RSTAB.initModel.Model'>)
+### MemberSetLoad.RotaryMotion(no, load_case_no, member_sets, angular_acceleration, angular_velocity, axis_definition_type, axis_orientation, axis_definition, axis_definition_p1, axis_definition_p2, comment, params, model)
 
 * **Parameters**
 
@@ -1473,17 +1359,17 @@ Bases: `object`
     * **axis_definition_p2** (*list*) – Axis Definition Second Point
 
 
-    * **comment** (*str**, **optional*) – Comment
+    * **comment** (*str*, *optional*) – Comment
 
 
-    * **params** (*dict**, **optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
+    * **params** (*dict*, *optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
 
 
-    * **model** (*RSTAB Class**, **optional*) – Model to be edited
+    * **model** (*RSTAB Class*, *optional*) – Model to be edited
 
 
 
-#### _static_ Rotation(no=1, load_case_no=1, member_sets='1', load_distribution=MemberSetLoadDistribution.LOAD_DISTRIBUTION_UNIFORM, load_direction=MemberSetLoadDirection.LOAD_DIRECTION_LOCAL_Z, load_parameter=None, load_over_total_length=False, comment='', params=None, model=<class 'RSTAB.initModel.Model'>)
+### MemberSetLoad.Rotation(no, load_case_no, member_sets, load_distribution, load_direction, load_parameter, load_over_total_length, comment, params, model)
 
 * **Parameters**
 
@@ -1504,62 +1390,52 @@ Bases: `object`
 
 
     * **load_parameter** (*list/list of lists*) – Load Parameters
-    for load_distribution = MemberSetLoadDistribution.LOAD_DISTRIBUTION_UNIFORM:
 
-    > load_parameter = [magnitude]
+        > * for load_distribution = MemberSetLoadDistribution.LOAD_DISTRIBUTION_UNIFORM:    
+        load_parameter = [magnitude]
 
-    for load_distrubition = MemberSetLoadDistribution.LOAD_DISTRIBUTION_CONCENTRATED_1:
-
+        > * for load_distrubition = MemberSetLoadDistribution.LOAD_DISTRIBUTION_CONCENTRATED_1:     
         load_parameter = [magnitude, distance_a_is_defined_as_relative = False, distance_a]
 
-    for load_distrubition = MemberSetLoadDistribution.LOAD_DISTRIBUTION_CONCENTRATED_N:
-
+        > * for load_distrubition = MemberSetLoadDistribution.LOAD_DISTRIBUTION_CONCENTRATED_N:     
         load_parameter = [magnitude, distance_a_is_defined_as_relative = False, distance_b_is_defined_as_relative = False, distance_a, distance_b]
 
-    for load_distrubition = MemberSetLoadDistribution.LOAD_DISTRIBUTION_CONCENTRATED_2x2:
-
+        > * for load_distrubition = MemberSetLoadDistribution.LOAD_DISTRIBUTION_CONCENTRATED_2x2:   
         load_parameter = [magnitude, distance_a_is_defined_as_relative = False, distance_b_is_defined_as_relative = False, distance_c_is_defined_as_relative = False, distance_a, distance_b, distance_c]
 
-    for load_distrubition = MemberSetLoadDistribution.LOAD_DISTRIBUTION_CONCENTRATED_2:
-
+        > * for load_distrubition = MemberSetLoadDistribution.LOAD_DISTRIBUTION_CONCENTRATED_2:     
         load_parameter = [magnitude_1, magnitude_2, distance_a_is_defined_as_relative = False, distance_b_is_defined_as_relative = False, distance_a, distance_b]
 
-    for load_distribution = MemberSetLoadDistribution.LOAD_DISTRIBUTION_CONCENTRATED_VARYING:
-
+        > * for load_distribution = MemberSetLoadDistribution.LOAD_DISTRIBUTION_CONCENTRATED_VARYING:   
         load_parameter = [[distance, delta_distance, magnitude], …]
 
-    for load_distribution = MemberSetLoadDistribution.LOAD_DISTRIBUTION_TRAPEZIODAL:
-
+        > * for load_distribution = MemberSetLoadDistribution.LOAD_DISTRIBUTION_TRAPEZIODAL:    
         load_parameter = [magnitude_1, magnitude_2, distance_a_relative = False, distance_a_relative = False, a_distance, b_distance]
 
-    for load_distribution = MemberSetLoadDistribution.LOAD_DISTRIBUTION_TAPERED:
-
+        > * for load_distribution = MemberSetLoadDistribution.LOAD_DISTRIBUTION_TAPERED:    
         load_parameter = [magnitude_1, magnitude_2, distance_a_relative = False, distance_a_relative = False, a_distance, b_distance]
 
-    for load_distribution = MemberSetLoadDistribution.LOAD_DISTRIBUTION_PARABOLIC:
-
+        > * for load_distribution = MemberSetLoadDistribution.LOAD_DISTRIBUTION_PARABOLIC:      
         load_parameter = [magnitude_1, magnitude_2, magnitude_3]
 
-    for load_distribution = MemberSetLoadDistribution.LOAD_DISTRIBUTION_VARYING:
-
+        > * for load_distribution = MemberSetLoadDistribution.LOAD_DISTRIBUTION_VARYING:    
         load_parameter = [[distance, delta_distance, magnitude], …]
-
 
 
     * **load_over_total_length** (*bool*) – Load Over Total Length
 
 
-    * **comment** (*str**, **optional*) – Comment
+    * **comment** (*str*, *optional*) – Comment
 
 
-    * **params** (*dict**, **optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
+    * **params** (*dict*, *optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
 
 
-    * **model** (*RSTAB Class**, **optional*) – Model to be edited
+    * **model** (*RSTAB Class*, *optional*) – Model to be edited
 
 
 
-#### _static_ Temperature(no=1, load_case_no=1, member_sets='1', load_distribution=MemberSetLoadDistribution.LOAD_DISTRIBUTION_UNIFORM, load_direction=MemberSetLoadDirection.LOAD_DIRECTION_LOCAL_Z, load_parameter=None, load_over_total_length=False, comment='', params=None, model=<class 'RSTAB.initModel.Model'>)
+### MemberSetLoad.Temperature(no, load_case_no, member_sets, load_distribution, load_direction, load_parameter, load_over_total_length, comment, params, model)
 
 * **Parameters**
 
@@ -1580,48 +1456,40 @@ Bases: `object`
 
 
     * **load_parameter** (*list/list of lists*) – Load Parameters
-    for load_distribution = MemberSetLoadDistribution.LOAD_DISTRIBUTION_UNIFORM:
 
-    > load_parameter = [tt, tb]
+        > * for load_distribution = MemberSetLoadDistribution.LOAD_DISTRIBUTION_UNIFORM:    
+        load_parameter = [tt, tb]
 
-    for load_distribution = MemberSetLoadDistribution.LOAD_DISTRIBUTION_TRAPEZIODAL:
-
-        for load_over_total_length: bool= False:
-
-            load_parameter = [tt1, tt2, tb1, tb2, distance_a_relative = False, distance_a_relative = False, a_distance, b_distance]
-
-        for load_over_total_length: bool= True:
-
+        > * for load_distribution = MemberSetLoadDistribution.LOAD_DISTRIBUTION_TRAPEZIODAL:    
+            >> * for load_over_total_length: bool= False:    
+            load_parameter = [tt1, tt2, tb1, tb2, distance_a_relative = False, distance_a_relative = False, a_distance, b_distance]     
+            >> * for load_over_total_length: bool= True:    
             load_parameter = [tt1, tt2, tb1, tb2]
 
-    for load_distribution = MemberSetLoadDistribution.LOAD_DISTRIBUTION_TAPERED:
-
+        > * for load_distribution = MemberSetLoadDistribution.LOAD_DISTRIBUTION_TAPERED:    
         load_parameter = [tt1, tt2, tb1, tb2, distance_a_relative = False, distance_a_relative = False, a_distance, b_distance]
 
-    for load_distribution = MemberSetLoadDistribution.LOAD_DISTRIBUTION_PARABOLIC:
-
+        > * for load_distribution = MemberSetLoadDistribution.LOAD_DISTRIBUTION_PARABOLIC:  
         load_parameter = [tb1, tb2, tb3, tt1, tt2, tt3]
 
-    for load_distribution = MemberSetLoadDistribution.LOAD_DISTRIBUTION_VARYING:
-
+        > * for load_distribution = MemberSetLoadDistribution.LOAD_DISTRIBUTION_VARYING:    
         load_parameter = [[distance, delta_distance, magnitude], …]
-
 
 
     * **load_over_total_length** (*bool*) – Enable/Disable Load Over Total Length Option
 
 
-    * **comment** (*str**, **optional*) – Comment
+    * **comment** (*str*, *optional*) – Comment
 
 
-    * **params** (*dict**, **optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
+    * **params** (*dict*, *optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
 
 
-    * **model** (*RSTAB Class**, **optional*) – Model to be edited
+    * **model** (*RSTAB Class*, *optional*) – Model to be edited
 
 
 
-#### _static_ TemperatureChange(no=1, load_case_no=1, member_sets='1', load_distribution=MemberSetLoadDistribution.LOAD_DISTRIBUTION_UNIFORM, load_direction=MemberSetLoadDirection.LOAD_DIRECTION_LOCAL_Z, load_parameter=None, load_over_total_length=False, comment='', params=None, model=<class 'RSTAB.initModel.Model'>)
+### MemberSetLoad.TemperatureChange(no, load_case_no, member_sets, load_distribution, load_direction, load_parameter, load_over_total_length, comment, params, model)
 
 * **Parameters**
 
@@ -1642,48 +1510,43 @@ Bases: `object`
 
 
     * **load_parameter** (*list/list of lists*) – Load Parameters
-    for load_distribution = MemberSetLoadDistribution.LOAD_DISTRIBUTION_UNIFORM:
 
-    > load_parameter = [tc, delta_t]
+        > * for load_distribution = MemberSetLoadDistribution.LOAD_DISTRIBUTION_UNIFORM:    
+        load_parameter = [tc, delta_t]
 
-    for load_distribution = MemberSetLoadDistribution.LOAD_DISTRIBUTION_TRAPEZIODAL:
-
-        for load_over_total_length: bool= False:
-
-            load_parameter = [delta_t_1, delta_t_2, t_c_1, t_c_2, distance_a_relative = False, distance_a_relative = False, a_distance, b_distance]
-
-        for load_over_total_length: bool= True:
-
+        > * for load_distribution = MemberSetLoadDistribution.LOAD_DISTRIBUTION_TRAPEZIODAL:    
+            >> * for load_over_total_length: bool= False:    
+            load_parameter = [delta_t_1, delta_t_2, t_c_1, t_c_2, distance_a_relative = False, distance_a_relative = False, a_distance, b_distance]     
+            >> * for load_over_total_length: bool= True:    
             load_parameter = [delta_t_1, delta_t_2, t_c_1, t_c_2]
 
-    for load_distribution = MemberSetLoadDistribution.LOAD_DISTRIBUTION_TAPERED:
-
+        > * for load_distribution = MemberSetLoadDistribution.LOAD_DISTRIBUTION_TAPERED:    
         load_parameter = [delta_t_1, delta_t_2, t_c_1, t_c_2, distance_a_relative = False, distance_a_relative = False, a_distance, b_distance]
 
-    for load_distribution = MemberSetLoadDistribution.LOAD_DISTRIBUTION_PARABOLIC:
-
+        > * for load_distribution = MemberSetLoadDistribution.LOAD_DISTRIBUTION_PARABOLIC:  
         load_parameter = [delta_t_1, delta_t_2, delta_t_3, t_c_1, t_c_2, t_c_3]
 
-    for load_distribution = MemberSetLoadDistribution.LOAD_DISTRIBUTION_VARYING:
-
+        > * for load_distribution = MemberSetLoadDistribution.LOAD_DISTRIBUTION_VARYING:    
         load_parameter = [[distance, delta_distance, magnitude], …]
-
 
 
     * **load_over_total_length** (*bool*) – Load Over Total Length Option
 
 
-    * **comment** (*str**, **optional*) – Comment
+    * **comment** (*str*, *optional*) – Comment
 
 
-    * **params** (*dict**, **optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
+    * **params** (*dict*, *optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
 
 
-    * **model** (*RSTAB Class**, **optional*) – Model to be edited
+    * **model** (*RSTAB Class*, *optional*) – Model to be edited
 
 
 
-#### \__init__(no=1, load_case_no=1, member_sets='1', load_direction=LoadDirectionType.LOAD_DIRECTION_LOCAL_Z, magnitude=0.0, comment='', params=None, model=<class 'RSTAB.initModel.Model'>)
+## NodalLoad 
+
+
+### NodalLoad(no, load_case_no, nodes_no, load_direction, magnitude, comment, params, model)
 
 * **Parameters**
 
@@ -1694,32 +1557,26 @@ Bases: `object`
     * **load_case_no** (*int*) – Assigned Load Case
 
 
-    * **member_sets** (*str*) – Assigned Member Sets
+    * **nodes_no** (*str*) – Assigned Nodes
 
 
     * **load_direction** (*enum*) – Load Direction Enumeration
 
 
-    * **magnitude** (*float*) – Load Magnitude
+    * **magnitude** (*float*) – Force Magnitude
 
 
-    * **comment** (*str**, **optional*) – Comments
+    * **comment** (*str*, *optional*) – Comments
 
 
-    * **params** (*dict**, **optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
+    * **params** (*dict*, *optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
 
 
-    * **model** (*RSTAB Class**, **optional*) – Model to be edited
+    * **model** (*RSTAB Class*, *optional*) – Model to be edited
 
 
-## RSTAB.Loads.nodalLoad module
 
-
-### _class_ RSTAB.Loads.nodalLoad.NodalLoad(no=1, load_case_no=1, nodes_no='1', load_direction=LoadDirectionType.LOAD_DIRECTION_GLOBAL_Z_OR_USER_DEFINED_W, magnitude=0.0, comment='', params=None, model=<class 'RSTAB.initModel.Model'>)
-Bases: `object`
-
-
-#### _static_ Components(no=1, load_case_no=1, nodes_no='1', components=None, specific_direction=False, force_eccentricity=False, shifted_display=False, comment='', params=None, model=<class 'RSTAB.initModel.Model'>)
+### NodalLoad.Components(no, load_case_no, nodes_no, components, specific_direction, force_eccentricity, shifted_display, comment, params, model)
 
 * **Parameters**
 
@@ -1745,36 +1602,32 @@ Bases: `object`
     * **shifted_display** (*bool*) – Enable/Disable Shifted Display Option
 
 
-    * **comment** (*str**, **optional*) – Comments
+    * **comment** (*str*, *optional*) – Comments
 
 
-    * **params** (*dict**, **optional*) – For specific_direction type DIRECTION_TYPE_ROTATED_VIA_3_ANGLES;
+    * **params** (*dict*, *optional*) – 
 
+        > * For specific_direction type DIRECTION_TYPE_ROTATED_VIA_3_ANGLES;    
         params={‘specific_direction’ : [NodalLoadSpecificDirectionType.DIRECTION_TYPE_ROTATED_VIA_3_ANGLES, NodalLoadAxesSequence, angle_1, angle_2, angle_3, angle_x, angle_y, angle_z]}
 
-    For specific_direction type DIRECTION_TYPE_PARALLEL_TO_CS_OF_LINE;
-
+        > * For specific_direction type DIRECTION_TYPE_PARALLEL_TO_CS_OF_LINE;  
         params={‘specific_direction’ : [NodalLoadSpecificDirectionType.DIRECTION_TYPE_PARALLEL_TO_CS_OF_LINE, line_no]}
 
-    For specific_direction type DIRECTION_TYPE_PARALLEL_TO_CS_OF_MEMBER;
-
+        > * For specific_direction type DIRECTION_TYPE_PARALLEL_TO_CS_OF_MEMBER;    
         params={‘specific_direction’ : [NodalLoadSpecificDirectionType.DIRECTION_TYPE_PARALLEL_TO_CS_OF_MEMBER, member_no]}
 
-    For force_eccentricity;
-
+        > * For force_eccentricity;         
         params={‘force_eccentricity’ : [ex, ey, ez]}
 
-    For shifted_display;
-
+        > * For shifted_display;    
         params={‘shifted_display’ : [offset_x, offset_y, offset_y, distance]}
 
 
-
-    * **model** (*RSTAB Class**, **optional*) – Model to be edited
-
+    * **model** (*RSTAB Class*, *optional*) – Model to be edited
 
 
-#### _static_ Force(no=1, load_case_no=1, nodes_no='1', load_direction=LoadDirectionType.LOAD_DIRECTION_GLOBAL_Z_OR_USER_DEFINED_W, magnitude=0.0, force_eccentricity=False, specific_direction=False, shifted_display=False, comment='', params=None, model=<class 'RSTAB.initModel.Model'>)
+
+### NodalLoad.Force(no, load_case_no, nodes_no, load_direction, magnitude, force_eccentricity, specific_direction, shifted_display, comment, params, model)
 
 * **Parameters**
 
@@ -1803,44 +1656,38 @@ Bases: `object`
     * **shifted_display** (*bool*) – Enable/Disable Shifted Display Option
 
 
-    * **comment** (*str**, **optional*) – Comments
+    * **comment** (*str*, *optional*) – Comments
 
 
-    * **params** (*dict**, **optional*) – For specific_direction type DIRECTION_TYPE_ROTATED_VIA_3_ANGLES;
+    * **params** (*dict*, *optional*) – 
 
+        > * For specific_direction type DIRECTION_TYPE_ROTATED_VIA_3_ANGLES;    
         params={‘specific_direction’ : [NodalLoadSpecificDirectionType.DIRECTION_TYPE_ROTATED_VIA_3_ANGLES, NodalLoadAxesSequence, angle_1, angle_2, angle_3, angle_x, angle_y, angle_z]}
 
-    For specific_direction type DIRECTION_TYPE_DIRECTED_TO_NODE;
-
+        > * For specific_direction type DIRECTION_TYPE_DIRECTED_TO_NODE;    
         params={‘specific_direction’ : [NodalLoadSpecificDirectionType.DIRECTION_TYPE_DIRECTED_TO_NODE, nodes_no]}
 
-    For specific_direction type DIRECTION_TYPE_PARALLEL_TO_TWO_NODES;
-
+        > * For specific_direction type DIRECTION_TYPE_PARALLEL_TO_TWO_NODES;   
         params={‘specific_direction’ : [NodalLoadSpecificDirectionType.DIRECTION_TYPE_PARALLEL_TO_TWO_NODES, nodes_no]}
 
-    For specific_direction type DIRECTION_TYPE_PARALLEL_TO_CS_OF_LINE;
-
+        > * For specific_direction type DIRECTION_TYPE_PARALLEL_TO_CS_OF_LINE;  
         params={‘specific_direction’ : [NodalLoadSpecificDirectionType.DIRECTION_TYPE_PARALLEL_TO_CS_OF_LINE, line_no]}
 
-    For specific_direction type DIRECTION_TYPE_PARALLEL_TO_CS_OF_MEMBER;
-
+        > * For specific_direction type DIRECTION_TYPE_PARALLEL_TO_CS_OF_MEMBER;    
         params={‘specific_direction’ : [NodalLoadSpecificDirectionType.DIRECTION_TYPE_PARALLEL_TO_CS_OF_MEMBER, member_no]}
 
-    For force_eccentricity;
-
+        > * For force_eccentricity;     
         params={‘force_eccentricity’ : [ex, ey, ez]}
 
-    For shifted_display;
-
+        > * For shifted_display;    
         params={‘shifted_display’ : [offset_x, offset_y, offset_y, distance]}
-
 
 
     * **model** (*RSTAB Class**, **optional*) – Model to be edited
 
 
 
-#### _static_ Mass(no=1, load_case_no=1, nodes_no='1', individual_mass_components=False, mass=None, comment='', params=None, model=<class 'RSTAB.initModel.Model'>)
+### NodalLoad.Mass(no, load_case_no, nodes_no, individual_mass_components, mass, comment, params, model)
 
 * **Parameters**
 
@@ -1857,27 +1704,26 @@ Bases: `object`
     * **individual_mass_components** (*bool*) – Enable/Disable Mass Component Option
 
 
-    * **mass** (*list*) – if individual_mass_components == False:
+    * **mass** (*list*) – Mass parameter List
 
+        > * if individual_mass_components == False:     
         mass = [M]
 
-    elif individual_mass_components == True:
-
+        > * elif individual_mass_components == True:    
         mass = [Mx, My, Mz, Ix, Iy, Iz]
 
 
+    * **comment** (*str*, *optional*) – Comments
 
-    * **comment** (*str**, **optional*) – Comments
 
-
-    * **params** (*dict**, **optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
+    * **params** (*dict*, *optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
 
 
     * **model** (*RSTAB Class**, **optional*) – Model to be edited
 
 
 
-#### _static_ Moment(no=1, load_case_no=1, nodes_no='1', load_direction=LoadDirectionType.LOAD_DIRECTION_GLOBAL_Z_OR_USER_DEFINED_W, moment_magnitude=0.0, specific_direction=False, shifted_display=False, comment='', params=None, model=<class 'RSTAB.initModel.Model'>)
+### NodalLoad.Moment(no, load_case_no, nodes_no, load_direction, moment_magnitude, specific_direction, shifted_display, comment, params, model)
 
 * **Parameters**
 
@@ -1903,66 +1749,29 @@ Bases: `object`
     * **shifted_display** (*bool*) – Enable/Disable Shifted Display Option
 
 
-    * **comment** (*str**, **optional*) – Comments
+    * **comment** (*str*, *optional*) – Comments
 
 
-    * **params** (*dict**, **optional*) – For specific_direction type DIRECTION_TYPE_ROTATED_VIA_3_ANGLES;
+    * **params** (*dict*, *optional*) – 
 
+        > * For specific_direction type DIRECTION_TYPE_ROTATED_VIA_3_ANGLES;    
         params={‘specific_direction’ : [NodalLoadSpecificDirectionType.DIRECTION_TYPE_ROTATED_VIA_3_ANGLES, NodalLoadAxesSequence, angle_1, angle_2, angle_3, angle_x, angle_y, angle_z]}
 
-    For specific_direction type DIRECTION_TYPE_DIRECTED_TO_NODE;
-
+        > * For specific_direction type DIRECTION_TYPE_DIRECTED_TO_NODE;    
         params={‘specific_direction’ : [NodalLoadSpecificDirectionType.DIRECTION_TYPE_DIRECTED_TO_NODE, nodes_no]}
 
-    For specific_direction type DIRECTION_TYPE_PARALLEL_TO_TWO_NODES;
-
+        > * For specific_direction type DIRECTION_TYPE_PARALLEL_TO_TWO_NODES;   
         params={‘specific_direction’ : [NodalLoadSpecificDirectionType.DIRECTION_TYPE_PARALLEL_TO_TWO_NODES, nodes_no]}
 
-    For specific_direction type DIRECTION_TYPE_PARALLEL_TO_CS_OF_LINE;
-
+        > * For specific_direction type DIRECTION_TYPE_PARALLEL_TO_CS_OF_LINE;  
         params={‘specific_direction’ : [NodalLoadSpecificDirectionType.DIRECTION_TYPE_PARALLEL_TO_CS_OF_LINE, line_no]}
 
-    For specific_direction type DIRECTION_TYPE_PARALLEL_TO_CS_OF_MEMBER;
-
+        > * For specific_direction type DIRECTION_TYPE_PARALLEL_TO_CS_OF_MEMBER;    
         params={‘specific_direction’ : [NodalLoadSpecificDirectionType.DIRECTION_TYPE_PARALLEL_TO_CS_OF_MEMBER, member_no]}
 
-    For shifted_display;
-
+        > * For shifted_display;    
         params={‘shifted_display’ : [offset_x, offset_y, offset_y, distance]}
 
 
+    * **model** (*RSTAB Class*, *optional*) – Model to be edited
 
-    * **model** (*RSTAB Class**, **optional*) – Model to be edited
-
-
-
-#### \__init__(no=1, load_case_no=1, nodes_no='1', load_direction=LoadDirectionType.LOAD_DIRECTION_GLOBAL_Z_OR_USER_DEFINED_W, magnitude=0.0, comment='', params=None, model=<class 'RSTAB.initModel.Model'>)
-
-* **Parameters**
-
-    
-    * **no** (*int*) – Load Tag
-
-
-    * **load_case_no** (*int*) – Assigned Load Case
-
-
-    * **nodes_no** (*str*) – Assigned Nodes
-
-
-    * **load_direction** (*enum*) – Load Direction Enumeration
-
-
-    * **magnitude** (*float*) – Force Magnitude
-
-
-    * **comment** (*str**, **optional*) – Comments
-
-
-    * **params** (*dict**, **optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
-
-
-    * **model** (*RSTAB Class**, **optional*) – Model to be edited
-
-
-## Module contents
