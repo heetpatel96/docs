@@ -29,32 +29,32 @@ module.exports = {
             "/guide/": [
               {
                 title: "Quick Start 🏃‍♀️",
-                collapsable: false,
+                collapsable: true,
                 children: ["", "getStarted"]
               },
               {
                 title: "RFEM Python HLF 🐍",
-                collapsable: false,
+                collapsable: true,
                 children: ["ready", "init", "RFEM.BasicObjects", "RFEM.ConcreteDesign", "RFEM.Imperfections", "RFEM.LoadCasesAndCombinations", "RFEM.Loads", "RFEM.SpecialObjects", "RFEM.TypesforConcreteDesign", "RFEM.TypesForLines", "RFEM.TypesForMembers", "RFEM.TypesForNodes", "RFEM.TypesForSolids", "RFEM.TypesForSpecialObjects", "RFEM.TypesForSteelDesign", "RFEM.TypesForSurfaces", "Articles"]
               },
               {
                 title: "RSTAB Python HLF 🐍",
-                collapsable: false,
+                collapsable: true,
                 children: ["RSTAB.BasicObjects", "RSTAB.ConcreteDesign", "RSTAB.Imperfections", "RSTAB.LoadCasesAndCombinations", "RSTAB.Loads", "RSTAB.SpecialObjects", "RSTAB.TypesforConcreteDesign", "RSTAB.TypesForMembers", "RSTAB.TypesForNodes", "RSTAB.TypesForSpecialObjects", "RSTAB.TypesForSteelDesign"]
               },
               {
                 title: ".NET HLF 🕸️",
-                collapsable: false,
+                collapsable: true,
                 children: ["netintro"]
               },
               {
                 title: "JavaScript Commands 📜",
-                collapsable: false,
+                collapsable: true,
                 children: ["MD/AnalysisSettings", "MD/BasicObjects", "MD/GuideObjects", "MD/Loading", "MD/Loads", "MD/LoadWizards", "MD/SpecialObjects", "MD/TypesForLines", "MD/TypesForMembers", "MD/TypesForNodes", "MD/TypesForSolids", "MD/TypesForSurfaces"]
               },
               {
                 title: "Tutorials 🗼",
-                collapsable: false,
+                collapsable: true,
                 children: ["tutorialintro"]
               },
             ]
