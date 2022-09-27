@@ -15,8 +15,9 @@ module.exports = {
             { text: 'User Guide',
               items: [
                 {text: 'Quick Start', link: '/guide/'},
-                {text: 'Python', link: '/guide/ready'},
+                {text: 'RFEM Python', link: '/guide/ready'},
                 {text: 'Articles', link: '/guide/Articles'},
+                {text: 'RSTAB Python', link: '/guide/RSTAB.BasicObjects'},
                 {text: '.NET', link: '/guide/netintro'},
                 {text: 'JavaScript', link: '/guide/MD/AnalysisSettings'},
                 {text: 'Tutorials', link: '/guide/tutorialintro'},
@@ -29,7 +30,7 @@ module.exports = {
             "/guide/": [
               {
                 title: "Quick Start 🏃‍♀️",
-                collapsable: true,
+                collapsable: false,
                 children: ["", "getStarted"]
               },
               {
