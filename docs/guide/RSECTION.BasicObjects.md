@@ -1,15 +1,34 @@
-# RSECTION.BasicObjects package
-
-## Submodules
-
-## RSECTION.BasicObjects.element module
+# BasicObjects 
 
 
-### _class_ RSECTION.BasicObjects.element.Element(no=1, points_no='1 2', thickness=0.0, comment='', params=None, model=<class 'RSECTION.initModel.Model'>)
-Bases: `object`
+## Element 
 
 
-#### _static_ Arc(no=1, points_no=[1, 2], control_point=None, alpha_adjustment_target=ElementArcAlphaAdjustmentTarget.ALPHA_ADJUSTMENT_TARGET_BEGINNING_OF_ARC, thickness=0.0, effective_thickness=[False, None], comment='', params=None, model=<class 'RSECTION.initModel.Model'>)
+### Element(no, points_no, thickness, comment, params, model)
+
+* **Parameters**
+
+    
+    * **no** (*int*) – Element Tag
+
+
+    * **points_no** (*str*) – Points Number
+
+
+    * **thickness** (*float*) – Element Thickness
+
+
+    * **comment** (*str*, *optional*) – Comments
+
+
+    * **params** (*dict*, *optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
+
+
+    * **model** (*RSECTION Class*, *optional*) – Model to be edited
+
+
+
+### Element.Arc(no, points_no, control_point, alpha_adjustment_target, thickness, effective_thickness, comment, params, model)
 
 * **Parameters**
 
@@ -32,17 +51,17 @@ Bases: `object`
     * **effective_thickness** (*list*) – Effective Thickness List
 
 
-    * **comment** (*str**, **optional*) – Comments
+    * **comment** (*str*, *optional*) – Comments
 
 
-    * **params** (*dict**, **optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
+    * **params** (*dict*, *optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
 
 
-    * **model** (*RSECTION Class**, **optional*) – Model to be edited
+    * **model** (*RSECTION Class*, *optional*) – Model to be edited
 
 
 
-#### _static_ Circle(no=1, center_of_cirle=[0.0, 0.0], circle_radius=0.1, thickness=0.0, effective_thickness=[False, None], comment='', params=None, model=<class 'RSECTION.initModel.Model'>)
+### Element.Circle(no, center_of_cirle, circle_radius, thickness, effective_thickness, comment, params, model)
 
 * **Parameters**
 
@@ -62,17 +81,17 @@ Bases: `object`
     * **effective_thickness** (*list*) – Effective Thickness List
 
 
-    * **comment** (*str**, **optional*) – Comments
+    * **comment** (*str*, *optional*) – Comments
 
 
-    * **params** (*dict**, **optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
+    * **params** (*dict*, *optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
 
 
-    * **model** (*RSECTION Class**, **optional*) – Model to be edited
+    * **model** (*RSECTION Class*, *optional*) – Model to be edited
 
 
 
-#### _static_ DeleteElement(elements_no='1 2', model=<class 'RSECTION.initModel.Model'>)
+### Element.DeleteElement(elements_no, model)
 
 * **Parameters**
 
@@ -80,11 +99,11 @@ Bases: `object`
     * **elements_no** (*str*) – Elements Number
 
 
-    * **model** (*RSECTION Class**, **optional*) – Model to be edited
+    * **model** (*RSECTION Class*, *optional*) – Model to be edited
 
 
 
-#### _static_ Ellipse(no=1, points_no=[1, 2], control_point=None, thickness=0.0, effective_thickness=[False, None], comment='', params=None, model=<class 'RSECTION.initModel.Model'>)
+### Element.Ellipse(no, points_no, control_point, thickness, effective_thickness, comment, params, model)
 
 * **Parameters**
 
@@ -104,17 +123,17 @@ Bases: `object`
     * **effective_thickness** (*list*) – Effective Thickness List
 
 
-    * **comment** (*str**, **optional*) – Comments
+    * **comment** (*str*, *optional*) – Comments
 
 
-    * **params** (*dict**, **optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
+    * **params** (*dict*, *optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
 
 
-    * **model** (*RSECTION Class**, **optional*) – Model to be edited
+    * **model** (*RSECTION Class*, *optional*) – Model to be edited
 
 
 
-#### _static_ NURBS(no=1, control_points=None, components=None, weights=None, order=None, thickness=0.0, effective_thickness=[False, None], comment='', params=None, model=<class 'RSECTION.initModel.Model'>)
+### Element.NURBS(no, control_points, components, weights, order, thickness, effective_thickness, comment, params, model)
 
 * **Parameters**
 
@@ -126,15 +145,13 @@ Bases: `object`
 
 
     * **components** (*list of lists*) – Control Points List
-    component = [[start_point_x, start_point_y],
 
-    > [control_point_x, control_point_y],
-    > ….,
-    > [end_point_x, end_point]]
-
+        > component = [[start_point_x, start_point_y], [control_point_x, control_point_y], ..., [end_point_x, end_point_y]]
 
 
     * **weights** (*list*) – Control Points Weights
+
+        > weights list lenght must be equal to components length
 
 
     * **order** (*int*) – Nurbs Order
@@ -146,17 +163,17 @@ Bases: `object`
     * **effective_thickness** (*list*) – Effective Thickness List
 
 
-    * **comment** (*str**, **optional*) – Comments
+    * **comment** (*str*, *optional*) – Comments
 
 
-    * **params** (*dict**, **optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
+    * **params** (*dict*, *optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
 
 
-    * **model** (*RSECTION Class**, **optional*) – Model to be edited
+    * **model** (*RSECTION Class*, *optional*) – Model to be edited
 
 
 
-#### _static_ Parabola(no=1, points_no=[1, 2], control_point=None, alpha=0.0, thickness=0.0, effective_thickness=[False, None], comment='', params=None, model=<class 'RSECTION.initModel.Model'>)
+### Element.Parabola(no, points_no, control_point, alpha, thickness, effective_thickness, comment, params, model)
 
 * **Parameters**
 
@@ -179,17 +196,17 @@ Bases: `object`
     * **effective_thickness** (*list*) – Effective Thickness List
 
 
-    * **comment** (*str**, **optional*) – Comments
+    * **comment** (*str*, *optional*) – Comments
 
 
-    * **params** (*dict**, **optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
+    * **params** (*dict*, *optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
 
 
-    * **model** (*RSECTION Class**, **optional*) – Model to be edited
+    * **model** (*RSECTION Class*, *optional*) – Model to be edited
 
 
 
-#### _static_ SingleLine(no=1, points_no='1 2', thickness=0.0, effective_thickness=[False, None], comment='', params=None, model=<class 'RSECTION.initModel.Model'>)
+### Element.SingleLine(no, points_no, thickness, effective_thickness, comment, params, model)
 
 * **Parameters**
 
@@ -206,47 +223,41 @@ Bases: `object`
     * **effective_thickness** (*list*) – Effective Thickness List
 
 
-    * **comment** (*str**, **optional*) – Comments
+    * **comment** (*str*, *optional*) – Comments
 
 
-    * **params** (*dict**, **optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
+    * **params** (*dict*, *optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
 
 
-    * **model** (*RSECTION Class**, **optional*) – Model to be edited
+    * **model** (*RSECTION Class*, *optional*) – Model to be edited
 
 
 
-#### \__init__(no=1, points_no='1 2', thickness=0.0, comment='', params=None, model=<class 'RSECTION.initModel.Model'>)
+## Line 
+
+
+### Line(no, points_no, comment, params, model)
 
 * **Parameters**
 
     
-    * **no** (*int*) – Element Tag
+    * **no** (*int*) – Line Tag
 
 
     * **points_no** (*str*) – Points Number
 
 
-    * **thickness** (*float*) – Element Thickness
+    * **comment** (*str*, *optional*) – Comments
 
 
-    * **comment** (*str**, **optional*) – Comments
+    * **params** (*dict*, *optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
 
 
-    * **params** (*dict**, **optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
+    * **model** (*RSECTION Class*, *optional*) – Model to be edited
 
 
-    * **model** (*RSECTION Class**, **optional*) – Model to be edited
 
-
-## RSECTION.BasicObjects.line module
-
-
-### _class_ RSECTION.BasicObjects.line.Line(no=1, points_no='1 2', comment='', params=None, model=<class 'RSECTION.initModel.Model'>)
-Bases: `object`
-
-
-#### _static_ Arc(no=1, points_no=[1, 2], control_point=None, alpha_adjustment_target=LineArcAlphaAdjustmentTarget.ALPHA_ADJUSTMENT_TARGET_BEGINNING_OF_ARC, comment='', params=None, model=<class 'RSECTION.initModel.Model'>)
+### Line.Arc(no, points_no, control_point, alpha_adjustment_target, comment, params, model)
 
 * **Parameters**
 
@@ -263,17 +274,17 @@ Bases: `object`
     * **alpha_adjustment_target** (*enum*) – Line Arc Alpha Adjustment Target Enumeration
 
 
-    * **comment** (*str**, **optional*) – Comments
+    * **comment** (*str*, *optional*) – Comments
 
 
-    * **params** (*dict**, **optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
+    * **params** (*dict*, *optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
 
 
-    * **model** (*RSECTION Class**, **optional*) – Model to be edited
+    * **model** (*RSECTION Class*, *optional*) – Model to be edited
 
 
 
-#### _static_ Circle(no=1, center_of_cirle=[0.0, 0.0], circle_radius=0.1, comment='', params=None, model=<class 'RSECTION.initModel.Model'>)
+### Line.Circle(no, center_of_cirle, circle_radius, comment, params, model)
 
 * **Parameters**
 
@@ -287,17 +298,17 @@ Bases: `object`
     * **circle_radius** (*float*) – Circle Radius
 
 
-    * **comment** (*str**, **optional*) – Comments
+    * **comment** (*str*, *optional*) – Comments
 
 
-    * **params** (*dict**, **optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
+    * **params** (*dict*, *optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
 
 
-    * **model** (*RSECTION Class**, **optional*) – Model to be edited
+    * **model** (*RSECTION Class*, *optional*) – Model to be edited
 
 
 
-#### _static_ DeleteLine(lines_no='1 2', model=<class 'RSECTION.initModel.Model'>)
+### Line.DeleteLine(lines_no, model)
 
 * **Parameters**
 
@@ -305,11 +316,11 @@ Bases: `object`
     * **lines_no** (*str*) – Line Number
 
 
-    * **model** (*RSECTION Class**, **optional*) – Model to be edited
+    * **model** (*RSECTION Class*, *optional*) – Model to be edited
 
 
 
-#### _static_ Ellipse(no=1, points_no=[1, 2], control_point=None, comment='', params=None, model=<class 'RSECTION.initModel.Model'>)
+### Line.Ellipse(no, points_no, control_point, comment, params, model)
 
 * **Parameters**
 
@@ -323,17 +334,17 @@ Bases: `object`
     * **control_point** (*list*) – Control Point coordinate for Ellipse in [Y, Z]
 
 
-    * **comment** (*str**, **optional*) – Comments
+    * **comment** (*str*, *optional*) – Comments
 
 
-    * **params** (*dict**, **optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
+    * **params** (*dict*, *optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
 
 
-    * **model** (*RSECTION Class**, **optional*) – Model to be edited
+    * **model** (*RSECTION Class*, *optional*) – Model to be edited
 
 
 
-#### _static_ NURBS(no=1, control_points=None, components=None, weights=None, order=None, comment='', params=None, model=<class 'RSECTION.initModel.Model'>)
+### Line.NURBS(no, control_points, components, weights, order, comment, params, model)
 
 * **Parameters**
 
@@ -345,12 +356,8 @@ Bases: `object`
 
 
     * **components** (*list of lists*) – Control Points List
-    component = [[start_point_x, start_point_y],
 
-    > [control_point_x, control_point_y],
-    > ….,
-    > [end_point_x, end_point]]
-
+        > component = [[start_point_x, start_point_y], [control_point_x, control_point_y], ..., [end_point_x, end_point]]
 
 
     * **weights** (*list*) – Control Points Weights
@@ -359,17 +366,17 @@ Bases: `object`
     * **order** (*int*) – Nurbs Order
 
 
-    * **comment** (*str**, **optional*) – Comments
+    * **comment** (*str*, *optional*) – Comments
 
 
-    * **params** (*dict**, **optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
+    * **params** (*dict*, *optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
 
 
-    * **model** (*RSECTION Class**, **optional*) – Model to be edited
+    * **model** (*RSECTION Class*, *optional*) – Model to be edited
 
 
 
-#### _static_ Parabola(no=1, points_no=[1, 2], control_point=None, alpha=0.0, comment='', params=None, model=<class 'RSECTION.initModel.Model'>)
+### Line.Parabola(no, points_no, control_point, alpha, comment, params, model)
 
 * **Parameters**
 
@@ -386,38 +393,17 @@ Bases: `object`
     * **alpha** (*float*) – Alpha Angle (in Radians)
 
 
-    * **comment** (*str**, **optional*) – Comments
+    * **comment** (*str*, *optional*) – Comments
 
 
-    * **params** (*dict**, **optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
+    * **params** (*dict*, *optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
 
 
-    * **model** (*RSECTION Class**, **optional*) – Model to be edited
-
-
-
-#### _static_ Polyline(no=1, points_no='1 2', comment='', params=None, model=<class 'RSECTION.initModel.Model'>)
-
-* **Parameters**
-
-    
-    * **no** (*int*) – Line Tag
-
-
-    * **points_no** (*str*) – Points Number
-
-
-    * **comment** (*str**, **optional*) – Comments
-
-
-    * **params** (*dict**, **optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
-
-
-    * **model** (*RSECTION Class**, **optional*) – Model to be edited
+    * **model** (*RSECTION Class*, *optional*) – Model to be edited
 
 
 
-#### \__init__(no=1, points_no='1 2', comment='', params=None, model=<class 'RSECTION.initModel.Model'>)
+### Line.Polyline(no, points_no, comment, params, model)
 
 * **Parameters**
 
@@ -428,35 +414,20 @@ Bases: `object`
     * **points_no** (*str*) – Points Number
 
 
-    * **comment** (*str**, **optional*) – Comments
+    * **comment** (*str*, *optional*) – Comments
 
 
-    * **params** (*dict**, **optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
+    * **params** (*dict*, *optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
 
 
-    * **model** (*RSECTION Class**, **optional*) – Model to be edited
-
-
-## RSECTION.BasicObjects.material module
-
-
-### _class_ RSECTION.BasicObjects.material.Material(no=1, name='Grade S275', comment='', params=None, model=<class 'RSECTION.initModel.Model'>)
-Bases: `object`
-
-
-#### _static_ DeleteMaterial(materials_no='1 2', model=<class 'RSECTION.initModel.Model'>)
-
-* **Parameters**
-
-    
-    * **materials_no** (*str*) – Materials Number
-
-
-    * **model** (*RSECTION Class**, **optional*) – Model to be edited
+    * **model** (*RSECTION Class*, *optional*) – Model to be edited
 
 
 
-#### \__init__(no=1, name='Grade S275', comment='', params=None, model=<class 'RSECTION.initModel.Model'>)
+## Material 
+
+
+### Material(no, name, comment, params, model)
 
 * **Parameters**
 
@@ -467,35 +438,32 @@ Bases: `object`
     * **name** (*str*) – Material Name
 
 
-    * **comment** (*str**, **optional*) – Comments
+    * **comment** (*str*, *optional*) – Comments
 
 
-    * **params** (*dict**, **optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
+    * **params** (*dict*, *optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
 
 
-    * **model** (*RSECTION Class**, **optional*) – Model to be edited
+    * **model** (*RSECTION Class*, *optional*) – Model to be edited
 
 
-## RSECTION.BasicObjects.opening module
 
-
-### _class_ RSECTION.BasicObjects.opening.Opening(no=1, boundary_lines='1 2 3 4', part_no=1, comment='', params=None, model=<class 'RSECTION.initModel.Model'>)
-Bases: `object`
-
-
-#### _static_ DeleteOpening(openings_no='1 2', model=<class 'RSECTION.initModel.Model'>)
+### Material.DeleteMaterial(materials_no, model)
 
 * **Parameters**
 
     
-    * **openings_no** (*str*) – Openings Number
+    * **materials_no** (*str*) – Materials Number
 
 
-    * **model** (*RSECTION Class**, **optional*) – Model to be edited
+    * **model** (*RSECTION Class*, *optional*) – Model to be edited
 
 
 
-#### \__init__(no=1, boundary_lines='1 2 3 4', part_no=1, comment='', params=None, model=<class 'RSECTION.initModel.Model'>)
+## Opening 
+
+
+### Opening(no, boundary_lines, part_no, comment, params, model)
 
 * **Parameters**
 
@@ -509,35 +477,32 @@ Bases: `object`
     * **part_no** (*int*) – Part Number
 
 
-    * **comment** (*str**, **optional*) – Comments
+    * **comment** (*str*, *optional*) – Comments
 
 
-    * **params** (*dict**, **optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
+    * **params** (*dict**, *optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
 
 
-    * **model** (*RSECTION Class**, **optional*) – Model to be edited
+    * **model** (*RSECTION Class*, *optional*) – Model to be edited
 
 
-## RSECTION.BasicObjects.part module
 
-
-### _class_ RSECTION.BasicObjects.part.Part(no=1, boundary_lines=None, material_no=1, integrated_objects=True, integrated_objects_auto=True, integrated_openings=None, comment='', params=None, model=<class 'RSECTION.initModel.Model'>)
-Bases: `object`
-
-
-#### _static_ DeletePart(parts_no='1 2', model=<class 'RSECTION.initModel.Model'>)
+### Opening.DeleteOpening(openings_no, model)
 
 * **Parameters**
 
     
-    * **parts_no** (*str*) – Parts Number
+    * **openings_no** (*str*) – Openings Number
 
 
-    * **model** (*RSECTION Class**, **optional*) – Model to be edited
+    * **model** (*RSECTION Class*, *optional*) – Model to be edited
 
 
 
-#### \__init__(no=1, boundary_lines=None, material_no=1, integrated_objects=True, integrated_objects_auto=True, integrated_openings=None, comment='', params=None, model=<class 'RSECTION.initModel.Model'>)
+## Part 
+
+
+### Part(no, boundary_lines, material_no, integrated_objects, integrated_objects_auto, integrated_openings, comment, params, model)
 
 * **Parameters**
 
@@ -560,23 +525,56 @@ Bases: `object`
     * **integrated_openings** (*str*) – Inegrated Openings Line Number
 
 
-    * **comment** (*str**, **optional*) – Comments
+    * **comment** (*str*, *optional*) – Comments
 
 
-    * **params** (*dict**, **optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
+    * **params** (*dict*, *optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
 
 
-    * **model** (*RSECTION Class**, **optional*) – Model to be edited
+    * **model** (*RSECTION Class*, *optional*) – Model to be edited
 
 
-## RSECTION.BasicObjects.point module
+
+### Part.DeletePart(parts_no, model)
+
+* **Parameters**
+
+    
+    * **parts_no** (*str*) – Parts Number
 
 
-### _class_ RSECTION.BasicObjects.point.Point(no=1, coordinate_Y=0.0, coordinate_Z=0.0, comment='', params=None, model=<class 'RSECTION.initModel.Model'>)
-Bases: `object`
+    * **model** (*RSECTION Class*, *optional*) – Model to be edited
 
 
-#### _static_ BetweenTwoLocations(no=1, start_point_y=0.0, start_point_z=0.0, end_point_y=1.0, end_point_z=1.0, point_reference=PointReferenceType.REFERENCE_TYPE_L, parameters=[True, 0.5], offset=0.0, comment='', params=None, model=<class 'RSECTION.initModel.Model'>)
+
+## Point 
+
+
+### Point(no, coordinate_Y, coordinate_Z, comment, params, model)
+
+* **Parameters**
+
+    
+    * **no** (*int*) – Point Tag
+
+
+    * **coordinate_Y** (*float*) – Y-Coordinate
+
+
+    * **coordinate_Z** (*float*) – Z-Coordinate
+
+
+    * **comment** (*str*, *optional*) – Comments
+
+
+    * **params** (*dict*, *optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
+
+
+    * **model** (*RSECTION Class*, *optional*) – Model to be edited
+
+
+
+### Point.BetweenTwoLocations(no, start_point_y, start_point_z, end_point_y, end_point_z, point_reference, parameters, offset, comment, params, model)
 
 * **Parameters**
 
@@ -600,30 +598,28 @@ Bases: `object`
 
 
     * **parameters** (*list*) – Point Reference Parameter List
-    for relative reference:
 
-    > parameters = [True, distance_from_start_relative] ex: [True, 0.5]
+        > * for relative reference:     
+        parameters = [True, distance_from_start_relative] ex: [True, 0.5]
 
-    for absolute reference:
-
+        > * for absolute reference:     
         parameters = [False, distance_from_start_absolute]
-
 
 
     * **offset** (*float*) – Offset Value
 
 
-    * **comment** (*str**, **optional*) – Comments
+    * **comment** (*str*, *optional*) – Comments
 
 
-    * **params** (*dict**, **optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
+    * **params** (*dict*, *optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
 
 
-    * **model** (*RSECTION Class**, **optional*) – Model to be edited
+    * **model** (*RSECTION Class*, *optional*) – Model to be edited
 
 
 
-#### _static_ BetweenTwoPoints(no=1, start_point_no=1, end_point_no=2, point_reference=PointReferenceType.REFERENCE_TYPE_L, parameters=[True, 0.5], offset=0.0, comment='', params=None, model=<class 'RSECTION.initModel.Model'>)
+### Point.BetweenTwoPoints(no, start_point_no, end_point_no, point_reference, parameters, offset, comment, params, model)
 
 * **Parameters**
 
@@ -641,30 +637,28 @@ Bases: `object`
 
 
     * **parameters** (*list*) – Point Reference Parameter List
-    for relative reference:
 
-    > parameters = [True, distance_from_start_relative] ex: [True, 0.5]
+        > * for relative reference:     
+        parameters = [True, distance_from_start_relative] ex: [True, 0.5]
 
-    for absolute reference:
-
+        > * for absolute reference:     
         parameters = [False, distance_from_start_absolute]
-
 
 
     * **offset** (*float*) – Offset Value
 
 
-    * **comment** (*str**, **optional*) – Comments
+    * **comment** (*str*, *optional*) – Comments
 
 
-    * **params** (*dict**, **optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
+    * **params** (*dict*, *optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
 
 
-    * **model** (*RSECTION Class**, **optional*) – Model to be edited
+    * **model** (*RSECTION Class*, *optional*) – Model to be edited
 
 
 
-#### _static_ DeletePoint(points_no='1 2', model=<class 'RSECTION.initModel.Model'>)
+### Point.DeletePoint(points_no, model)
 
 * **Parameters**
 
@@ -672,11 +666,11 @@ Bases: `object`
     * **points_no** (*str*) – Points Number
 
 
-    * **model** (*RSECTION Class**, **optional*) – Model to be edited
+    * **model** (*RSECTION Class*, *optional*) – Model to be edited
 
 
 
-#### _static_ OnLine(no=1, line_no=1, point_reference=PointReferenceType.REFERENCE_TYPE_L, parameters=[True, 0.5], comment='', params=None, model=<class 'RSECTION.initModel.Model'>)
+### Point.OnLine(no, line_no, point_reference, parameters, comment, params, model)
 
 * **Parameters**
 
@@ -691,27 +685,25 @@ Bases: `object`
 
 
     * **parameters** (*list*) – Point Reference Parameter List
-    for relative reference:
 
-    > parameters = [True, distance_from_start_relative] ex: [True, 0.5]
+        > * for relative reference:     
+        parameters = [True, distance_from_start_relative] ex: [True, 0.5]
 
-    for absolute reference:
-
+        > * for absolute reference:     
         parameters = [False, distance_from_start_absolute]
 
 
-
-    * **comment** (*str**, **optional*) – Comments
-
-
-    * **params** (*dict**, **optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
+    * **comment** (*str*, *optional*) – Comments
 
 
-    * **model** (*RSECTION Class**, **optional*) – Model to be edited
+    * **params** (*dict*, *optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
+
+
+    * **model** (*RSECTION Class*, *optional*) – Model to be edited
 
 
 
-#### _static_ Standard(no=1, reference_point=None, coordinate_system=None, comment='', params=None, model=<class 'RSECTION.initModel.Model'>)
+### Point.Standard(no, reference_point, coordinate_system, comment, params, model)
 
 * **Parameters**
 
@@ -723,62 +715,24 @@ Bases: `object`
 
 
     * **coordinate_system** (*list*) – Coordinate System List
-    coordinate_system = [coordinate_Y, coordinate_Z]
+
+        > coordinate_system = [coordinate_Y, coordinate_Z]
 
 
-    * **comment** (*str**, **optional*) – Comments
+    * **comment** (*str*, *optional*) – Comments
 
 
-    * **params** (*dict**, **optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
+    * **params** (*dict*, *optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
 
 
-    * **model** (*RSECTION Class**, **optional*) – Model to be edited
-
-
-
-#### \__init__(no=1, coordinate_Y=0.0, coordinate_Z=0.0, comment='', params=None, model=<class 'RSECTION.initModel.Model'>)
-
-* **Parameters**
-
-    
-    * **no** (*int*) – Point Tag
-
-
-    * **coordinate_Y** (*float*) – Y-Coordinate
-
-
-    * **coordinate_Z** (*float*) – Z-Coordinate
-
-
-    * **comment** (*str**, **optional*) – Comments
-
-
-    * **params** (*dict**, **optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
-
-
-    * **model** (*RSECTION Class**, **optional*) – Model to be edited
-
-
-## RSECTION.BasicObjects.section module
-
-
-### _class_ RSECTION.BasicObjects.section.Section(no=1, name='IPE 80', material_no=1, comment='', params=None, model=<class 'RSECTION.initModel.Model'>)
-Bases: `object`
-
-
-#### _static_ DeleteSection(sections_no='1 2', model=<class 'RSECTION.initModel.Model'>)
-
-* **Parameters**
-
-    
-    * **sections_no** (*str*) – Sections Number
-
-
-    * **model** (*RSECTION Class**, **optional*) – Model to be edited
+    * **model** (*RSECTION Class*, *optional*) – Model to be edited
 
 
 
-#### \__init__(no=1, name='IPE 80', material_no=1, comment='', params=None, model=<class 'RSECTION.initModel.Model'>)
+## Section 
+
+
+### Section(no, name, material_no, comment, params, model)
 
 * **Parameters**
 
@@ -792,13 +746,23 @@ Bases: `object`
     * **material_no** (*int*) – Material Number
 
 
-    * **comment** (*str**, **optional*) – Comments
+    * **comment** (*str*, *optional*) – Comments
 
 
-    * **params** (*dict**, **optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
+    * **params** (*dict*, *optional*) – Any WS Parameter relevant to the object and its value in form of a dictionary
 
 
-    * **model** (*RSECTION Class**, **optional*) – Model to be edited
+    * **model** (*RSECTION Class*, *optional*) – Model to be edited
 
 
-## Module contents
+
+#### _static_ DeleteSection(sections_no, model)
+
+* **Parameters**
+
+    
+    * **sections_no** (*str*) – Sections Number
+
+
+    * **model** (*RSECTION Class*, *optional*) – Model to be edited
+
