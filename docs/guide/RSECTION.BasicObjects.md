@@ -756,7 +756,7 @@
 
 
 
-#### _static_ DeleteSection(sections_no, model)
+### Section.DeleteSection(sections_no, model)
 
 * **Parameters**
 
