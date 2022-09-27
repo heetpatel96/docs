@@ -44,6 +44,11 @@ module.exports = {
                 children: ["RSTAB.BasicObjects", "RSTAB.ConcreteDesign", "RSTAB.Imperfections", "RSTAB.LoadCasesAndCombinations", "RSTAB.Loads", "RSTAB.SpecialObjects", "RSTAB.TypesforConcreteDesign", "RSTAB.TypesForMembers", "RSTAB.TypesForNodes", "RSTAB.TypesForSpecialObjects", "RSTAB.TypesForSteelDesign"]
               },
               {
+                title: "RSECTION Python HLF 🐍",
+                collapsable: true,
+                children: ["RSECTION.BasicObjects"]
+              },
+              {
                 title: ".NET HLF 🕸️",
                 collapsable: true,
                 children: ["netintro"]
