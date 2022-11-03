@@ -46,7 +46,7 @@ module.exports = {
               {
                 title: "RSECTION Python HLF 🐍",
                 collapsable: true,
-                children: ["RSECTION.BasicObjects"]
+                children: ["RSECTION.BasicObjects", "RSECTION.LoadCasesAndCombinations"]
               },
               {
                 title: ".NET HLF 🕸️",
