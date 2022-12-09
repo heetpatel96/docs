@@ -15,10 +15,12 @@ module.exports = {
             { text: 'User Guide',
               items: [
                 {text: 'Quick Start', link: '/guide/'},
-                {text: 'RFEM Python', link: '/guide/ready'},
                 {text: 'Articles', link: '/guide/Articles'},
+                {text: 'RFEM Python', link: '/guide/ready'},
                 {text: 'RSTAB Python', link: '/guide/RSTAB.BasicObjects'},
+                {text: 'RSECTION Python', link: '/guide/RSECTION.BasicObjects'},
                 {text: '.NET', link: '/guide/netintro'},
+                {text: 'JaveScript Articles', link: '/guide/MD/JSarticles'},
                 {text: 'JavaScript', link: '/guide/MD/AnalysisSettings'},
                 {text: 'Tutorials', link: '/guide/tutorialintro'},
               ]
@@ -61,7 +63,7 @@ module.exports = {
               {
                 title: "JavaScript Articles",
                 collapsable: true,
-                children: ["MD/JSarticles"]
+                children: ["MD/JSarticles", "MD/introblock", "MD/functionforBlocks"]
               },
               {
                 title: "JavaScript Commands 📜",
