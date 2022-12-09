@@ -34,9 +34,14 @@ module.exports = {
                 children: ["", "getStarted"]
               },
               {
+                title: "Articles",
+                collapsable: true,
+                children: ["Articles"]
+              },
+              {
                 title: "RFEM Python HLF 🐍",
                 collapsable: true,
-                children: ["ready", "init", "RFEM.BasicObjects", "RFEM.ConcreteDesign", "RFEM.Imperfections", "RFEM.LoadCasesAndCombinations", "RFEM.Loads", "RFEM.SpecialObjects", "RFEM.SteelDesign", "RFEM.TypesForAluminumDesign", "RFEM.TypesforConcreteDesign", "RFEM.TypesForLines", "RFEM.TypesForMembers", "RFEM.TypesForNodes", "RFEM.TypesForSolids", "RFEM.TypesForSpecialObjects", "RFEM.TypesForSteelDesign", "RFEM.TypesForSurfaces", "RFEM.TypesForTimberDesign", "Articles"]
+                children: ["ready", "init", "RFEM.BasicObjects", "RFEM.ConcreteDesign", "RFEM.Imperfections", "RFEM.LoadCasesAndCombinations", "RFEM.Loads", "RFEM.SpecialObjects", "RFEM.SteelDesign", "RFEM.TypesForAluminumDesign", "RFEM.TypesforConcreteDesign", "RFEM.TypesForLines", "RFEM.TypesForMembers", "RFEM.TypesForNodes", "RFEM.TypesForSolids", "RFEM.TypesForSpecialObjects", "RFEM.TypesForSteelDesign", "RFEM.TypesForSurfaces", "RFEM.TypesForTimberDesign"]
               },
               {
                 title: "RSTAB Python HLF 🐍",
@@ -52,6 +57,11 @@ module.exports = {
                 title: ".NET HLF 🕸️",
                 collapsable: true,
                 children: ["netintro"]
+              },
+              {
+                title: "JavaScript Articles",
+                collapsable: true,
+                children: ["MD/JSarticles"]
               },
               {
                 title: "JavaScript Commands 📜",
