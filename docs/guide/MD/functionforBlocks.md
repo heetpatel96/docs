@@ -2,8 +2,8 @@
 
 ## Sections
 
-1. [global_parameters()](#global_parameters)
-2. [input_data()](#input_data)
+1. [global_parameters()](#global-parameters)
+2. [input_data()](#input-data)
 3. [generate()](#generate)
 4. [model variable in block scripts](#model-variable)
 5. [UNIT variables](#unit)
