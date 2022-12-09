@@ -275,8 +275,9 @@ Function creates input field for material object, which exists in model.
 * name - name of parameter in input table
 * multiplicity_counter_key - key of counter, which was created by function parameter_int() function.
 
-> [!NOTE] 
-> [Read about important behavior.](#important-behavior-of-input-and-generated-objects)
+::: tip NOTE 💡
+[Read about important behavior.](#important-behavior-of-input-and-generated-objects)
+:::
 
 ### function section(no, name, multiplicity_counter_key, category)
 
@@ -288,8 +289,9 @@ Function creates input field for section object, which exists in model.
 * name - name of parameter in input table
 * multiplicity_counter_key - key of counter, which was created by function parameter_int() function.
 
-> [!NOTE] 
-> [Read about important behavior.](#important-behavior-of-input-and-generated-objects)
+::: tip NOTE 💡 
+[Read about important behavior.](#important-behavior-of-input-and-generated-objects)
+:::
 
 ### function thickness(no, name, multiplicity_counter_key)
 
@@ -301,8 +303,9 @@ no - script id of thickness objects. Thickness will be added to thicknesses map.
 name - name of parameter in input table
 multiplicity_counter_key - key of counter, which was created by function parameter_int() function.
 
-> [!NOTE] 
-> [Read about important behavior.](#important-behavior-of-input-and-generated-objects)
+::: tip NOTE 💡 
+[Read about important behavior.](#important-behavior-of-input-and-generated-objects)
+:::
 
 ### function nodal_support(no, name, multiplicity_counter_key)
 
@@ -314,8 +317,9 @@ Function creates input field for Nodal Support object, which exists in model.
 * name - name of parameter in input table
 * multiplicity_counter_key - key of counter, which was created by function parameter_int() function.
 
-> [!NOTE] 
-> Nodal supports exists like input objects only.
+::: tip NOTE 💡 
+Nodal supports exists like input objects only.
+:::
 
 ### function line_support(no, name, multiplicity_counter_key)
 
@@ -327,8 +331,9 @@ Function creates input field for Line Support object, which exists in model.
 * name - name of parameter in input table
 * multiplicity_counter_key - key of counter, which was created by function parameter_int() function.
 
-> [!NOTE]
-> Line supports exists like input objects only.
+::: tip NOTE 💡
+Line supports exists like input objects only.
+:::
 
 ### function member_support(no, name, multiplicity_counter_key)
 
@@ -340,8 +345,9 @@ Function creates input field for Member Support object, which exists in model.
 * name - name of parameter in input table
 * multiplicity_counter_key - key of counter, which was created by function parameter_int() function.
 
-> [!NOTE]
-> Member supports exists like input objects only.
+::: tip NOTE 💡
+Member supports exists like input objects only.
+:::
 
 ### function surface_support(no, name, multiplicity_counter_key)
 
@@ -353,8 +359,9 @@ Function creates input field for Surface Support object, which exists in model.
 * name - name of parameter in input table
 * multiplicity_counter_key - key of counter, which was created by function parameter_int() function.
 
-> [!NOTE]
-> Surface supports exists like input objects only.
+::: tip NOTE 💡
+Surface supports exists like input objects only.
+:::
 
 ### function load_case(no, name, multiplicity_counter_key)
 
@@ -366,8 +373,9 @@ Function creates input field for Load Case object, which exists in model. Load c
 * name - name of parameter in input table
 * multiplicity_counter_key - key of counter, which was created by function parameter_int() function.
 
-> [!NOTE]
-> Load cases exists like input objects only.
+::: tip NOTE 💡
+Load cases exists like input objects only.
+:::
 
 ### function parameter_check(name, key, value)
 
@@ -827,8 +835,9 @@ function generate()
 }
 ```
 
-> [!CAUTION]
-> If Member created in RFEM, with Member will be created Line with same id. It means when we create member number 3, in same time will be created line number 3.
+::: tip CAUTION ⚠️
+If Member created in RFEM, with Member will be created Line with same id. It means when we create member number 3, in same time will be created line number 3.
+:::
 
 ### function Surface(no, boundary_lines, thickness, comment, params)
 
@@ -1138,9 +1147,10 @@ function generate()
     }
 }
 ```
-> [!Caution]
-> All nodal loads from different load cases will be add to same map. Therefore all loads should get different script id.
-> Read more about important behavior of loads.
+::: tip CAUTION ⚠️
+All nodal loads from different load cases will be add to same map. Therefore all loads should get different script id.
+Read more about important behavior of loads.
+:::
 
 ### function LineLoad(no, load_case, lines, comment, params)
 
@@ -1185,9 +1195,10 @@ function generate()
     }
 }
 ```
-> [!Caution]
-> All line loads from different load cases will be add to same map. Therefore all loads should get different script id.
-> Read more about important behavior of loads.
+::: tip CAUTION ⚠️
+All line loads from different load cases will be add to same map. Therefore all loads should get different script id.
+Read more about important behavior of loads.
+:::
 
 ### function MemberLoad(no, load_case, members, comment, params)
 
@@ -1232,9 +1243,10 @@ function generate()
     }
 }
 ```
->[!Caution]
->All member loads from different load cases will be add to same map. Therefore all loads should get different script id.
->Read more about important behavior of loads.
+::: tip CAUTION ⚠️
+All member loads from different load cases will be add to same map. Therefore all loads should get different script id.
+Read more about important behavior of loads.
+:::
 
 ### function SurfaceLoad(no, load_case, surfaces, comment, params)
 
@@ -1286,9 +1298,10 @@ function generate()
 }
 ```
 
->[!Caution]
-> All surface loads from different load cases will be add to same map. Therefore all loads should get different script id.
-> Read more about important behavior of loads.
+::: tip CAUTION ⚠️
+All surface loads from different load cases will be add to same map. Therefore all loads should get different script id.
+Read more about important behavior of loads.
+:::
 
 ### function SolidLoad(no, load_case, solids, comment, params)
 
@@ -1354,9 +1367,11 @@ function generate()
     }
 }
 ```
->[!Caution]
-> All solid loads from different load cases will be add to same map. Therefore all loads should get different script id.
-> Read more about important behavior of loads.
+
+::: tip CAUTION ⚠️
+All solid loads from different load cases will be add to same map. Therefore all loads should get different script id.
+Read more about important behavior of loads.
+:::
 
 ### function OpeningLoad(no, load_case, openings, comment, params)
 
@@ -1413,9 +1428,11 @@ function generate()
     }
 }
 ```
-> [!Caution]
-> All opening loads from different load cases will be add to same map. Therefore all loads should get different script id.
-> Read more about important behavior of loads.
+
+::: tip CAUTION ⚠️
+All opening loads from different load cases will be add to same map. Therefore all loads should get different script id.
+Read more about important behavior of loads.
+:::
 
 ### function LineSetLoad(no, load_case, line_sets, comment, params)
 
@@ -1465,9 +1482,11 @@ function generate()
     }
 }
 ```
->[!Caution]
-> All line set loads from different load cases will be add to same map. Therefore all loads should get different script id.
-> Read more about important behavior of loads.
+
+::: tip CAUTION ⚠️
+All line set loads from different load cases will be add to same map. Therefore all loads should get different script id.
+Read more about important behavior of loads.
+:::
 
 ### function MemberSetLoad(no, load_case, member_sets, comment, params)
 
@@ -1517,9 +1536,11 @@ function generate()
     }
 }
 ```
-> [!Caution]
-> All member set loads from different load cases will be add to same map. Therefore all loads should get different script id.
-> Read more about important behavior of loads.
+
+::: tip CAUTION ⚠️
+All member set loads from different load cases will be add to same map. Therefore all loads should get different script id.
+Read more about important behavior of loads.
+:::
 
 ### function SurfaceSetLoad(no, load_case, surface_sets, comment, params)
 
@@ -1576,9 +1597,11 @@ function generate()
     }
 }
 ```
-> [!Caution]
-> All surface set loads from different load cases will be add to same map. Therefore all loads should get different script id.
-> Read more about important behavior of loads.
+
+::: tip CAUTION ⚠️
+All surface set loads from different load cases will be add to same map. Therefore all loads should get different script id.
+Read more about important behavior of loads.
+:::
 
 ### function SolidSetLoad(no, load_case, solid_sets, comment, params)
 
@@ -1615,9 +1638,11 @@ function generate()
     }
 }
 ```
-> [!Caution]
-> All solid set loads from different load cases will be add to same map. Therefore all loads should get different script id.
-> Read more about important behavior of loads.
+
+::: tip CAUTION ⚠️
+All solid set loads from different load cases will be add to same map. Therefore all loads should get different script id.
+Read more about important behavior of loads.
+:::
 
 ### function FreeConcentratedLoad(no, load_case, surfaces, comment, params)
 
@@ -1668,9 +1693,11 @@ function generate()
     }
 }
 ```
-> [!Caution]
-> All free concentrated loads from different load cases will be add to same map. Therefore all loads should get different script id.
-> Read more about important behavior of loads.
+
+::: tip CAUTION ⚠️
+All free concentrated loads from different load cases will be add to same map. Therefore all loads should get different script id.
+Read more about important behavior of loads.
+:::
 
 ### function FreeLineLoad(no, load_case, surfaces, comment, params)
 
@@ -1707,9 +1734,11 @@ function generate()
     }
 }
 ```
-> [!Caution]
-> All free line loads from different load cases will be add to same map. Therefore all loads should get different script id.
-> Read more about important behavior of loads.
+
+::: tip CAUTION ⚠️
+All free line loads from different load cases will be add to same map. Therefore all loads should get different script id.
+Read more about important behavior of loads.
+:::
 
 ### function FreeRectangularLoad(no, load_case, surfaces, comment, params)
 
@@ -1747,9 +1776,10 @@ function generate()
 }
 ```
 
-> [!Caution]
-> All free rectangular loads from different load cases will be add to same map. Therefore all loads should get different script id.
-> Read more about important behavior of loads.
+::: tip CAUTION ⚠️
+All free rectangular loads from different load cases will be add to same map. Therefore all loads should get different script id.
+Read more about important behavior of loads.
+:::
 
 ### function FreeCircularLoad(no, load_case, surfaces, comment, params)
 
@@ -1786,9 +1816,11 @@ function generate()
     }
 }
 ```
-> [!Caution]
-> All free circular loads from different load cases will be add to same map. Therefore all loads should get different script id.
-> Read more about important behavior of loads.
+
+::: tip CAUTION ⚠️
+All free circular loads from different load cases will be add to same map. Therefore all loads should get different script id.
+Read more about important behavior of loads.
+:::
 
 ### function FreePolygonLoad(no, load_case, surfaces, comment, params)
 
@@ -1825,9 +1857,11 @@ function generate()
     }
 }
 ```
-> [!Caution]
-> All free polygon loads from different load cases will be add to same map. Therefore all loads should get different script id.
-> Read more about important behavior of loads.
+
+::: tip CAUTION ⚠️
+All free polygon loads from different load cases will be add to same map. Therefore all loads should get different script id.
+Read more about important behavior of loads.
+:::
 
 ### function ImposedLineDeformation(no, load_case, lines, comment, params)
 
@@ -1905,8 +1939,10 @@ Creating angular dimension with objects with same reference type via positional 
 ```javascript
 AngularDimension(18, [3, 5, 2], members[4], model.dimensions.REFERENCE_TYPE_MEMBER, "A", offset, model.dimensions.ANGULAR_QUADRANT_POSITIVE);
 ```
-> [!Caution]
-> If you use positional parameters, you can't use reference object with different types.
+
+::: tip CAUTION ⚠️
+If you use positional parameters, you can't use reference object with different types.
+:::
 
 The following example is bad. Because of second positional parameter is a Node, but function wait Member, by positional parameter 4 (model.dimensions.REFERENCE_TYPE_MEMBER).
 

@@ -84,7 +84,10 @@ Object properties can be of different types, which are also listed in the "Objec
 
 ### Float
 Returns as a JavaScript number. When you set properties, either a number or a string that can be converted to a number is also expected. 
-> [!Caution] The value is always returned and set in SI units.
+
+::: tip CAUTION ⚠️
+The value is always returned and set in SI units.
+:::
 
 ### String
 It returns as String. Almost anything can be set (converted to text).
