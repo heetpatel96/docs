@@ -2239,10 +2239,10 @@ Go to *[[source]](https://github.com/Dlubal-Software/RFEM_Python_Client/tree/mai
     * **name** (*str*) – Thickness Name
 
 
-    * **layers** (*list of lists*) - Layers Table as an Array
+    * **layers** (*list of lists*) - Layers Table as an Array. Angle of the material will be set if material model is orthotropic.
 
 
-        > layers = [[thickness_type, material, thickness], ...]
+        > layers = [[thickness_type, material, thickness, angle], ...]
 
 
     * **stiffness_reduction** (*bool, optional*) – Enable/disable Stiffness Reduction
