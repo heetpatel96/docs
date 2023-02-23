@@ -6,7 +6,7 @@ Go to *[[source]](https://github.com/Dlubal-Software/RFEM_Python_Client/tree/mai
 ## TimberDesignServiceLimitStateConfigurations
 
 
-### TimberDesignServiceLimitStateConfigurations(no, name, members_no, member_sets_no, , comment, params, model)
+### TimberDesignServiceLimitStateConfigurations(no, name, members_no, member_sets_no, comment, params, model)
 
 * **Parameters**
 
@@ -36,7 +36,7 @@ Go to *[[source]](https://github.com/Dlubal-Software/RFEM_Python_Client/tree/mai
 ## TimberDesignUltimateConfigurations
 
 
-### TimberDesignUltimateConfigurations(no, name, members_no, member_sets_no, , comment, params, model)
+### TimberDesignUltimateConfigurations(no, name, members_no, member_sets_no, comment, params, model)
 
 * **Parameters**
 
