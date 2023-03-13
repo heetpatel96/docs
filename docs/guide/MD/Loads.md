@@ -1,107 +1,9 @@
-## Classes
-
-<dl>
-<dt><a href="#FreeCircularLoad">FreeCircularLoad</a></dt>
-<dd></dd>
-<dt><a href="#FreeConcentratedLoad">FreeConcentratedLoad</a></dt>
-<dd></dd>
-<dt><a href="#FreeLineLoad">FreeLineLoad</a></dt>
-<dd></dd>
-<dt><a href="#FreePolygonLoad">FreePolygonLoad</a></dt>
-<dd></dd>
-<dt><a href="#FreeRectangularLoad">FreeRectangularLoad</a></dt>
-<dd></dd>
-<dt><a href="#ImposedLineDeformation">ImposedLineDeformation</a></dt>
-<dd></dd>
-<dt><a href="#ImposedNodalDeformation">ImposedNodalDeformation</a></dt>
-<dd></dd>
-<dt><a href="#LineLoad">LineLoad</a></dt>
-<dd></dd>
-<dt><a href="#LineSetLoad">LineSetLoad</a></dt>
-<dd></dd>
-<dt><a href="#MemberLoad">MemberLoad</a></dt>
-<dd></dd>
-<dt><a href="#MemberSetLoad">MemberSetLoad</a></dt>
-<dd></dd>
-<dt><a href="#NodalLoad">NodalLoad</a></dt>
-<dd></dd>
-<dt><a href="#OpeningLoad">OpeningLoad</a></dt>
-<dd></dd>
-<dt><a href="#SolidLoad">SolidLoad</a></dt>
-<dd></dd>
-<dt><a href="#SolidSetLoad">SolidSetLoad</a></dt>
-<dd></dd>
-<dt><a href="#SurfaceLoad">SurfaceLoad</a></dt>
-<dd></dd>
-<dt><a href="#SurfaceSetLoad">SurfaceSetLoad</a></dt>
-<dd></dd>
-</dl>
-
-## Functions
-
-<dl>
-<dt><a href="#createBaseLoad">createBaseLoad(load_type, no, load_case, index_list, comment, params)</a> ⇒ <code>Object</code></dt>
-<dd><p>Creates load based on its type</p>
-</dd>
-<dt><a href="#createSimplyValueLoad">createSimplyValueLoad(load_type, no, load_case, nodes, force, moment, mass, load_direction, comment, params)</a> ⇒ <code>Object</code></dt>
-<dd><p>Creates load with one only value (force, mass and so on)</p>
-</dd>
-<dt><a href="#showLoadAssert">showLoadAssert(load_type, load_distribution)</a></dt>
-<dd><p>Shows assert (private)</p>
-</dd>
-<dt><a href="#setLoadValues">setLoadValues(arguments)</a></dt>
-<dd><p>Set load parameters</p>
-</dd>
-<dt><a href="#setAxis">setAxis(load, value)</a> ⇒ <code>Boolean</code></dt>
-<dd><p>Sets axis for rotary motion load type</p>
-</dd>
-<dt><a href="#setAxisAndOrientation">setAxisAndOrientation(load, value)</a> ⇒ <code>Boolean</code></dt>
-<dd><p>Sets axis and orientation for rotary motion load type</p>
-</dd>
-<dt><a href="#setLineLoadDistribution">setLineLoadDistribution(load, load_type, load_distribution, load_values)</a> ⇒ <code>Object</code></dt>
-<dd><p>Function assigns parameters to line / line set load depend of load type and load distribution (private)</p>
-</dd>
-<dt><a href="#setMemberLoadDistribution">setMemberLoadDistribution(load, load_type, load_distribution, load_values)</a> ⇒ <code>Object</code></dt>
-<dd><p>Function assigns parameters to member / member set load depend of load type and load distribution (private)</p>
-</dd>
-<dt><a href="#setSurfaceLoadDistribution">setSurfaceLoadDistribution(load, load_type, load_distribution, load_values)</a> ⇒ <code>Object</code></dt>
-<dd><p>Function assigns parameters to surface / surface set load depend of load type and load distribution (private)</p>
-</dd>
-<dt><a href="#setSolidLoadDistribution">setSolidLoadDistribution(load, load_type, load_distribution, load_values)</a> ⇒ <code>Object</code></dt>
-<dd><p>Function assigns parameters to solid / solid set load depend of load type and load distribution (private)</p>
-</dd>
-<dt><a href="#setCommonFreeLoadsValues">setCommonFreeLoadsValues(load, load_projection, load_direction, load_acting_region_from, load_acting_region_to)</a> ⇒ <code>Object</code></dt>
-<dd><p>Updates common parameters for free loads</p>
-</dd>
-<dt><a href="#setFreeCircularLoadParameters">setFreeCircularLoadParameters(load, load_distribution, load_values)</a> ⇒ <code>Object</code></dt>
-<dd><p>Set parameters to free circular load depend on load distribution</p>
-</dd>
-<dt><a href="#setFreeConcentratedLoadParameters">setFreeConcentratedLoadParameters(load, load_type, load_values)</a> ⇒ <code>Object</code></dt>
-<dd><p>Set parameters to free concentrated load depend on load type</p>
-</dd>
-<dt><a href="#setFreeLineLoadParameters">setFreeLineLoadParameters(load, load_distribution, load_values)</a> ⇒ <code>Object</code></dt>
-<dd><p>Set parameters to free line load depend on load distribution</p>
-</dd>
-<dt><a href="#setFreePolygonLoadParameters">setFreePolygonLoadParameters(load, load_distribution, load_values)</a> ⇒ <code>Object</code></dt>
-<dd><p>Set parameters to free polygon load depend on load distribution</p>
-</dd>
-<dt><a href="#setFreeRectangularLoadParameters">setFreeRectangularLoadParameters(load, load_distribution, load_values)</a> ⇒ <code>Object</code></dt>
-<dd><p>Set parameters to free rectangular load depend on load distribution</p>
-</dd>
-<dt><a href="#setLoadDistribution">setLoadDistribution(load_type, load_distribution, load_values)</a> ⇒ <code>Object</code></dt>
-<dd><p>Assignes values to load depend of load type and load distribution (private)</p>
-</dd>
-</dl>
+# Loads
 
 <a name="FreeCircularLoad"></a>
 
 ## FreeCircularLoad
 **Kind**: global class  
-
-* [FreeCircularLoad](#FreeCircularLoad)
-    * [new FreeCircularLoad(no, load_case, surfaces, comment, params)](#new_FreeCircularLoad_new)
-    * [.Uniform(no, load_case, surfaces, load_values, load_projection, load_direction, load_acting_region_from, load_acting_region_to, comment, params)](#FreeCircularLoad+Uniform) ⇒ <code>Object</code>
-    * [.Linear(no, load_case, surfaces, load_values, load_projection, load_direction, load_acting_region_from, load_acting_region_to, comment, params)](#FreeCircularLoad+Linear) ⇒ <code>Object</code>
 
 <a name="new_FreeCircularLoad_new"></a>
 
@@ -165,11 +67,6 @@ Creates free circular linear load
 ## FreeConcentratedLoad
 **Kind**: global class  
 
-* [FreeConcentratedLoad](#FreeConcentratedLoad)
-    * [new FreeConcentratedLoad(no, load_case, surfaces, comment, params)](#new_FreeConcentratedLoad_new)
-    * [.Force(no, load_case, surfaces, load_values, load_projection, load_direction, load_acting_region_from, load_acting_region_to, comment, params)](#FreeConcentratedLoad+Force) ⇒ <code>Object</code>
-    * [.Moment(no, load_case, surfaces, load_values, load_projection, load_direction, load_acting_region_from, load_acting_region_to, comment, params)](#FreeConcentratedLoad+Moment) ⇒ <code>Object</code>
-
 <a name="new_FreeConcentratedLoad_new"></a>
 
 ### new FreeConcentratedLoad(no, load_case, surfaces, comment, params)
@@ -232,11 +129,6 @@ Creates free concentrated moment load
 ## FreeLineLoad
 **Kind**: global class  
 
-* [FreeLineLoad](#FreeLineLoad)
-    * [new FreeLineLoad(no, load_case, surfaces, comment, params)](#new_FreeLineLoad_new)
-    * [.Uniform(no, load_case, surfaces, load_values, load_projection, load_direction, load_acting_region_from, load_acting_region_to, comment, params)](#FreeLineLoad+Uniform) ⇒ <code>Object</code>
-    * [.Linear(no, load_case, surfaces, load_values, load_projection, load_direction, load_acting_region_from, load_acting_region_to, comment, params)](#FreeLineLoad+Linear) ⇒ <code>Object</code>
-
 <a name="new_FreeLineLoad_new"></a>
 
 ### new FreeLineLoad(no, load_case, surfaces, comment, params)
@@ -298,13 +190,6 @@ Creates free line linear load
 
 ## FreePolygonLoad
 **Kind**: global class  
-
-* [FreePolygonLoad](#FreePolygonLoad)
-    * [new FreePolygonLoad(no, load_case, surfaces, comment, params)](#new_FreePolygonLoad_new)
-    * [.Uniform(no, load_case, surfaces, load_values, load_projection, load_direction, load_acting_region_from, load_acting_region_to, comment, params)](#FreePolygonLoad+Uniform) ⇒ <code>Object</code>
-    * [.Linear(no, load_case, surfaces, load_values, load_projection, load_direction, load_acting_region_from, load_acting_region_to, comment, params)](#FreePolygonLoad+Linear) ⇒ <code>Object</code>
-    * [.LinearX(no, load_case, surfaces, load_values, load_projection, load_direction, load_acting_region_from, load_acting_region_to, comment, params)](#FreePolygonLoad+LinearX) ⇒ <code>Object</code>
-    * [.LinearY(no, load_case, surfaces, load_values, load_projection, load_direction, load_acting_region_from, load_acting_region_to, comment, params)](#FreePolygonLoad+LinearY) ⇒ <code>Object</code>
 
 <a name="new_FreePolygonLoad_new"></a>
 
@@ -409,15 +294,6 @@ Creates free polygon linear in Y load
 
 ## FreeRectangularLoad
 **Kind**: global class  
-
-* [FreeRectangularLoad](#FreeRectangularLoad)
-    * [new FreeRectangularLoad(no, load_case, surfaces, comment, params)](#new_FreeRectangularLoad_new)
-    * [.Uniform(no, load_case, surfaces, load_values, load_projection, load_direction, load_acting_region_from, load_acting_region_to, comment, params)](#FreeRectangularLoad+Uniform) ⇒ <code>Object</code>
-    * [.LinearX(no, load_case, surfaces, load_values, load_projection, load_direction, load_acting_region_from, load_acting_region_to, comment, params)](#FreeRectangularLoad+LinearX) ⇒ <code>Object</code>
-    * [.LinearY(no, load_case, surfaces, load_values, load_projection, load_direction, load_acting_region_from, load_acting_region_to, comment, params)](#FreeRectangularLoad+LinearY) ⇒ <code>Object</code>
-    * [.VaryingZ(no, load_case, surfaces, load_values, load_projection, load_direction, load_acting_region_from, load_acting_region_to, comment, params)](#FreeRectangularLoad+VaryingZ) ⇒ <code>Object</code>
-    * [.VaryingPerimeter(no, load_case, surfaces, load_values, load_projection, load_direction, load_acting_region_from, load_acting_region_to, comment, params)](#FreeRectangularLoad+VaryingPerimeter) ⇒ <code>Object</code>
-    * [.VaryingZAndPerimeter(no, load_case, surfaces, load_values, load_projection, load_direction, load_acting_region_from, load_acting_region_to, comment, params)](#FreeRectangularLoad+VaryingZAndPerimeter) ⇒ <code>Object</code>
 
 <a name="new_FreeRectangularLoad_new"></a>
 
@@ -565,10 +441,6 @@ Creates free rectangular varying in Z and along perimeter load
 ## ImposedLineDeformation
 **Kind**: global class  
 
-* [ImposedLineDeformation](#ImposedLineDeformation)
-    * [new ImposedLineDeformation(no, load_case, lines, comment, params)](#new_ImposedLineDeformation_new)
-    * [.Set(no, load_case, lines, displacement_line_start_x, displacement_line_start_y, displacement_line_start_z, displacement_line_end_x, displacement_line_end_y, displacement_line_end_z, rotation_line_start, rotation_line_end, comment, params)](#ImposedLineDeformation+Set) ⇒ <code>Object</code>
-
 <a name="new_ImposedLineDeformation_new"></a>
 
 ### new ImposedLineDeformation(no, load_case, lines, comment, params)
@@ -613,10 +485,6 @@ Creates imposed line deformation
 ## ImposedNodalDeformation
 **Kind**: global class  
 
-* [ImposedNodalDeformation](#ImposedNodalDeformation)
-    * [new ImposedNodalDeformation(no, load_case, nodes, comment, params)](#new_ImposedNodalDeformation_new)
-    * [.Set(no, load_case, nodes, imposed_displacement_x, imposed_displacement_y, imposed_displacement_z, imposed_rotation_x, imposed_rotation_y, imposed_rotation_z, comment, params)](#ImposedNodalDeformation+Set) ⇒ <code>Object</code>
-
 <a name="new_ImposedNodalDeformation_new"></a>
 
 ### new ImposedNodalDeformation(no, load_case, nodes, comment, params)
@@ -658,16 +526,6 @@ Creates imposed nodal deformation
 
 ## LineLoad
 **Kind**: global class  
-
-* [LineLoad](#LineLoad)
-    * [new LineLoad(no, load_case, lines, comment, params)](#new_LineLoad_new)
-    * [.Force(no, load_case, lines, load_distribution, load_values, load_direction, comment, params)](#LineLoad+Force) ⇒ <code>Object</code>
-    * [.Moment(no, load_case, lines, load_distribution, load_values, load_direction, comment, params)](#LineLoad+Moment) ⇒ <code>Object</code>
-    * [.Mass(no, load_case, lines, load_value, comment, params)](#LineLoad+Mass) ⇒ <code>Object</code>
-    * [.ReferenceToListOfLines(value)](#LineLoad+ReferenceToListOfLines)
-    * [.ReferDistanceLineEnd(value)](#LineLoad+ReferDistanceLineEnd)
-    * [.LoadOverLine(value)](#LineLoad+LoadOverLine)
-    * [.IndividualMassComponents(MX, MY, MZ)](#LineLoad+IndividualMassComponents)
 
 <a name="new_LineLoad_new"></a>
 
@@ -790,15 +648,6 @@ Sets individual mass components (only for mass load)
 ## LineSetLoad
 **Kind**: global class  
 
-* [LineSetLoad](#LineSetLoad)
-    * [new LineSetLoad(no, load_case, line_sets, comment, params)](#new_LineSetLoad_new)
-    * [.Force(no, load_case, line_sets, load_distribution, load_values, load_direction, comment, params)](#LineSetLoad+Force) ⇒ <code>Object</code>
-    * [.Moment(no, load_case, line_sets, load_distribution, load_values, load_direction, comment, params)](#LineSetLoad+Moment) ⇒ <code>Object</code>
-    * [.Mass(no, load_case, line_sets, load_value, comment, params)](#LineSetLoad+Mass) ⇒ <code>Object</code>
-    * [.ReferDistanceLineSetEnd(value)](#LineSetLoad+ReferDistanceLineSetEnd)
-    * [.LoadOverLineSet(value)](#LineSetLoad+LoadOverLineSet)
-    * [.IndividualMassComponents(MX, MY, MZ)](#LineSetLoad+IndividualMassComponents)
-
 <a name="new_LineSetLoad_new"></a>
 
 ### new LineSetLoad(no, load_case, line_sets, comment, params)
@@ -908,29 +757,6 @@ Sets individual mass components (only for mass load)
 
 ## MemberLoad
 **Kind**: global class  
-
-* [MemberLoad](#MemberLoad)
-    * [new MemberLoad(no, load_case, members, comment, params)](#new_MemberLoad_new)
-    * [.Force(no, load_case, members, load_distribution, load_values, load_direction, comment, params)](#MemberLoad+Force) ⇒ <code>Object</code>
-    * [.Moment(no, load_case, members, load_distribution, load_values, load_direction, comment, params)](#MemberLoad+Moment) ⇒ <code>Object</code>
-    * [.Mass(no, load_case, members, load_value, comment, params)](#MemberLoad+Mass) ⇒ <code>Object</code>
-    * [.Temperature(no, load_case, members, load_distribution, load_values, load_direction, comment, params)](#MemberLoad+Temperature) ⇒ <code>Object</code>
-    * [.TemperatureChange(no, load_case, members, load_distribution, load_values, load_direction, comment, params)](#MemberLoad+TemperatureChange) ⇒ <code>Object</code>
-    * [.AxialStrain(no, load_case, members, load_distribution, load_values, comment, params)](#MemberLoad+AxialStrain) ⇒ <code>Object</code>
-    * [.AxialDisplacement(no, load_case, members, load_value, comment, params)](#MemberLoad+AxialDisplacement) ⇒ <code>Object</code>
-    * [.Precamber(no, load_case, members, load_distribution, load_values, load_direction, comment, params)](#MemberLoad+Precamber) ⇒ <code>Object</code>
-    * [.InitialPrestress(no, load_case, members, load_value, comment, params)](#MemberLoad+InitialPrestress) ⇒ <code>Object</code>
-    * [.Displacement(no, load_case, members, load_distribution, load_values, load_direction, comment, params)](#MemberLoad+Displacement) ⇒ <code>Object</code>
-    * [.Rotation(no, load_case, members, load_distribution, load_values, load_direction, comment, params)](#MemberLoad+Rotation) ⇒ <code>Object</code>
-    * [.PipeContentFull(no, load_case, members, load_value, load_direction, comment, params)](#MemberLoad+PipeContentFull) ⇒ <code>Object</code>
-    * [.PipeContentPartial(no, load_case, members, load_values, load_direction, comment, params)](#MemberLoad+PipeContentPartial) ⇒ <code>Object</code>
-    * [.PipeInternalPressure(no, load_case, members, load_value, comment, params)](#MemberLoad+PipeInternalPressure) ⇒ <code>Object</code>
-    * [.RotaryMotion(no, load_case, members, load_values, comment, params)](#MemberLoad+RotaryMotion) ⇒ <code>Object</code>
-    * [.ReferenceToListOfMembers(value)](#MemberLoad+ReferenceToListOfMembers)
-    * [.ReferDistanceMemberEnd(value)](#MemberLoad+ReferDistanceMemberEnd)
-    * [.LoadOverMember(value)](#MemberLoad+LoadOverMember)
-    * [.Eccentricity(reference_to, offset_member_start_ey, offset_member_start_ez, offset_member_end_ey, offset_member_end_ez)](#MemberLoad+Eccentricity)
-    * [.IndividualMassComponents(MX, MY, MZ)](#MemberLoad+IndividualMassComponents)
 
 <a name="new_MemberLoad_new"></a>
 
@@ -1042,7 +868,7 @@ Creates member temperature change load
 
 <a name="MemberLoad+AxialStrain"></a>
 
-### memberLoad.AxialStrain(no, load_case, members, load_distribution, load_values, comment, params) ⇒ <code>Object</code>
+### memberLoad.AxialStrain(no, load_case, members, load_distribution, load_values, load_direction, comment, params) ⇒ <code>Object</code>
 Creates member axial strain load
 
 **Kind**: instance method of [<code>MemberLoad</code>](#MemberLoad)  
@@ -1055,6 +881,7 @@ Creates member axial strain load
 | members | <code>Array</code> | List of member indexes |
 | load_distribution | <code>String</code> | Load distribution |
 | load_values | <code>Array</code> | Load parameters depend on load distribution (for more information look at setMemberLoadDistribution function) |
+| load_direction | <code>String</code> | Load direction, can be undefined |
 | comment | <code>String</code> | Comment, can be undefined |
 | params | <code>Object</code> | Load parameters, can be undefined |
 
@@ -1261,7 +1088,7 @@ Sets eccentricity (only force load)
 
 | Param | Type | Description |
 | --- | --- | --- |
-| reference_to | <code>String</code> | Eccentricity is refereed to what ("LEFT_TOP", "CENTER_TOP", "RIGHT_TOP", "LEFT_CENTER", "CENTER_CENTER", "RIGHT_CENTER", "LEFT_BOTTOM", "CENTER_BOTTOM", "RIGHT_BOTTOM", "CENTER_OF_GRAVITY", "SHEAR_CENTER") |
+| reference_to | <code>String</code> | Eccentricity is refereed to what ("left_top", "center_top", "right_top", "left_center", "center_center", "right_center", 												"left_bottom", "center_bottom", "right_bottom", "center_of_gravity", "shear_center") |
 | offset_member_start_ey | <code>Number</code> | Offset at member start, can be undefined |
 | offset_member_start_ez | <code>Number</code> | Offset at member start, can be undefined |
 | offset_member_end_ey | <code>Number</code> | Offset at member end, can be undefined |
@@ -1284,28 +1111,6 @@ Sets individual mass components (only for mass load)
 
 ## MemberSetLoad
 **Kind**: global class  
-
-* [MemberSetLoad](#MemberSetLoad)
-    * [new MemberSetLoad(no, load_case, member_sets, comment, params)](#new_MemberSetLoad_new)
-    * [.Force(no, load_case, member_sets, load_distribution, load_values, load_direction, comment, params)](#MemberSetLoad+Force) ⇒ <code>Object</code>
-    * [.Moment(no, load_case, member_sets, load_distribution, load_values, load_direction, comment, params)](#MemberSetLoad+Moment) ⇒ <code>Object</code>
-    * [.Mass(no, load_case, member_sets, load_value, comment, params)](#MemberSetLoad+Mass) ⇒ <code>Object</code>
-    * [.Temperature(no, load_case, member_sets, load_distribution, load_values, load_direction, comment, params)](#MemberSetLoad+Temperature) ⇒ <code>Object</code>
-    * [.TemperatureChange(no, load_case, member_sets, load_distribution, load_values, load_direction, comment, params)](#MemberSetLoad+TemperatureChange) ⇒ <code>Object</code>
-    * [.AxialStrain(no, load_case, member_sets, load_distribution, load_values, load_direction, comment, params)](#MemberSetLoad+AxialStrain) ⇒ <code>Object</code>
-    * [.AxialDisplacement(no, load_case, member_sets, load_value, comment, params)](#MemberSetLoad+AxialDisplacement) ⇒ <code>Object</code>
-    * [.Precamber(no, load_case, member_sets, load_distribution, load_values, load_direction, comment, params)](#MemberSetLoad+Precamber) ⇒ <code>Object</code>
-    * [.InitialPrestress(no, load_case, member_sets, load_value, comment, params)](#MemberSetLoad+InitialPrestress) ⇒ <code>Object</code>
-    * [.Displacement(no, load_case, member_sets, load_distribution, load_values, load_direction, comment, params)](#MemberSetLoad+Displacement) ⇒ <code>Object</code>
-    * [.Rotation(no, load_case, member_sets, load_distribution, load_values, load_direction, comment, params)](#MemberSetLoad+Rotation) ⇒ <code>Object</code>
-    * [.PipeContentFull(no, load_case, member_sets, load_value, load_direction, comment, params)](#MemberSetLoad+PipeContentFull) ⇒ <code>Object</code>
-    * [.PipeContentPartial(no, load_case, member_sets, load_values, load_direction, comment, params)](#MemberSetLoad+PipeContentPartial) ⇒ <code>Object</code>
-    * [.PipeInternalPressure(no, load_case, member_sets, load_value, comment, params)](#MemberSetLoad+PipeInternalPressure) ⇒ <code>Object</code>
-    * [.RotaryMotion(no, load_case, member_sets, load_values, comment, params)](#MemberSetLoad+RotaryMotion) ⇒ <code>Object</code>
-    * [.ReferDistanceMemberSetEnd(value)](#MemberSetLoad+ReferDistanceMemberSetEnd)
-    * [.LoadOverMember(value)](#MemberSetLoad+LoadOverMember)
-    * [.Eccentricity(reference_to, offset_member_start_ey, offset_member_start_ez, offset_member_end_ey, offset_member_end_ez)](#MemberSetLoad+Eccentricity)
-    * [.IndividualMassComponents(MX, MY, MZ)](#MemberSetLoad+IndividualMassComponents)
 
 <a name="new_MemberSetLoad_new"></a>
 
@@ -1650,17 +1455,6 @@ Sets individual mass components (only for mass load)
 ## NodalLoad
 **Kind**: global class  
 
-* [NodalLoad](#NodalLoad)
-    * [new NodalLoad(no, load_case, nodes, comment, params)](#new_NodalLoad_new)
-    * [.Force(no, load_case, nodes, force, load_direction, comment, params)](#NodalLoad+Force) ⇒ <code>Object</code>
-    * [.Moment(no, load_case, nodes, moment, load_direction, comment, params)](#NodalLoad+Moment) ⇒ <code>Object</code>
-    * [.Components(no, load_case, nodes, forces, moments, comment, params)](#NodalLoad+Components) ⇒ <code>Object</code>
-    * [.Mass(no, load_case, nodes, mass, comment, params)](#NodalLoad+Mass) ⇒ <code>Object</code>
-    * [.SpecificDirection(type, values)](#NodalLoad+SpecificDirection)
-    * [.ForceEccentricity(eccentricity_x, eccentricity_y, eccentricity_z)](#NodalLoad+ForceEccentricity)
-    * [.ShiftedDisplay(offset, distance)](#NodalLoad+ShiftedDisplay)
-    * [.IndividualMassComponents(mass, distance)](#NodalLoad+IndividualMassComponents)
-
 <a name="new_NodalLoad_new"></a>
 
 ### new NodalLoad(no, load_case, nodes, comment, params)
@@ -1801,11 +1595,6 @@ Adds individual mass components to load
 ## OpeningLoad
 **Kind**: global class  
 
-* [OpeningLoad](#OpeningLoad)
-    * [new OpeningLoad(no, load_case, openings, comment, params)](#new_OpeningLoad_new)
-    * [.Force(no, load_case, openings, load_distribution, load_values, load_direction, comment, params)](#OpeningLoad+Force) ⇒ <code>Object</code>
-    * [.SmoothConcentratedLoad(value,)](#OpeningLoad+SmoothConcentratedLoad)
-
 <a name="new_OpeningLoad_new"></a>
 
 ### new OpeningLoad(no, load_case, openings, comment, params)
@@ -1855,15 +1644,6 @@ Set smooth concentrated load
 
 ## SolidLoad
 **Kind**: global class  
-
-* [SolidLoad](#SolidLoad)
-    * [new SolidLoad(no, load_case, solids, comment, params)](#new_SolidLoad_new)
-    * [.Force(no, load_case, solids, load_value, load_direction, comment, params)](#SolidLoad+Force) ⇒ <code>Object</code>
-    * [.Temperature(no, load_case, solids, load_distribution, load_values, comment, params)](#SolidLoad+Temperature) ⇒ <code>Object</code>
-    * [.Strain(no, load_case, solids, load_distribution, load_values, comment, params)](#SolidLoad+Strain) ⇒ <code>Object</code>
-    * [.Buoyancy(no, load_case, solids, load_value, load_direction, comment, params)](#SolidLoad+Buoyancy) ⇒ <code>Object</code>
-    * [.RotaryMotion(no, load_case, solids, load_values, comment, params)](#SolidLoad+RotaryMotion) ⇒ <code>Object</code>
-    * [.AirDensity(altitude)](#SolidLoad+AirDensity)
 
 <a name="new_SolidLoad_new"></a>
 
@@ -1985,15 +1765,6 @@ Determine air density at specified altitude
 ## SolidSetLoad
 **Kind**: global class  
 
-* [SolidSetLoad](#SolidSetLoad)
-    * [new SolidSetLoad(no, load_case, solid_sets, comment, params)](#new_SolidSetLoad_new)
-    * [.Force(no, load_case, solid_sets, load_value, load_direction, comment, params)](#SolidSetLoad+Force) ⇒ <code>Object</code>
-    * [.Temperature(no, load_case, solid_sets, load_distribution, load_values, comment, params)](#SolidSetLoad+Temperature) ⇒ <code>Object</code>
-    * [.Strain(no, load_case, solid_sets, load_distribution, load_values, comment, params)](#SolidSetLoad+Strain) ⇒ <code>Object</code>
-    * [.Buoyancy(no, load_case, solid_sets, load_value, load_direction, comment, params)](#SolidSetLoad+Buoyancy) ⇒ <code>Object</code>
-    * [.RotaryMotion(no, load_case, solid_sets, load_values, comment, params)](#SolidSetLoad+RotaryMotion) ⇒ <code>Object</code>
-    * [.AirDensity(altitude)](#SolidSetLoad+AirDensity)
-
 <a name="new_SolidSetLoad_new"></a>
 
 ### new SolidSetLoad(no, load_case, solid_sets, comment, params)
@@ -2113,16 +1884,6 @@ Determine air density at specified altitude
 
 ## SurfaceLoad
 **Kind**: global class  
-
-* [SurfaceLoad](#SurfaceLoad)
-    * [new SurfaceLoad(no, load_case, surfaces, comment, params)](#new_SurfaceLoad_new)
-    * [.Force(no, load_case, surfaces, load_distribution, load_values, load_direction, comment, params)](#SurfaceLoad+Force) ⇒ <code>Object</code>
-    * [.Temperature(no, load_case, surfaces, load_distribution, load_values, comment, params)](#SurfaceLoad+Temperature) ⇒ <code>Object</code>
-    * [.AxialStrain(no, load_case, surfaces, load_distribution, load_values, comment, params)](#SurfaceLoad+AxialStrain) ⇒ <code>Object</code>
-    * [.Precamber(no, load_case, surfaces, load_value, comment, params)](#SurfaceLoad+Precamber) ⇒ <code>Object</code>
-    * [.RotaryMotion(no, load_case, surfaces, load_values, comment, params)](#SurfaceLoad+RotaryMotion) ⇒ <code>Object</code>
-    * [.Mass(no, load_case, surfaces, load_value, comment, params)](#SurfaceLoad+Mass) ⇒ <code>Object</code>
-    * [.IndividualMassComponents(MX, MY, MZ)](#SurfaceLoad+IndividualMassComponents)
 
 <a name="new_SurfaceLoad_new"></a>
 
@@ -2262,16 +2023,6 @@ Sets individual mass components (only for mass load)
 
 ## SurfaceSetLoad
 **Kind**: global class  
-
-* [SurfaceSetLoad](#SurfaceSetLoad)
-    * [new SurfaceSetLoad(no, load_case, line_sets, comment, params)](#new_SurfaceSetLoad_new)
-    * [.Force(no, load_case, surface_sets, load_distribution, load_values, load_direction, comment, params)](#SurfaceSetLoad+Force) ⇒ <code>Object</code>
-    * [.Temperature(no, load_case, surface_sets, load_distribution, load_values, comment, params)](#SurfaceSetLoad+Temperature) ⇒ <code>Object</code>
-    * [.AxialStrain(no, load_case, surface_sets, load_distribution, load_values, comment, params)](#SurfaceSetLoad+AxialStrain) ⇒ <code>Object</code>
-    * [.Precamber(no, load_case, surface_sets, load_value, comment, params)](#SurfaceSetLoad+Precamber) ⇒ <code>Object</code>
-    * [.RotaryMotion(no, load_case, surface_sets, load_values, comment, params)](#SurfaceSetLoad+RotaryMotion) ⇒ <code>Object</code>
-    * [.Mass(no, load_case, surface_sets, load_value, comment, params)](#SurfaceSetLoad+Mass) ⇒ <code>Object</code>
-    * [.IndividualMassComponents(MX, MY, MZ)](#SurfaceSetLoad+IndividualMassComponents)
 
 <a name="new_SurfaceSetLoad_new"></a>
 
@@ -2522,7 +2273,7 @@ Function assigns parameters to member / member set load depend of load type and 
 | load | <code>Object</code> | Load |
 | load_type | <code>String</code> | Load type |
 | load_distribution | <code>String</code> | Load distribution, can be undefined |
-| load_values | <code>Array</code> | Load parameters depend on load type and load distribution 										- (load type / load distribution: [valid values]) 										- "Force" / "Uniform": [p] 										- "Force" / "Uniform - Total": [P] 										- "Force" / "Concentrated - 1": [P, A, is_a_relative] 										- "Force" / "Concentrated - n x": [P, n, A, B, is_a_relative, is_b_relative] 										- "Force" / "Concentrated - 2 x 2": [P, A, B, C, is_a_relative, is_b_relative, is_c_relative] 										- "Force" / "Concentrated - 2 x": [P1, A, P2, B, is_a_relative, is_b_relative] 										- "Force" / "Concentrated - Varying": [P1, x1, P2, x2 ... Pn, xn] 										- "Force" / "Trapezoidal": [p1, B, p2, A, is_b_relative, is_a_relative] 										- "Force" / "Tapered": [p1, p2, A, B, is_a_relative, is_b_relative] 										- "Force" / "Parabolic": [p1, p2, p3] 										- "Force" / "Varying": [p1, x1, p2, x2, ... pn, xn] 										- "Force" / "Varying in Z": [p1, z1, p2, z2 ... pn, zn] 										- "Moment" / "Uniform" (load type / load distribution): [m] 										- "Moment" / "Concentrated - 1": [M, A, is_a_relative] 										- "Moment" / "Concentrated - n x": [M, n, A, B, is_a_relative, is_b_relative] 										- "Moment" / "Concentrated - 2 x 2": [M, A, B, C, is_a_relative, is_b_relative, is_c_relative] 										- "Moment" / "Concentrated - 2 x": [M1, A, M2, B, is_a_relative, is_b_relative] 										- "Moment" / "Concentrated - Varying": [M1, x1, M2, x2 ... Mn, xn] 										- "Moment" / "Trapezoidal": [m1, B, m2, A, is_b_relative, is_a_relative] 										- "Moment" / "Tapered": [m1, m2, A, B, is_a_relative, is_b_relative] 										- "Moment" / "Parabolic": [m1, m2, m3] 										- "Moment" / "Varying": [m1, x1, m2, x2, ... mn, xn] 										- "Mass" / "Uniform": M 										- "Temperature" / "Uniform": [Tt, Tb] 										- "Temperature" / "Trapezoidal": [Tt1, B, Tb1, Tt2, Tb2, A, is_b_relative, is_a_relative] 										- "Temperature" / "Tapered": [Tt1, Tb1, Tt2, Tb2, A, B, is_a_relative, is_b_relative] 										- "Temperature" / "Parabolic": [Tt1, Tb1, Tt2, Tb2, Tt3, Tb3] 										- "Temperature" / "Varying": [Tt1, Tb1, x1, Tt2, Tb2, x2 ... Ttn, Tbn, xn] 										- "Temperature Change" / "Uniform": [Tc, ΔT] 										- "Temperature Change" / "Trapezoidal": [Tc1, B, ΔT1, Tc2, ΔT2, A, is_b_relative, is_a_relative] 										- "Temperature Change" / "Tapered": [Tc1, ΔT1, ΔT2, ΔT2, A, B, is_a_relative, is_b_relative] 										- "Temperature Change" / "Parabolic": [Tt1, ΔT1, Tt2, ΔT2, Tt3, ΔT3] 										- "Temperature Change" / "Varying": [Tc1, ΔT1, x1, Tc2, ΔT2, x2 ... Tcn, ΔTn, xn] 										- "Axial Strain" / "Uniform": [ε] 										- "Axial Strain" / "Trapezoidal": [ε1, B, ε2, A, is_b_relative, is_a_relative] 										- "Axial Strain" / "Tapered": [ε1, ε2, A, B, is_a_relative, is_b_relative] 										- "Axial Strain" / "Parabolic": [ε1, ε2, ε3] 										- "Axial Strain" / Varying": [ε1, x1, ε2, x2, ... εn, xn] 										- "Axial Displacement" / "Uniform": Δl 										- "Precamber" / "Uniform": [κ] 										- "Precamber" / "Trapezoidal": [κ1, B, κ2, A, is_b_relative, is_a_relative] 										- "Precamber" / "Tapered": [κ1, A, κ2, B, is_a_relative, is_a_relative] 										- "Precamber" / "Parabolic": [κ1, κ2, κ3] 										- "Precamber" / "Varying": [κ1, x1, κ2, x2, ... κn, xn] 										- "Initial Prestress" / "Uniform": V 										- "Displacement" / "Uniform": [δ] 										- "Displacement" / "Concentrated - 1": [Δ, A, is_a_relative] 										- "Displacement" / "Concentrated - n x": [Δ, n, A, B, is_a_relative, is_b_relative] 										- "Displacement" / "Concentrated - 2 x 2": [Δ, A, B, C, is_a_relative, is_b_relative, is_c_relative] 										- "Displacement" / "Concentrated - 2 x": [Δ1, Δ2, A, B, is_a_relative, is_b_relative] 										- "Displacement" / "Concentrated - Varying": [Δ1, x1, Δ2, x2 ... Δn, xn] 										- "Displacement" / "Trapezoidal": [δ1, B, δ2, A, is_b_relative, is_a_relative] 										- "Displacement" / "Tapered": [δ1, δ2, A, B, is_a_relative, is_b_relative] 										- "Displacement" / "Parabolic": [δ1, δ2, δ3] 										- "Displacement" / "Varying": [δ1, x1, δ2, x2, ... δn, xn] 										- "Rotation" / "Uniform": [φ] 										- "Rotation" / "Concentrated - 1": [φ, A, is_a_relative] 										- "Rotation" / "Concentrated - n x": [φ, n, A, B, is_a_relative, is_b_relative] 										- "Rotation" / "Concentrated - 2 x 2": [φ, A, B, C, is_a_relative, is_b_relative, is_c_relative] 										- "Rotation" / "Concentrated - 2 x": [φ1, A, φ2, B, is_a_relative, is_b_relative] 										- "Rotation" / "Concentrated - Varying": [φ1, x1, φ2, x2 ... φn, xn] 										- "Rotation" / "Trapezoidal": [φ1, B, φ2, A, is_b_relative, is_a_relative] 										- "Rotation" / "Tapered": [φ1, φ2, A, B, is_a_relative, is_b_relative] 										- "Rotation" / "Parabolic": [φ1, φ2, φ3] 										- "Rotation" / "Varying": [φ1, x1, φ2, x2, ... φn, xn] 										- "Pipe Content - Full" / "Uniform": γ 										- "Pipe Content - Partial" / "Uniform": [γ, d] 										- "Pipe Internal Pressure" / "Uniform": p 										- "Rotary Motion": [axis_definition, ω, α, [Node1, Node2] or XA, YA, ZA, XB, YB, ZB] (axis definition 1 === "Two points") 														   [axis_definition, ω, α, ([Node1] or XA, YA, ZA), parallel_axis] (axis definition 2 === "Point and axis") |
+| load_values | <code>Array</code> | Load parameters depend on load type and load distribution 										- (load type / load distribution: [valid values]) 										- "Force" / "Uniform": [p] 										- "Force" / "Uniform - Total": [P] 										- "Force" / "Concentrated - 1": [P, A, is_a_relative] 										- "Force" / "Concentrated - n x": [P, n, A, B, is_a_relative, is_b_relative] 										- "Force" / "Concentrated - 2 x 2": [P, A, B, C, is_a_relative, is_b_relative, is_c_relative] 										- "Force" / "Concentrated - 2 x": [P1, A, P2, B, is_a_relative, is_b_relative] 										- "Force" / "Concentrated - Varying": [P1, x1, P2, x2 ... Pn, xn] 										- "Force" / "Trapezoidal": [p1, B, p2, A, is_b_relative, is_a_relative] 										- "Force" / "Tapered": [p1, p2, A, B, is_a_relative, is_b_relative] 										- "Force" / "Parabolic": [p1, p2, p3] 										- "Force" / "Varying": [p1, x1, p2, x2, ... pn, xn] 										- "Force" / "Varying in Z": [p1, z1, p2, z2 ... pn, zn] 										- "Moment" / "Uniform" (load type / load distribution): [m] 										- "Moment" / "Concentrated - 1": [M, A, is_a_relative] 										- "Moment" / "Concentrated - n x": [M, n, A, B, is_a_relative, is_b_relative] 										- "Moment" / "Concentrated - 2 x 2": [M, A, B, C, is_a_relative, is_b_relative, is_c_relative] 										- "Moment" / "Concentrated - 2 x": [M1, A, M2, B, is_a_relative, is_b_relative] 										- "Moment" / "Concentrated - Varying": [M1, x1, M2, x2 ... Mn, xn] 										- "Moment" / "Trapezoidal": [m1, B, m2, A, is_b_relative, is_a_relative] 										- "Moment" / "Tapered": [m1, m2, A, B, is_a_relative, is_b_relative] 										- "Moment" / "Parabolic": [m1, m2, m3] 										- "Moment" / "Varying": [m1, x1, m2, x2, ... mn, xn] 										- "Mass" / "Uniform": M 										- "Temperature" / "Uniform": [Tt, Tb] 										- "Temperature" / "Trapezoidal": [Tt1, B, Tb1, Tt2, Tb2, A, is_b_relative, is_a_relative] 										- "Temperature" / "Tapered": [Tt1, Tb1, Tt2, Tb2, A, B, is_a_relative, is_b_relative] 										- "Temperature" / "Parabolic": [Tt1, Tb1, Tt2, Tb2, Tt3, Tb3] 										- "Temperature" / "Varying": [Tt1, Tb1, x1, Tt2, Tb2, x2 ... Ttn, Tbn, xn] 										- "Temperature Change" / "Uniform": [Tc, ΔT] 										- "Temperature Change" / "Trapezoidal": [Tc1, B, ΔT1, Tc2, ΔT2, A, is_b_relative, is_a_relative] 										- "Temperature Change" / "Tapered": [Tc1, ΔT1, ΔT2, ΔT2, A, B, is_a_relative, is_b_relative] 										- "Temperature Change" / "Parabolic": [Tt1, ΔT1, Tt2, ΔT2, Tt3, ΔT3] 										- "Temperature Change" / "Varying": [Tc1, ΔT1, x1, Tc2, ΔT2, x2 ... Tcn, ΔTn, xn] 										- "Axial Strain" / "Uniform": [ε] 										- "Axial Strain" / "Trapezoidal": [ε1, B, ε2, A, is_b_relative, is_a_relative] 										- "Axial Strain" / "Tapered": [ε1, ε2, A, B, is_a_relative, is_b_relative] 										- "Axial Strain" / "Parabolic": [ε1, ε2, ε3] 										- "Axial Strain" / Varying": [ε1, x1, ε2, x2, ... εn, xn] 										- "Axial Displacement" / "Uniform": Δl 										- "Precamber" / "Uniform": [κ] 										- "Precamber" / "Trapezoidal": [κ1, B, κ2, A, is_b_relative, is_a_relative] 										- "Precamber" / "Tapered": [κ1, A, κ2, B, is_a_relative, is_a_relative] 										- "Precamber" / "Parabolic": [κ1, κ2, κ3] 										- "Precamber" / "Varying": [κ1, x1, κ2, x2, ... κn, xn] 										- "Initial Prestress" / "Uniform": V 										- "Displacement" / "Uniform": [δ] 										- "Displacement" / "Concentrated - 1": [Δ, A, is_a_relative] 										- "Displacement" / "Concentrated - n x": [Δ, n, A, B, is_a_relative, is_b_relative] 										- "Displacement" / "Concentrated - 2 x 2": [Δ, A, B, C, is_a_relative, is_b_relative, is_c_relative] 										- "Displacement" / "Concentrated - 2 x": [Δ1, Δ2, A, B, is_a_relative, is_b_relative] 										- "Displacement" / "Concentrated - Varying": [Δ1, x1, Δ2, x2 ... Δn, xn] 										- "Displacement" / "Trapezoidal": [δ1, B, δ2, A, is_b_relative, is_a_relative] 										- "Displacement" / "Tapered": [δ1, δ2, A, B, is_a_relative, is_b_relative] 										- "Displacement" / "Parabolic": [δ1, δ2, δ3] 										- "Displacement" / "Varying": [δ1, x1, δ2, x2, ... δn, xn] 										- "Rotation" / "Uniform": [φ] 										- "Rotation" / "Concentrated - 1": [φ, A, is_a_relative] 										- "Rotation" / "Concentrated - n x": [φ, n, A, B, is_a_relative, is_b_relative] 										- "Rotation" / "Concentrated - 2 x 2": [φ, A, B, C, is_a_relative, is_b_relative, is_c_relative] 										- "Rotation" / "Concentrated - 2 x": [φ1, A, φ2, B, is_a_relative, is_b_relative] 										- "Rotation" / "Concentrated - Varying": [φ1, x1, φ2, x2 ... φn, xn] 										- "Rotation" / "Trapezoidal": [φ1, B, φ2, A, is_b_relative, is_a_relative] 										- "Rotation" / "Tapered": [φ1, φ2, A, B, is_a_relative, is_b_relative] 										- "Rotation" / "Parabolic": [φ1, φ2, φ3] 										- "Rotation" / "Varying": [φ1, x1, φ2, x2, ... φn, xn] 										- "Pipe Content - Full" / "Uniform": γ 										- "Pipe Content - Partial" / "Uniform": [γ, d] 										- "Pipe Internal Pressure" / "Uniform": p 										- "Rotary Motion": [axis_definition, ω, α, [Node1, Node2] | XA, YA, ZA, XB, YB, ZB] (axis definition 1 === "Two points") 														   [axis_definition, ω, α, ([Node1] | XA, YA, ZA), parallel_axis] (axis definition 2 === "Point and axis") |
 
 <a name="setSurfaceLoadDistribution"></a>
 
@@ -2537,7 +2288,7 @@ Function assigns parameters to surface / surface set load depend of load type an
 | load | <code>Object</code> | Load |
 | load_type | <code>String</code> | Load type |
 | load_distribution | <code>String</code> | Load distribution, can be undefined |
-| load_values | <code>Array</code> | Load parameters depend on load type and load distribution 										- (load type / load distribution: [valid values]) 										- "Force" / "Uniform": [p] 										- "Force" / "Linear": [Node1, Node2, Node3, p1, p2, p3] 										- "Force: / "Linear in X": [Node1, Node2, p1, p2] 										- "Force" / "Linear in Y": [Node1, Node2, p1, p2] 										- "Force" / "Linear in Z": [Node1, Node2, p1, p2] 										- "Force" / "Radial":	[axis_definition, p1, p2, Node1, Node2, [Node1, Node2] or XA, YA, ZA, XB, YB, ZB] (axis definition 1 === "Two points") 																[axis_definition, p1, p2, Node1, Node2, ([Node1] or XA, YA, ZA), parallel_axis] (axis definition 2 === "Point and axis") 										- "Force" / "Varying in Z": [p1, z1, p2, z2, ... pn, zn] 										- "Temperature" / "Uniform": [Tc, ΔT] 										- "Temperature" / "Linear": [Node1, Node2, Node3, Tc1, Tc2, Tc3, ΔT1, ΔT2, ΔT3] 										- "Temperature" / "Linear in X": [Node1, Node2, Tc1, Tc2, ΔT1, ΔT2] 										- "Temperature" / "Linear in Y": [Node1, Node2, Tc1, Tc2, ΔT1, ΔT2] 										- "Temperature" / "Linear in Z": [Node1, Node2, Tc1, Tc2, ΔT1, ΔT2] 										- "Temperature" / "Radial":	[axis_definition, Tc1, Tc2, ΔT1, ΔT2, Node1, Node2, [Node1, Node2] or XA, YA, ZA, XB, YB, ZB] (axis definition 1 === "Two points") 																	[axis_definition, Tc1, Tc2, ΔT1, ΔT2, Node1, Node2, ([Node1] or XA, YA, ZA), parallel_axis] (axis definition 2 === "Point and axis") 										- "Axial Strain" / "Uniform": [εx, εy] 										- "Axial Strain" / "Linear": [Node1, Node2, Node3, ε1x, ε1y, ε2x, ε2y, ε3x, ε3y] 										- "Axial Strain" / "Linear in X": [Node1, Node2, ε1x, ε1y, ε2x, ε2y] 										- "Axial Strain" / "Linear in Y": [Node1, Node2, ε1x, ε1y, ε2x, ε2y] 										- "Axial Strain" / "Linear in Z": [Node1, Node2, ε1x, ε1y, ε2x, ε2y] 										- "Precamber" / "Uniform": [κ] 										- "Rotary Motion": [axis_definition, p1, p2, Node1, Node2, [Node1, Node2] or XA, YA, ZA, XB, YB, ZB] (axis definition 1 === "Two points") 														   [axis_definition, p1, p2, Node1, Node2, ([Node1] or XA, YA, ZA), parallel_axis] (axis definition 2 === "Point and axis") 										- "Mass" / "Uniform": [M] |
+| load_values | <code>Array</code> | Load parameters depend on load type and load distribution 										- (load type / load distribution: [valid values]) 										- "Force" / "Uniform": [p] 										- "Force" / "Linear": [Node1, Node2, Node3, p1, p2, p3] 										- "Force: / "Linear in X": [Node1, Node2, p1, p2] 										- "Force" / "Linear in Y": [Node1, Node2, p1, p2] 										- "Force" / "Linear in Z": [Node1, Node2, p1, p2] 										- "Force" / "Radial": [axis_definition, p1, p2, Node1, Node2, [Node1, Node2] | XA, YA, ZA, XB, YB, ZB] (axis definition 1 === "Two points") 														   	  [axis_definition, p1, p2, Node1, Node2, ([Node1] | XA, YA, ZA), parallel_axis] (axis definition 2 === "Point and axis") 										- "Force" / "Varying in Z": [p1, z1, p2, z2, ... pn, zn] 										- "Temperature" / "Uniform": [Tc, ΔT] 										- "Temperature" / "Linear": [Node1, Node2, Node3, Tc1, Tc2, Tc3, ΔT1, ΔT2, ΔT3] 										- "Temperature" / "Linear in X": [Node1, Node2, Tc1, Tc2, ΔT1, ΔT2] 										- "Temperature" / "Linear in Y": [Node1, Node2, Tc1, Tc2, ΔT1, ΔT2] 										- "Temperature" / "Linear in Z": [Node1, Node2, Tc1, Tc2, ΔT1, ΔT2] 										- "Temperature" / "Radial": [axis_definition, Tc1, Tc2, ΔT1, ΔT2, Node1, Node2, [Node1, Node2] | XA, YA, ZA, XB, YB, ZB] (axis definition 1 === "Two points") 														   	  		[axis_definition, Tc1, Tc2, ΔT1, ΔT2, Node1, Node2, ([Node1] | XA, YA, ZA), parallel_axis] (axis definition 2 === "Point and axis") 										- "Axial Strain" / "Uniform": [εx, εy] 										- "Axial Strain" / "Linear": [Node1, Node2, Node3, ε1x, ε1y, ε2x, ε2y, ε3x, ε3y] 										- "Axial Strain" / "Linear in X": [Node1, Node2, ε1x, ε1y, ε2x, ε2y] 										- "Axial Strain" / "Linear in Y": [Node1, Node2, ε1x, ε1y, ε2x, ε2y] 										- "Axial Strain" / "Linear in Z": [Node1, Node2, ε1x, ε1y, ε2x, ε2y] 										- "Precamber" / "Uniform": [κ] 										- "Rotary Motion": [axis_definition, p1, p2, Node1, Node2, [Node1, Node2] | XA, YA, ZA, XB, YB, ZB] (axis definition 1 === "Two points") 														   [axis_definition, p1, p2, Node1, Node2, ([Node1] | XA, YA, ZA), parallel_axis] (axis definition 2 === "Point and axis") 										- "Mass" / "Uniform": [M] |
 
 <a name="setSolidLoadDistribution"></a>
 
@@ -2552,7 +2303,7 @@ Function assigns parameters to solid / solid set load depend of load type and lo
 | load | <code>Object</code> | Load |
 | load_type | <code>String</code> | Load type |
 | load_distribution | <code>String</code> | Load distribution, can be undefined |
-| load_values | <code>Array</code> | Load parameters depend on load type and load distribution 										- (load type / load distribution: [valid values]) 										- "Force" / "Uniform": [p] 										- "Temperature" / "Uniform": [T] 										- "Temperature" / "Linear in X": [Node1, Node2, T1, T2] 										- "Temperature" / "Linear in Y": [Node1, Node2, T1, T2] 										- "Temperature" / "Linear in Z": [Node1, Node2, T1, T2] 										- "Strain" / "Uniform": [εx, εy, εz] 										- "Strain" / "Linear in X": [Node1, Node2, ε1x, ε1y, ε1z, ε2x, ε2y, ε2z] 										- "Strain" / "Linear in Y": [Node1, Node2, ε1x, ε1y, ε1z, ε2x, ε2y, ε2z] 										- "Strain" / "Linear in Z": [Node1, Node2, ε1x, ε1y, ε1z, ε2x, ε2y, ε2z] 										- "Buoyancy" / "Uniform": [p] 										- "Rotary Motion": [axis_definition, p1, p2, Node1, Node2, [Node1, Node2] or XA, YA, ZA, XB, YB, ZB] (axis definition 1 === "Two points") 														   [axis_definition, p1, p2, Node1, Node2, ([Node1] or XA, YA, ZA), parallel_axis] (axis definition 2 === "Point and axis") |
+| load_values | <code>Array</code> | Load parameters depend on load type and load distribution 										- (load type / load distribution: [valid values]) 										- "Force" / "Uniform": [p] 										- "Temperature" / "Uniform": [T] 										- "Temperature" / "Linear in X": [Node1, Node2, T1, T2] 										- "Temperature" / "Linear in Y": [Node1, Node2, T1, T2] 										- "Temperature" / "Linear in Z": [Node1, Node2, T1, T2] 										- "Strain" / "Uniform": [εx, εy, εz] 										- "Strain" / "Linear in X": [Node1, Node2, ε1x, ε1y, ε1z, ε2x, ε2y, ε2z] 										- "Strain" / "Linear in Y": [Node1, Node2, ε1x, ε1y, ε1z, ε2x, ε2y, ε2z] 										- "Strain" / "Linear in Z": [Node1, Node2, ε1x, ε1y, ε1z, ε2x, ε2y, ε2z] 										- "Buoyancy" / "Uniform": [p] 										- "Rotary Motion": [axis_definition, p1, p2, Node1, Node2, [Node1, Node2] | XA, YA, ZA, XB, YB, ZB] (axis definition 1 === "Two points") 														   [axis_definition, p1, p2, Node1, Node2, ([Node1] | XA, YA, ZA), parallel_axis] (axis definition 2 === "Point and axis") |
 
 <a name="setCommonFreeLoadsValues"></a>
 

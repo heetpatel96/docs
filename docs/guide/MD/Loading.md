@@ -1,49 +1,9 @@
-## Classes
-
-<dl>
-<dt><a href="#DesignSituation">DesignSituation</a></dt>
-<dd></dd>
-<dt><a href="#LoadCase">LoadCase</a></dt>
-<dd></dd>
-<dt><a href="#ResultCombination">ResultCombination</a></dt>
-<dd></dd>
-<dt><a href="#RSectionLoadCase">RSectionLoadCase</a></dt>
-<dd></dd>
-<dt><a href="#RSectionLoadCombination">RSectionLoadCombination</a></dt>
-<dd></dd>
-</dl>
-
-## Functions
-
-<dl>
-<dt><a href="#createBaseDesignSituation">createBaseDesignSituation(no, params, comment)</a> ⇒</dt>
-<dd><p>Creates base design situation (private)</p>
-</dd>
-<dt><a href="#LoadCombination">LoadCombination(no, design_situation_no, load_combination_items, comment, params)</a> ⇒</dt>
-<dd><p>Creates load combination</p>
-</dd>
-<dt><a href="#createBaseLoadCombination">createBaseLoadCombination(no, comment, params)</a> ⇒</dt>
-<dd><p>Creates load combination (private)</p>
-</dd>
-<dt><a href="#createBaseLoadCase">createBaseLoadCase(no, action_category, name, to_solve, comment, params)</a> ⇒</dt>
-<dd></dd>
-<dt><a href="#createBaseLoadCombinations">createBaseLoadCombinations(no, name, to_solve, comment, params)</a> ⇒</dt>
-<dd><p>Create RSection Load combination</p>
-</dd>
-</dl>
+# Loading
 
 <a name="DesignSituation"></a>
 
 ## DesignSituation
 **Kind**: global class  
-
-* [DesignSituation](#DesignSituation)
-    * [new DesignSituation(no, design_situation_type, params, comment)](#new_DesignSituation_new)
-    * [.GetDesignSituation()](#DesignSituation+GetDesignSituation) ⇒
-    * [.GetNo()](#DesignSituation+GetNo) ⇒
-    * [.SetCombinationWizard(combination_wizard_no)](#DesignSituation+SetCombinationWizard)
-    * [.SetConsiderInclusiveExclusiveLoadCases(relationship_between_load_cases_no)](#DesignSituation+SetConsiderInclusiveExclusiveLoadCases)
-    * [.SetActive(active)](#DesignSituation+SetActive)
 
 <a name="new_DesignSituation_new"></a>
 
@@ -110,18 +70,6 @@ Enables/disables design situation
 
 ## LoadCase
 **Kind**: global class  
-
-* [LoadCase](#LoadCase)
-    * [new LoadCase(no, name, comment, params)](#new_LoadCase_new)
-    * [.StaticAnalysis(no, name, staticAnalysisSettingsNo, ActionCategory, selfWeighParams, stabilityAnalysisSettingsNo, comment, params)](#LoadCase+StaticAnalysis) ⇒
-    * [.ModalAnalysis(no, name, modalAnalysisSettingsNo, importMassesFrom, selfWeighParams, comment, params)](#LoadCase+ModalAnalysis) ⇒
-    * [.ResponseSpectrumAnalysis(no, name, responseSpectrumAnalysisSettingsNo, importModalAnalysisFrom, responseSpectrums, comment, params)](#LoadCase+ResponseSpectrumAnalysis) ⇒
-    * [.WindSimulation(no, name, staticAnalysisSettingsNo, windAnalysisSettingsNo, windProfileNo, windDirection, terrainOffset, stabilityAnalysisSettingsNo, comment, params)](#LoadCase+WindSimulation) ⇒
-    * [.ConsiderImperfection(imperfectionCaseNo)](#LoadCase+ConsiderImperfection)
-    * [.SetStructureModification(structureModificationNo)](#LoadCase+SetStructureModification)
-    * [.GetActionCategoryList()](#LoadCase+GetActionCategoryList) ⇒
-    * [.GetLoadCase()](#LoadCase+GetLoadCase) ⇒
-    * [.GetNo()](#LoadCase+GetNo) ⇒
 
 <a name="new_LoadCase_new"></a>
 
@@ -226,16 +174,11 @@ Creates load case
 <a name="LoadCase+GetActionCategoryList"></a>
 
 ### loadCase.GetActionCategoryList() ⇒
-<<<<<<< HEAD
-
 **Kind**: instance method of [<code>LoadCase</code>](#LoadCase)  
 **Returns**: List of action categories  
 <a name="LoadCase+GetLoadCase"></a>
 
 ### loadCase.GetLoadCase() ⇒
-=======
->>>>>>> 197138568d3 (Before rebase)
-
 **Kind**: instance method of [<code>LoadCase</code>](#LoadCase)  
 **Returns**: Load case object  
 <a name="LoadCase+GetNo"></a>
@@ -243,157 +186,10 @@ Creates load case
 ### loadCase.GetNo() ⇒
 **Kind**: instance method of [<code>LoadCase</code>](#LoadCase)  
 **Returns**: Number of Load case  
-<a name="ResultCombination"></a>
-
-## ResultCombination
-**Kind**: global class  
-
-* [ResultCombination](#ResultCombination)
-    * [new ResultCombination(no, design_situation_no, load_case_items, load_combination_items, combination_type, comment, params)](#new_ResultCombination_new)
-    * [.General(no, design_situation_no, load_case_items, load_combination_items, comment, params)](#ResultCombination+General)
-    * [.EnvelopePermanent(no, design_situation_no, load_case_items, load_combination_items, comment, params)](#ResultCombination+EnvelopePermanent)
-    * [.EnvelopeTransient(no, design_situation_no, load_case_items, load_combination_items, comment, params)](#ResultCombination+EnvelopeTransient)
-    * [.Superposition(no, design_situation_no, load_case_items, load_combination_items, comment, params)](#ResultCombination+Superposition)
-    * [.SRSSCombination(use_equivalent_linear_combination, extreme_value_sign, according_load_case_or_combination)](#ResultCombination+SRSSCombination)
-    * [.ToSolve(to_solve)](#ResultCombination+ToSolve)
-    * [.GenerateSubCombinations(generate)](#ResultCombination+GenerateSubCombinations)
-    * [.GetNo()](#ResultCombination+GetNo) ⇒
-    * [.GetResultCombination()](#ResultCombination+GetResultCombination) ⇒
-
-<a name="new_ResultCombination_new"></a>
-
-### new ResultCombination(no, design_situation_no, load_case_items, load_combination_items, combination_type, comment, params)
-Creates Result combination object
-
-
-| Param | Type | Description |
-| --- | --- | --- |
-| no | <code>Number</code> | Number of Result combination, can be undefined |
-| design_situation_no | <code>Number</code> | Design situation number |
-| load_case_items | <code>Array</code> | Array of load cases, can be undefined                                            At least one load case must be specified:                                              - combination type 'General': [[load_case, factor, load_type, operator], [load_case, factor, load_type, load_operator], ...]                                              - other combination types: [[load_case], [load_case], ...] |
-| load_combination_items | <code>Array</code> | Array of load combinations, can be undefined                                            At least one load combination must be specified:                                              - combination type 'General': [[load_combination, factor, load_type, operator], [load_combination, factor, load_type, load_operator], ...]                                              - other combination types: [[load_combination], [load_combination], ...] |
-| combination_type | <code>String</code> | Combination type, can be one of these types: GENERAL, ENVELOPE_PERMANENT, ENVELOPE_TRANSIENT, SUPERPOSITION. |
-| comment | <code>String</code> | Comment, can be undefined |
-| params | <code>String</code> | Additional parameters, can be undefined |
-
-<a name="ResultCombination+General"></a>
-
-### resultCombination.General(no, design_situation_no, load_case_items, load_combination_items, comment, params)
-Creates General Result combination object
-
-**Kind**: instance method of [<code>ResultCombination</code>](#ResultCombination)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| no | <code>Number</code> | Number of Result combination, can be undefined |
-| design_situation_no | <code>Number</code> | Design situation number |
-| load_case_items | <code>Array</code> | Array of load cases, can be undefined                                            At least one load case must be specified:                                              - combination type 'General': [[load_case, factor, load_type, operator], [load_case, factor, load_type, load_operator], ...]                                              - other combination types: [[load_case], [load_case], ...] |
-| load_combination_items | <code>Array</code> | Array of load combinations, can be undefined                                            At least one load combination must be specified:                                              - combination type 'General': [[load_combination, factor, load_type, operator], [load_combination, factor, load_type, load_operator], ...]                                              - other combination types: [[load_combination], [load_combination], ...] |
-| comment | <code>String</code> | Comment, can be undefined |
-| params | <code>String</code> | Additional parameters, can be undefined |
-
-<a name="ResultCombination+EnvelopePermanent"></a>
-
-### resultCombination.EnvelopePermanent(no, design_situation_no, load_case_items, load_combination_items, comment, params)
-Creates Envelope permanent Result combination object
-
-**Kind**: instance method of [<code>ResultCombination</code>](#ResultCombination)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| no | <code>Number</code> | Number of Result combination, can be undefined |
-| design_situation_no | <code>Number</code> | Design situation number |
-| load_case_items | <code>Array</code> | Array of load cases, can be undefined                                            At least one load case must be specified:                                              - combination type 'General': [[load_case, factor, load_type, operator], [load_case, factor, load_type, load_operator], ...]                                              - other combination types: [[load_case], [load_case], ...] |
-| load_combination_items | <code>Array</code> | Array of load combinations, can be undefined                                            At least one load combination must be specified:                                              - combination type 'General': [[load_combination, factor, load_type, operator], [load_combination, factor, load_type, load_operator], ...]                                              - other combination types: [[load_combination], [load_combination], ...] |
-| comment | <code>String</code> | Comment, can be undefined |
-| params | <code>String</code> | Additional parameters, can be undefined |
-
-<a name="ResultCombination+EnvelopeTransient"></a>
-
-### resultCombination.EnvelopeTransient(no, design_situation_no, load_case_items, load_combination_items, comment, params)
-Creates Envelope transient Result combination object
-
-**Kind**: instance method of [<code>ResultCombination</code>](#ResultCombination)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| no | <code>Number</code> | Number of Result combination, can be undefined |
-| design_situation_no | <code>Number</code> | Design situation number |
-| load_case_items | <code>Array</code> | Array of load cases, can be undefined                                            At least one load case must be specified:                                              - combination type 'General': [[load_case, factor, load_type, operator], [load_case, factor, load_type, load_operator], ...]                                              - other combination types: [[load_case], [load_case], ...] |
-| load_combination_items | <code>Array</code> | Array of load combinations, can be undefined                                            At least one load combination must be specified:                                              - combination type 'General': [[load_combination, factor, load_type, operator], [load_combination, factor, load_type, load_operator], ...]                                              - other combination types: [[load_combination], [load_combination], ...] |
-| comment | <code>String</code> | Comment, can be undefined |
-| params | <code>String</code> | Additional parameters, can be undefined |
-
-<a name="ResultCombination+Superposition"></a>
-
-### resultCombination.Superposition(no, design_situation_no, load_case_items, load_combination_items, comment, params)
-Creates Superposition Result combination object
-
-**Kind**: instance method of [<code>ResultCombination</code>](#ResultCombination)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| no | <code>Number</code> | Number of Result combination, can be undefined |
-| design_situation_no | <code>Number</code> | Design situation number |
-| load_case_items | <code>Array</code> | Array of load cases, can be undefined (in case the load combinations are specified).                                            At least one load case must be specified:                                              - combination type 'General': [[load_case, factor, load_type, operator], [load_case, factor, load_type, load_operator], ...]                                              - other combination types: [[load_case], [load_case], ...] |
-| load_combination_items | <code>Array</code> | Array of load combinations, can be undefined                                            At least one load combination must be specified:                                              - combination type 'General': [[load_combination, factor, load_type, operator], [load_combination, factor, load_type, load_operator], ...]                                              - other combination types: [[load_combination], [load_combination], ...] |
-| comment | <code>String</code> | Comment, can be undefined |
-| params | <code>String</code> | Additional parameters, can be undefined |
-
-<a name="ResultCombination+SRSSCombination"></a>
-
-### resultCombination.SRSSCombination(use_equivalent_linear_combination, extreme_value_sign, according_load_case_or_combination)
-Sets SRSS combination
-
-**Kind**: instance method of [<code>ResultCombination</code>](#ResultCombination)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| use_equivalent_linear_combination | <code>Boolean</code> | Use equivalent linear combination, can be undefined (false as default) |
-| extreme_value_sign | <code>String</code> | Extreme value sign, can be undefined ('SIGN_POSITIVE_OR_NEGATIVE' as default) |
-| according_load_case_or_combination | <code>Object</code> | According load case or combination, can be undefined in case extreme_value_sign is not 'SIGN_ACCORDING_TO_LC_CO'; otherwise must be specified |
-
-<a name="ResultCombination+ToSolve"></a>
-
-### resultCombination.ToSolve(to_solve)
-Sets to solve
-
-**Kind**: instance method of [<code>ResultCombination</code>](#ResultCombination)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| to_solve | <code>Boolean</code> | To solve state, can be undefined (true as default) |
-
-<a name="ResultCombination+GenerateSubCombinations"></a>
-
-### resultCombination.GenerateSubCombinations(generate)
-Sets Generate sub-combinations of type 'Superposition'
-
-**Kind**: instance method of [<code>ResultCombination</code>](#ResultCombination)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| generate | <code>Boolean</code> | Generate sub-combinations of 'Superposition' combination type, can be undefined (true as default) |
-
-<a name="ResultCombination+GetNo"></a>
-
-### resultCombination.GetNo() ⇒
-**Kind**: instance method of [<code>ResultCombination</code>](#ResultCombination)  
-**Returns**: Number of Result combination  
-<a name="ResultCombination+GetResultCombination"></a>
-
-### resultCombination.GetResultCombination() ⇒
-**Kind**: instance method of [<code>ResultCombination</code>](#ResultCombination)  
-**Returns**: Result combination object  
 <a name="RSectionLoadCase"></a>
 
 ## RSectionLoadCase
 **Kind**: global class  
-
-* [RSectionLoadCase](#RSectionLoadCase)
-    * [new RSectionLoadCase(no, action_category, name, to_solve, comment, params)](#new_RSectionLoadCase_new)
-    * [.GetLoadcase()](#RSectionLoadCase+GetLoadcase)
-    * [.GetNo()](#RSectionLoadCase+GetNo)
 
 <a name="new_RSectionLoadCase_new"></a>
 
@@ -428,10 +224,6 @@ Returns load case number
 ## RSectionLoadCombination
 **Kind**: global class  
 
-* [RSectionLoadCombination](#RSectionLoadCombination)
-    * [new RSectionLoadCombination(no, load_combination_items, name, to_solve, comment, params)](#new_RSectionLoadCombination_new)
-    * [.AssignLoadCases(load_combination_items)](#RSectionLoadCombination+AssignLoadCases) ⇒
-
 <a name="new_RSectionLoadCombination_new"></a>
 
 ### new RSectionLoadCombination(no, load_combination_items, name, to_solve, comment, params)
@@ -458,8 +250,20 @@ Assigns load cases
 
 | Param | Type | Description |
 | --- | --- | --- |
-| load_combination_items | <code>Array</code> | Load combination items [[load case no, factor], .... ] |
+| load_combination_items | <code>Array</code> | Load combination itemns [[load case no, factor], .... ] |
 
+<a name="actionCategory_dict"></a>
+
+## actionCategory\_dict
+Dictionary
+
+**Kind**: global constant  
+<a name="get_design_situation_types"></a>
+
+## get\_design\_situation\_types()
+Shows list of all available design situation types
+
+**Kind**: global function  
 <a name="createBaseDesignSituation"></a>
 
 ## createBaseDesignSituation(no, params, comment) ⇒
@@ -607,7 +411,7 @@ Assigns load cases
 
 | Param | Type | Description |
 | --- | --- | --- |
-| load_combination_items | <code>Array</code> | Load combination items [[load case no, factor], .... ] |
+| load_combination_items | <code>Array</code> | Load combination itemns [[load case no, factor], .... ] |
 
 <a name="LoadCombination+ToSolve"></a>
 
@@ -635,6 +439,18 @@ Creates load combination (private)
 | comment | <code>String</code> | Comment, can be undefined |
 | params | <code>Object</code> | Additional parameters, can be undefined |
 
+<a name="get_analysis_types"></a>
+
+## get\_analysis\_types()
+Gets all available analysis types strings
+
+**Kind**: global function  
+<a name="get_initial_state_definition_types"></a>
+
+## get\_initial\_state\_definition\_types()
+Gets all available initial state definition types strings
+
+**Kind**: global function  
 <a name="createBaseLoadCase"></a>
 
 ## createBaseLoadCase(no, action_category, name, to_solve, comment, params) ⇒
@@ -650,6 +466,12 @@ Creates load combination (private)
 | comment | <code>String</code> | Comment, can be undefined |
 | params | <code>Object</code> | Parameters, can be undefined |
 
+<a name="get_action_categories_types"></a>
+
+## get\_action\_categories\_types()
+Shows list of all available design situation types
+
+**Kind**: global function  
 <a name="createBaseLoadCombinations"></a>
 
 ## createBaseLoadCombinations(no, name, to_solve, comment, params) ⇒
