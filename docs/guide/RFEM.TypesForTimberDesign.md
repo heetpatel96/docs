@@ -36,16 +36,16 @@ Go to *[[source]](https://github.com/Dlubal-Software/RFEM_Python_Client/tree/mai
 
         > nodal_supports[i][0] (*enum*): Support Type Enumeration Type    
         nodal_supports[i][1] (*bool*): Support in Z Option    
-        nodal_supports[i][2] (*enum*): Eccentricity Type Enumeration
-        nodal_supports[i][3] (*enum*): Support Type in Y Enumeration
-        nodal_supports[i][4] (*enum*): Restraint Type in X Enumeration
+        nodal_supports[i][2] (*enum*): Eccentricity Type Enumeration    
+        nodal_supports[i][3] (*enum*): Support Type in Y Enumeration    
+        nodal_supports[i][4] (*enum*): Restraint Type in X Enumeration      
         nodal_supports[i][5] (*str*): Assigned Nodes     
 
 
     * **factors** (*list of lists*) – Effective Length Factors
 
         > factors[i][0] (*float*): Flexural Buckling in U Coefficient     
-        factors[i][1] (*float*): Flexural Buckling in V Coefficient
+        factors[i][1] (*float*): Flexural Buckling in V Coefficient     
         factors[i][2] (*float*): Critical Moment     
 
 
