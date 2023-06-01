@@ -7,7 +7,7 @@ module.exports = {
     title: '',
     base: "/docs/",
     description: 'Welcome to RFEM Documentation',
-    plugins: ['@vuepress/back-to-top', ['vuepress-plugin-code-copy', true]],
+    plugins: ['@vuepress/back-to-top', ['vuepress-plugin-code-copy', {align: 'top'}]],
     themeConfig: {
         logo: '/images/dev_docs.png',
         nav: [
