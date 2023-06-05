@@ -52,7 +52,7 @@ module.exports = {
               {
                 title: ".NET HLF 🕸️",
                 collapsable: true,
-                children: ["netintro"]
+                children: ["net/netintro"]
               },
               {
                 title: "JavaScript Commands 📜",
