@@ -1,4 +1,6 @@
-# Tutorial Webservice/API in C#
+# Article
+
+## Tutorial Webservice/API in C#
 
 The HLF library for C# offers many useful functions for creating structures in RFEM and RSTAB, some of which will be used in the following example.
 
@@ -20,13 +22,13 @@ node newNode = new()
 ```
 The definition of lines, areas and other objects is done analogously. It should be noted that for certain attributes an associated "Specified" attribute must also be defined and set to "true".
 
-## Practice Example
+### Practice Example
 
 This example shows how to create a continuous beam with constant line load. The number of fields, span and size of the line load can be defined variably via the user input. First, the required variables are defined via the user input in the console. The system checks whether the user's input is compatible with the data type of the respective variable. If the input is incorrect or empty, an error message appears in the console. During programming, care must be taken to ensure that decimal numbers can be entered using both dot and comma notation in order to minimise the susceptibility to errors during input.
 
 ![input](../img/netInput.jpg)
 
-### Connection to RFEM/RSTAB
+#### Connection to RFEM/RSTAB
 
 The following code attempts to establish a connection with RFEM/RSTAB within a Try-Catch-Block:
 
@@ -74,7 +76,7 @@ ModelClient model = new ModelClient(Binding, new EndpointAddress(modelUrl));
 
 For establishing a connection, the program must be opened before executing the code. After a successful connection, the program information is displayed in the console and a new model with a user-defined name is created in RFEM/RSTAB.
 
-### Definition of the Basic Objects
+#### Definition of the Basic Objects
 
 In the next step, the material and cross-section of the continuous beam can be defined. It is important that the names correspond to the names in the RFEM material or cross-section library.
 
@@ -164,7 +166,7 @@ nodalSupports.Add(support1);
 nodalSupports.Add(support2);
 ```
 
-### Transmitting the Objects to RFEM
+#### Transmitting the Objects to RFEM
 
 In order for the created objects to be available in RFEM/RSTAB, they must first be passed to the program. This is done between the two functions "model.begin_modification" and "model.end_modification" using object-specific functions of the HLF library. Using foreach loops, all objects of a type are passed to the program.
 
@@ -212,7 +214,7 @@ finally
 }
 ```
 
-### Definition of the Loads
+#### Definition of the Loads
 
 The load cases, load combinations and design situations are created in a similar way to the basic objects and then transferred to the programme. Afterwards, the member load, which was previously specified by the user, can be created:
 
@@ -240,7 +242,7 @@ for (int i = 0; i < spanNumber; i++)
 ```
 In addition to uniformly distributed loads, trapezoidal and parabolic loads, among others, are also possible.
 
-### Calculation and Result Output
+#### Calculation and Result Output
 
 The function model.calculate(all) performs all calculations in RFEM. After successful calculation, the results are displayed in the console in this example. The HLF library for C# also allows results to be exported to XML or CSV files. Finally, the model.save() function can be used to save the model in the file path specified in brackets:
 
@@ -252,6 +254,6 @@ application.close_model(0, true);
 
 ![result](../img/netResult.png)
 
-### Summary
+#### Summary
 
 In the shown example, the advantages and the ease of use of the C# library become clear. Through user-defined inputs, the structure can be quickly adjusted, which saves a lot of time when creating static systems in RFEM 6 and RSTAB 9. The HLF library of C# also offers many other functions that enable the creation of complex systems.
