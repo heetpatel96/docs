@@ -5952,16 +5952,16 @@ one transport session active by not setting ‘trans’ into Client. -->
 * **Parameters**
 
     
-    * **new_model** (*bool**, **optional*) – Set to True if new model is requested.
+    * **new_model** (*bool*, *optional*) – Set to True if new model is requested.
 
 
-    * **model_name** (*str**, **optional*) – Defaults to “TestModel”.
+    * **model_name** (*str*, *optional*) – Defaults to “TestModel”.
 
 
-    * **delete** (*bool**, **optional*) – Delete results
+    * **delete** (*bool*, *optional*) – Delete results
 
 
-    * **delete_all** (*bool**, **optional*) – Delete all objects in Model.
+    * **delete_all** (*bool*, *optional*) – Delete all objects in Model.
 
 
 
